@@ -15,16 +15,25 @@
 
 
 
-<meta name="description" content="������+">
+<meta name="description" content="��¼һ�£���������
+����һ������$$dp[i][j]=min(dp[i][k]+dp[k][j]+w[i][j])$$��ת�Ʒ��̣�ע��ȡ����ֵʱ��һ�������ı��β���ʽ��
++">
 <meta property="og:type" content="article">
 <meta property="og:title" content="debug">
 <meta property="og:url" content="attack204.github.io/2018/02/20/debug/index.html">
 <meta property="og:site_name" content="Attack">
-<meta property="og:description" content="������+">
-<meta property="og:updated_time" content="2018-02-20T10:58:10.000Z">
+<meta property="og:description" content="��¼һ�£���������
+����һ������$$dp[i][j]=min(dp[i][k]+dp[k][j]+w[i][j])$$��ת�Ʒ��̣�ע��ȡ����ֵʱ��һ�������ı��β���ʽ��
++">
+<meta property="og:image" content="https://images2018.cnblogs.com/blog/1101696/201802/1101696-20180220195000323-1743945977.png">
+<meta property="og:image" content="https://images2018.cnblogs.com/blog/1101696/201802/1101696-20180220195923187-15020794.png">
+<meta property="og:updated_time" content="2018-02-20T12:09:51.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="debug">
-<meta name="twitter:description" content="������+">
+<meta name="twitter:description" content="��¼һ�£���������
+����һ������$$dp[i][j]=min(dp[i][k]+dp[k][j]+w[i][j])$$��ת�Ʒ��̣�ע��ȡ����ֵʱ��һ�������ı��β���ʽ��
++">
+<meta name="twitter:image" content="https://images2018.cnblogs.com/blog/1101696/201802/1101696-20180220195000323-1743945977.png">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
 
@@ -138,13 +147,13 @@
                 <div class="tips-box hide">
                     <div class="tips-arrow"></div>
                     <ul class="tips-inner">
-                        <li>菜單</li>
-                        <li>標籤</li>
+                        <li>Menu</li>
+                        <li>Tags</li>
                         
-                        <li>友情鏈接</li>
+                        <li>Friends</li>
                         
                         
-                        <li>關於我</li>
+                        <li>About Me</li>
                         
                     </ul>
                 </div>
@@ -258,7 +267,7 @@
             </nav>
         </header>                
     </div>
-    <link class="menu-list" tags="標籤" friends="友情鏈接" about="關於我"/>
+    <link class="menu-list" tags="Tags" friends="Friends" about="About Me"/>
 </nav>
       <div class="body-wrap"><article id="post-debug" class="article article-type-post" itemscope itemprop="blogPost">
   
@@ -296,8 +305,18 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p><excerpt in="" index="" |="" ��ҳժҫ=""><br>������<br>+<a id="more"></a></excerpt></p>
-<p><the rest="" of="" contents="" |="" ����ȫ��=""><br>123456789</the></p>
+        <p><excerpt in="" index="" |="" ��ҳժҫ=""><br>��¼һ�£���������</excerpt></p>
+<p>����һ������<br>$$dp[i][j]=min(dp[i][k]+dp[k][j]+w[i][j])$$<br>��ת�Ʒ��̣�ע��ȡ����ֵʱ��һ�������ı��β���ʽ��</p>
+<p>+<a id="more"></a></p>
+<p><the rest="" of="" contents="" |="" ����ȫ��=""><br>��¼һ�£���������</the></p>
+<p>����һ������<br>$$dp[i][j]=min(dp[i][k]+dp[k][j]+w[i][j])$$<br>��ת�Ʒ��̣�ע��ȡ����ֵʱ��һ�������ı��β���ʽ��</p>
+<p>##����1<br>������$a \leq b\leq c \leq d$��$w<em>{b,c}\leq w</em>{a,d}$<br>��ô���ǳ�$w$��������������ϵ����<br><img src="https://images2018.cnblogs.com/blog/1101696/201802/1101696-20180220195000323-1743945977.png" alt=""></p>
+<p>##����2<br>������$a \leq b\leq c \leq d$��$w<em>{a,c}+w</em>{b,d}\leq w<em>{b,c}+w</em>{a,d}$<br>����$w$�����ı��β���ʽ<br><img src="https://images2018.cnblogs.com/blog/1101696/201802/1101696-20180220195923187-15020794.png" alt=""></p>
+<p>##����1<br>��$w$�����ı��β���ʽ�����ҽ���$w<em>{i,j}+w</em>{i+1,j+1}\leq w<em>{i+1,j}+w</em>{i,j+1}$<br>��ûɶ���ã�</p>
+<p>##����2<br>��$w$�����ı��β���ʽ���ҹ�������������ϵ����<br>��$dp$Ҳ�����ı��β���ʽ</p>
+<p>##����3<br>��$s<em>{i,j}$Ϊ$dp</em>{i,j}$�ľ��ߵ㣬��$dp$�����ı��β���ʽ<br>��ô$s<em>{i,j-1}\leq s</em>{i,j} \leq s_{i+1,j}$</p>
+<p>##֤��<br>��һ�򲻴���<a href="http://blog.csdn.net/noiau/article/details/72514812" target="_blank" rel="external">����</a></p>
+<p>##����<br><a href="http://www.cnblogs.com/zwfymqz/p/8455716.html" target="_blank" rel="external">ʯ�ӹ鲢��ǿ��</a><br>��ʵ���Ⲣ���Ǽ������ݣ���ǿһ���Ŀ���ȥ�ٶ�SDOI2008ʯ�ӹ鲢����˵Ҫ��ƽ����ά��ĳG���㷨<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div></pre></td><td class="code"><pre><div class="line">#include&lt;cstdio&gt;</div><div class="line">#include&lt;cstring&gt;</div><div class="line">const int MAXN=1e5+10,INF=1e8+10;</div><div class="line">using namespace std;</div><div class="line">inline char nc()</div><div class="line">&#123;</div><div class="line">    static char buf[MAXN],*p1=buf,*p2=buf;</div><div class="line">    return p1==p2&amp;&amp;(p2=(p1=buf)+fread(buf,1,MAXN,stdin)),p1==p2?EOF:*p1++;</div><div class="line">&#125;</div><div class="line">inline int read()</div><div class="line">&#123;</div><div class="line">    char c=nc();int x=0,f=1;</div><div class="line">    while(c&lt;&apos;0&apos;||c&gt;&apos;9&apos;)&#123;if(c==&apos;-&apos;)f=-1;c=nc();&#125;</div><div class="line">    while(c&gt;=&apos;0&apos;&amp;&amp;c&lt;=&apos;9&apos;)&#123;x=x*10+c-&apos;0&apos;;c=nc();&#125;</div><div class="line">    return x*f;</div><div class="line">&#125;</div><div class="line">int dp[3001][3001],sum[MAXN],s[3001][3001];</div><div class="line">int main()</div><div class="line">&#123;</div><div class="line">    #ifdef WIN32</div><div class="line">    freopen(&quot;a.in&quot;,&quot;r&quot;,stdin);</div><div class="line">    #else</div><div class="line">    #endif</div><div class="line">	int N=read();</div><div class="line">	for(int i=1;i&lt;=N;i++) sum[i]=read(),sum[i]+=sum[i-1],s[i][i]=i;</div><div class="line">	for(int i=N;i&gt;=1;i--) </div><div class="line">	&#123;</div><div class="line">		for(int j=i+1;j&lt;=N;j++)</div><div class="line">		&#123;</div><div class="line">			int mn=INF,mnpos=0;</div><div class="line">			for(int k=s[i][j-1];k&lt;=s[i+1][j];k++)</div><div class="line">			&#123;</div><div class="line">				if(dp[i][k]+dp[k+1][j]+sum[j]-sum[i-1] &lt; mn)</div><div class="line">				&#123;</div><div class="line">					mn=dp[i][k]+dp[k+1][j]+sum[j]-sum[i-1];</div><div class="line">					mnpos=k;</div><div class="line">				&#125;</div><div class="line">			&#125;</div><div class="line">			dp[i][j]=mn;</div><div class="line">			s[i][j]=mnpos;</div><div class="line">		&#125;</div><div class="line">	&#125; </div><div class="line">	printf(&quot;%d&quot;,dp[1][N]);</div><div class="line">    return 0;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 
       
     </div>
@@ -306,17 +325,17 @@
   
     
     <div class="copyright">
-        <p><span>本文標題:</span><a href="/2018/02/20/debug/">debug</a></p>
-        <p><span>文章作者:</span><a href="/" title="回到主頁">attack204</a></p>
-        <p><span>發布時間:</span>2018-02-20, 18:56:45</p>
-        <p><span>最後更新:</span>2018-02-20, 18:58:10</p>
+        <p><span>Title:</span><a href="/2018/02/20/debug/">debug</a></p>
+        <p><span>Author:</span><a href="/" title="Back to Homepage">attack204</a></p>
+        <p><span>Created:</span>2018-02-20, 18:56:45</p>
+        <p><span>Updated:</span>2018-02-20, 20:09:51</p>
         <p>
-            <span>原始鏈接:</span><a class="post-url" href="/2018/02/20/debug/" title="debug">attack204.github.io/2018/02/20/debug/</a>
-            <span class="copy-path" data-clipboard-text="原文: attack204.github.io/2018/02/20/debug/　　作者: attack204" title="點擊複製文章鏈接"><i class="fa fa-clipboard"></i></span>
+            <span>Full URL:</span><a class="post-url" href="/2018/02/20/debug/" title="debug">attack204.github.io/2018/02/20/debug/</a>
+            <span class="copy-path" data-clipboard-text="From attack204.github.io/2018/02/20/debug/　　By attack204" title="Copy Article&#39;s Link &amp; Author"><i class="fa fa-clipboard"></i></span>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
         <p>
-            <span>許可協議:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"姓名標示-非商業性-相同方式分享 4.0 國際"</a> 轉載請保留原文鏈接及作者。
+            <span>License:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"CC BY-NC-SA 4.0"</a> Keep Link &amp; Author if Distribute.
         </p>
     </div>
 
@@ -325,8 +344,8 @@
     <nav id="article-nav">
         
             <div id="article-nav-newer" class="article-nav-title">
-                <a href="/2018/02/20/hello-world/">
-                    Hello World
+                <a href="/2018/02/20/四边形不等式优化DP/">
+                    四边形不等式优化DP
                 </a>
             </div>
         
@@ -337,7 +356,7 @@
 </article>
 
     <div id="toc" class="toc-article">
-        <strong class="toc-title">文章目錄</strong>
+        <strong class="toc-title">Contents</strong>
         
             
         
@@ -353,10 +372,10 @@
         }
     </style>
 
-    <input type="button" id="tocButton" value="隱藏目錄"  title="點擊按鈕隱藏或者顯示文章目錄">
+    <input type="button" id="tocButton" value="Hide"  title="Show or Hide Table of Contents">
 
     <script>
-        yiliaConfig.toc = ["隱藏目錄", "顯示目錄", !!"false"];
+        yiliaConfig.toc = ["Hide", "Show", !!"false"];
     </script>
 
 
@@ -395,19 +414,19 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2018/02/20/hello-world/" title="上一篇: Hello World">
+            <a href="/2018/02/20/四边形不等式优化DP/" title="Pre: 四边形不等式优化DP">
                 <i class="fa fa-angle-left"></i>
             </a>
         
 
-        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+        <a title="Mini Archives"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         
-            <a href="/" title="回到主頁"><i class="fa fa-home"></i></a>
+            <a href="/" title="Back to Homepage"><i class="fa fa-home"></i></a>
         
     </div>
 
-    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2018/02/20/hello-world/">Hello World</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/02/20/debug/">debug</a></li></ul>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2018/02/20/hello-world/">Hello World</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/02/20/四边形不等式优化DP/">四边形不等式优化DP</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/02/20/debug/">debug</a></li></ul>
 
 
 
@@ -424,14 +443,14 @@
                 2016-2018 attack204
             </div>
             <div class="footer-right">
-                <a href="http://hexo.io/" target="_blank" title="快速、簡潔且高效的博客框架">Hexo</a>  Theme <a href="https://github.com/MOxFIVE/hexo-theme-yelee" target="_blank" title="簡而不減 Hexo 雙欄博客主題  v3.5">Yelee</a> by MOxFIVE <i class="fa fa-heart animated infinite pulse"></i>
+                <a href="http://hexo.io/" target="_blank" title="A fast, simple &amp; powerful blog framework">Hexo</a>  Theme <a href="https://github.com/MOxFIVE/hexo-theme-yelee" target="_blank" title="Another simple and elegant theme for Hexo  v3.5">Yelee</a> by MOxFIVE <i class="fa fa-heart animated infinite pulse"></i>
             </div>
         </div>
         
             <div class="visit">
                 
                     <span id="busuanzi_container_site_pv" style='display:none'>
-                        <span id="site-visit" title="本站到訪數"><i class="fa fa-user" aria-hidden="true"></i><span id="busuanzi_value_site_uv"></span>
+                        <span id="site-visit" title="Site Visitors"><i class="fa fa-user" aria-hidden="true"></i><span id="busuanzi_value_site_uv"></span>
                         </span>
                     </span>
                 
@@ -440,7 +459,7 @@
                 
                 
                     <span id="busuanzi_container_page_pv" style='display:none'>
-                        <span id="page-visit"  title="本頁閱讀量"><i class="fa fa-eye animated infinite pulse" aria-hidden="true"></i><span id="busuanzi_value_page_pv"></span>
+                        <span id="page-visit"  title="Page Hits"><i class="fa fa-eye animated infinite pulse" aria-hidden="true"></i><span id="busuanzi_value_page_pv"></span>
                         </span>
                     </span>
                 
@@ -473,9 +492,9 @@
 
 
 <div class="scroll" id="scroll">
-    <a href="#" title="返回頂部"><i class="fa fa-arrow-up"></i></a>
-    <a href="#comments" onclick="load$hide();" title="查看評論"><i class="fa fa-comments-o"></i></a>
-    <a href="#footer" title="轉到底部"><i class="fa fa-arrow-down"></i></a>
+    <a href="#" title="Back to Top"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments" onclick="load$hide();" title="Comments"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer" title="Go to Bottom"><i class="fa fa-arrow-down"></i></a>
 </div>
 <script>
     // Open in New Window
