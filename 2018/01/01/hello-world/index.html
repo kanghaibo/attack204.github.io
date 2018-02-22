@@ -15,19 +15,24 @@
 
 
 
-<meta name="description" content="记录一下，以免忘了对于一个形如$$dp[i][j]=min(dp[i][k]+dp[k][j]+w[i][j])$$的转移方程（注意取最大值时不一定满足四边形不等式）">
+<meta name="description" content="Hexo入门">
 <meta property="og:type" content="article">
-<meta property="og:title" content="四边形不等式优化DP">
-<meta property="og:url" content="http://attack204.com/2018/02/20/四边形不等式优化DP/index.html">
+<meta property="og:title" content="Hello World">
+<meta property="og:url" content="http://attack204.com/2018/01/01/hello-world/index.html">
 <meta property="og:site_name" content="Attack博客">
-<meta property="og:description" content="记录一下，以免忘了对于一个形如$$dp[i][j]=min(dp[i][k]+dp[k][j]+w[i][j])$$的转移方程（注意取最大值时不一定满足四边形不等式）">
-<meta property="og:image" content="http://ou46et6i2.bkt.clouddn.com/1101696-20180220195000323-1743945977.png">
-<meta property="og:image" content="http://ou46et6i2.bkt.clouddn.com/1101696-20180220195923187-15020794.png">
-<meta property="og:updated_time" content="2018-02-21T11:47:46.000Z">
+<meta property="og:description" content="Hexo入门">
+<meta property="og:image" content="https://portablehexo.bitmoe.cn/hexopp/hexop.png">
+<meta property="og:image" content="https://portablehexo.bitmoe.cn/hexopp/hexop2.png">
+<meta property="og:image" content="https://portablehexo.bitmoe.cn/hexopp/hexop3.png">
+<meta property="og:image" content="https://portablehexo.bitmoe.cn/hexopp/hexop5.png">
+<meta property="og:image" content="https://portablehexo.bitmoe.cn/hexopp/hexop6.png">
+<meta property="og:image" content="https://portablehexo.bitmoe.cn/hexopp/hexop7.png">
+<meta property="og:image" content="https://portablehexo.bitmoe.cn/hexopp/hexop8.png">
+<meta property="og:updated_time" content="2018-02-22T12:28:49.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="四边形不等式优化DP">
-<meta name="twitter:description" content="记录一下，以免忘了对于一个形如$$dp[i][j]=min(dp[i][k]+dp[k][j]+w[i][j])$$的转移方程（注意取最大值时不一定满足四边形不等式）">
-<meta name="twitter:image" content="http://ou46et6i2.bkt.clouddn.com/1101696-20180220195000323-1743945977.png">
+<meta name="twitter:title" content="Hello World">
+<meta name="twitter:description" content="Hexo入门">
+<meta name="twitter:image" content="https://portablehexo.bitmoe.cn/hexopp/hexop.png">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
 
@@ -59,7 +64,7 @@
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>四边形不等式优化DP | Attack博客</title>
+<title>Hello World | Attack博客</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -282,11 +287,11 @@
     </div>
     <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
 </nav>
-      <div class="body-wrap"><article id="post-四边形不等式优化DP" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2018/02/20/四边形不等式优化DP/" class="article-date">
-      <time datetime="2018-02-20T12:08:47.000Z" itemprop="datePublished">2018-02-20</time>
+      <a href="/2018/01/01/hello-world/" class="article-date">
+      <time datetime="2018-01-01T11:10:18.000Z" itemprop="datePublished">2018-01-01</time>
 </a>
 
 
@@ -301,7 +306,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      四边形不等式优化DP
+      Hello World
     </h1>
   
 
@@ -311,10 +316,6 @@
         
 
         
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/DP优化/">DP优化</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/四边形不等式/">四边形不等式</a></li></ul>
-    </div>
-
         <div class="clearfix"></div>
       </div>
       
@@ -322,16 +323,86 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p><excerpt in="" index="" |="" 首页摘要=""><br>记录一下，以免忘了<br>对于一个形如<br>$$dp[i][j]=min(dp[i][k]+dp[k][j]+w[i][j])$$<br>的转移方程（注意取最大值时不一定满足四边形不等式）<br><a id="more"></a></excerpt></p>
-<p><the rest="" of="" contents="" |="" 余下全文=""><br>记录一下，以免忘了</the></p>
-<h1 id="首先"><a href="#首先" class="headerlink" title="首先"></a>首先</h1><p>对于一个形如<br>$$dp[i][j]=min(dp[i][k]+dp[k][j]+w[i][j])$$<br>的转移方程（注意取最大值时不一定满足四边形不等式）</p>
-<h2 id="定理1"><a href="#定理1" class="headerlink" title="定理1"></a>定理1</h2><p>若对于$a \leq b\leq c \leq d$且$w_{b,c}\leq w_{a,d}$<br>那么我们称$w$关于区间包含关系单调<br><img src="http://ou46et6i2.bkt.clouddn.com/1101696-20180220195000323-1743945977.png" alt=""></p>
-<h2 id="定理2"><a href="#定理2" class="headerlink" title="定理2"></a>定理2</h2><p>若对于$a \leq b\leq c \leq d$且$w_{a,c}+w_{b,d}\leq w_{b,c}+w_{a,d}$<br>则称$w$满足四边形不等式<br><img src="http://ou46et6i2.bkt.clouddn.com/1101696-20180220195923187-15020794.png" alt=""></p>
-<h2 id="性质1"><a href="#性质1" class="headerlink" title="性质1"></a>性质1</h2><p>若$w$满足四边形不等式，当且仅当$w_{i,j}+w_{i+1,j+1}\leq w_{i+1,j}+w_{i,j+1}$<br>（没啥卵用）</p>
-<h2 id="性质2"><a href="#性质2" class="headerlink" title="性质2"></a>性质2</h2><p>若$w$满足四边形不等式，且关于区间包含关系单调<br>则$dp$也满足四边形不等式</p>
-<h2 id="性质3"><a href="#性质3" class="headerlink" title="性质3"></a>性质3</h2><p>设$s_{i,j}$为$dp_{i,j}$的决策点，若$dp$满足四边形不等式<br>那么$s_{i,j-1}\leq s_{i,j} \leq s_{i+1,j}$</p>
-<h3 id="证明"><a href="#证明" class="headerlink" title="证明"></a>证明</h3><p>放一个不错的<a href="http://blog.csdn.net/noiau/article/details/72514812" target="_blank" rel="external">博客</a></p>
-<h2 id="例题"><a href="#例题" class="headerlink" title="例题"></a>例题</h2><p><a href="http://www.cnblogs.com/zwfymqz/p/8455716.html" target="_blank" rel="external">石子归并加强版</a><br>其实这题并不是极限数据，再强一点的可以去百度SDOI2008石子归并，据说要用平衡树维护某G姓算法<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstdio&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstring&gt;</span></span></div><div class="line"><span class="keyword">const</span> <span class="keyword">int</span> MAXN=<span class="number">1e5</span>+<span class="number">10</span>,INF=<span class="number">1e8</span>+<span class="number">10</span>;</div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">char</span> <span class="title">nc</span><span class="params">()</span></span></div><div class="line">&#123;</div><div class="line">    <span class="keyword">static</span> <span class="keyword">char</span> buf[MAXN],*p1=buf,*p2=buf;</div><div class="line">    <span class="keyword">return</span> p1==p2&amp;&amp;(p2=(p1=buf)+fread(buf,<span class="number">1</span>,MAXN,<span class="built_in">stdin</span>)),p1==p2?EOF:*p1++;</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">int</span> <span class="title">read</span><span class="params">()</span></span></div><div class="line">&#123;</div><div class="line">    <span class="keyword">char</span> c=nc();<span class="keyword">int</span> x=<span class="number">0</span>,f=<span class="number">1</span>;</div><div class="line">    <span class="keyword">while</span>(c&lt;<span class="string">'0'</span>||c&gt;<span class="string">'9'</span>)&#123;<span class="keyword">if</span>(c==<span class="string">'-'</span>)f=<span class="number">-1</span>;c=nc();&#125;</div><div class="line">    <span class="keyword">while</span>(c&gt;=<span class="string">'0'</span>&amp;&amp;c&lt;=<span class="string">'9'</span>)&#123;x=x*<span class="number">10</span>+c-<span class="string">'0'</span>;c=nc();&#125;</div><div class="line">    <span class="keyword">return</span> x*f;</div><div class="line">&#125;</div><div class="line"><span class="keyword">int</span> dp[<span class="number">3001</span>][<span class="number">3001</span>],sum[MAXN],s[<span class="number">3001</span>][<span class="number">3001</span>];</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></div><div class="line">&#123;</div><div class="line">    <span class="meta">#<span class="meta-keyword">ifdef</span> WIN32</span></div><div class="line">    freopen(<span class="string">"a.in"</span>,<span class="string">"r"</span>,<span class="built_in">stdin</span>);</div><div class="line">    <span class="meta">#<span class="meta-keyword">else</span></span></div><div class="line">    <span class="meta">#<span class="meta-keyword">endif</span></span></div><div class="line">    <span class="keyword">int</span> N=read();</div><div class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=N;i++) sum[i]=read(),sum[i]+=sum[i<span class="number">-1</span>],s[i][i]=i;</div><div class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=N;i&gt;=<span class="number">1</span>;i--) </div><div class="line">    &#123;</div><div class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j=i+<span class="number">1</span>;j&lt;=N;j++)</div><div class="line">        &#123;</div><div class="line">            <span class="keyword">int</span> mn=INF,mnpos=<span class="number">0</span>;</div><div class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> k=s[i][j<span class="number">-1</span>];k&lt;=s[i+<span class="number">1</span>][j];k++)</div><div class="line">            &#123;</div><div class="line">                <span class="keyword">if</span>(dp[i][k]+dp[k+<span class="number">1</span>][j]+sum[j]-sum[i<span class="number">-1</span>] &lt; mn)</div><div class="line">                &#123;</div><div class="line">                    mn=dp[i][k]+dp[k+<span class="number">1</span>][j]+sum[j]-sum[i<span class="number">-1</span>];</div><div class="line">                    mnpos=k;</div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line">            dp[i][j]=mn;</div><div class="line">            s[i][j]=mnpos;</div><div class="line">        &#125;</div><div class="line">    &#125; </div><div class="line">    <span class="built_in">printf</span>(<span class="string">"%d"</span>,dp[<span class="number">1</span>][N]);</div><div class="line">    <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+        <p><img src="https://portablehexo.bitmoe.cn/hexopp/hexop.png" alt=""></p>
+<blockquote>
+<p><strong>本版本仅适用于Win环境</strong><br>本文关键字： <strong>Hexo绿色版</strong>，<strong>Hexo便携版</strong>，<strong>Hexo配置</strong>，<strong>Hexo</strong>，<strong>U盘</strong></p>
+</blockquote>
+<p><a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>是一个快速、简洁且高效的博客框架，支持 GitHub Flavored Markdown 的所有功能；具有超快生成速度，让上百个页面在几秒内瞬间完成渲染；还拥有各式各样的插件等等。</p>
+<p>但是就像很多教程里面写的那样，搭建 Hexo 本地环境，需要安装 Node.js、Git 以及使用 npm 进行安装和配置。这对于毫无经验的新手来说，是一个很大的挑战。同时，由于这些环境的存在，导致如果需要更换计算机的时候，重新安装配置一个新的Hexo环境，又得花费一些功夫。</p>
+<p>所以呢，锵锵，我们整合了一个 Hexo 便携版，来简化本地环境的部署。</p>
+<p>####<strong>版本介绍</strong><br>那么所谓的便携版到底是什么？便携版就是将 Hexo 本地环境所需要的各种依赖环境的整合到一起，做成的不需要安装的版本。</p>
+<p>本便携版（Release 1.0.0）所包含的软件如下：</p>
+<blockquote>
+<ul>
+<li>Git: 2.7.4</li>
+<li>Nodejs: 6.10.1</li>
+<li>Npm: 4.4.1</li>
+<li>Hexo: 3.2.2</li>
+</ul>
+</blockquote>
+<p>为了便携的需要，不能配置固定的环境变量，所以除此之外还有相应的批处理文件，下文将详细介绍。</p>
+<p>####<strong>从零开始，1分钟搭建Hexo写作环境</strong><br>说了这么多，我们这就开始教你如何在1分钟内，从零开始搭建Hexo写作环境！</p>
+<p>#####1 注册一个Github帐号</p>
+<p>1.1 进入<a href="https://github.com" target="_blank" rel="external">Github</a>，并在右边的3个框框中分别填写 用户名、邮箱地址、账户密码，并点击 <strong><code>Sign up for Github</code></strong>;</p>
+<p><img src="https://portablehexo.bitmoe.cn/hexopp/hexop2.png" alt="图1.1.1"></p>
+<p>1.2 进入欢迎页面后，点击<strong><code>Finish sign up</code></strong>;</p>
+<p><img src="https://portablehexo.bitmoe.cn/hexopp/hexop3.png" alt="图1.2.1"></p>
+<p>1.3 进入到这一步之后（<strong>图1.3.1</strong>），先别记着点任何东西，查看你的邮箱，应该会收到如下的邮件（<strong>图1.3.2</strong>），确认你的邮件。否则，你会看到错误页面（<strong>图1.3.3</strong>）。query完毕之后在<strong>图1.3.1</strong>所示的页面，点击<strong><code>+ New repository</code></strong>;</p>
+<p><img src="https://portablehexo.bitmoe.cn/hexopp/hexop5.png" alt="图1.3.1"></p>
+<p><img src="https://portablehexo.bitmoe.cn/hexopp/hexop6.png" alt="图1.3.2"></p>
+<p><img src="https://portablehexo.bitmoe.cn/hexopp/hexop7.png" alt="图1.3.3"></p>
+<p>1.4 请在红框中的 <strong><code>Repository name</code></strong> 里面输入 <strong><code>用户名.github.io</code></strong> ( <strong>用户名</strong> 就是你刚刚 <strong>步骤1.1</strong> 中注册的用户名)，然后点击 <strong><code>Create repository</code></strong>;</p>
+<p><img src="https://portablehexo.bitmoe.cn/hexopp/hexop8.png" alt="图1.4.1"></p>
+<p>1.5 至此，Github网页注册的部分完毕</p>
+<p>####2 下载HEXO Portable</p>
+<p>2.1 访问我们的 <a href="https://project.bitmoe.cn/PortableHexo/" target="_blank" rel="external">HEXO Portable</a> 页面，或者 <a href="https://github.com/Bitmoe/PortableHexo" target="_blank" rel="external">Github仓库</a> 下载最新的便携版；</p>
+<p>2.2 双击得到的自解压文件，解压到你需要安装博客的地方，可以选择硬盘或者U盘；</p>
+<p>####3 配置你的环境</p>
+<p>3.1 在你的博客的文件夹，你会发现很多批处理文件，我先介绍下各个文件的用途：</p>
+<blockquote>
+<ul>
+<li>配置基本信息 &gt;&gt; 配置博客的基本环境</li>
+<li>配置Github部署 &gt;&gt; 配置博客的部署</li>
+<li>启动命令行 &gt;&gt; 启动带环境变量的Git-Bash，否则无法使用node、npm、git等命令</li>
+<li>新建文章 &gt;&gt; 新建一篇文章</li>
+<li>渲染并本地测试 &gt;&gt; 生成并本地预览</li>
+<li>渲染并部署 &gt;&gt; 生成并部署到GitHub</li>
+<li>重置配置文件 &gt;&gt; 重置_config.yml</li>
+</ul>
+</blockquote>
+<p>3.2 我们继续进行环境配置，双击<strong><code>配置基本信息</code></strong>并按顺序输入以下信息：</p>
+<blockquote>
+<ul>
+<li>主标题：顾名思义</li>
+<li>副标题：顾名思义</li>
+<li>描述：顾名思义</li>
+<li>作者：顾名思义</li>
+<li>网站地址：填写 <strong>用户名.github.io</strong> （此处的用户名为<strong>步骤1.1</strong>中填写的用户名）<br><strong>如果您已经购买了域名，可以参看相关的文章！</strong></li>
+</ul>
+</blockquote>
+<p>3.3 双击<strong><code>配置Github部署</code></strong>并按顺序输入以下信息：</p>
+<blockquote>
+<ul>
+<li>Github的用户名：此处的用户名为<strong>步骤1.1</strong>中填写的用户名</li>
+<li>Github注册邮箱：此处的注册邮箱为<strong>步骤1.1</strong>中填写的注册邮箱</li>
+</ul>
+</blockquote>
+<p>3.4 输入完毕之后，会进行测试部署，等待屏幕提示<strong>下面将进行部署测试，稍后将有一个openssh的对话框出现，请输入你的github用户密码。</strong>的时候，按回车继续；（此处的用户密码为<strong>步骤1.1</strong>中填写的用户密码）</p>
+<p>3.5 然后继续等待，此时屏幕会出现n多行，耐心等待即可；</p>
+<p>3.6 等待屏幕提示<strong>请访问 <a href="https://用户名.github.io" target="_blank" rel="external">https://用户名.github.io</a> 查看是否部署成功！</strong>的时候，在浏览器中输入<strong><a href="https://用户名.github.io" target="_blank" rel="external">https://用户名.github.io</a> </strong>，理论上可以看到你的Hexo站点！（此处的用户名为<strong>步骤1.1</strong>中填写的用户名）</p>
+<p>3.7 至此，你的Hexo环境就配置完成了，这样你的这个Hexo博客文件夹无论移动到哪一台电脑，都能通过<strong>启动命令行</strong>出现的bash命令行，或者其余便捷的批处理文件比如<strong>新建文章</strong>、<strong>渲染并本地测试</strong>、<strong>渲染并部署</strong>进行相应的操作。</p>
+<p>3.8 如果你在配置中出错，可以运行<strong>重置配置文件</strong>后，再重复<strong>3.1~3.6步骤</strong></p>
+<p>####4 开始享受纯粹的Hexo写作吧！</p>
+<p>####5 备注</p>
+<blockquote>
+<ul>
+<li>本便携版以及本文均使用 <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="external">CC BY-NC-SA 4.0</a>协议；</li>
+<li>本文所有权归 <a href="http://qistchan.com" target="_blank" rel="external">QistChan</a> &amp; <a href="https://wwww.bitmoe.com" target="_blank" rel="external">Bitmoe Inc.</a> 所有；</li>
+<li>本便携版由 <a href="https://www.bitmoe.com" target="_blank" rel="external">Bitmoe Inc.</a> 维护并提供技术支持；</li>
+<li>需要技术支持可以在<a href="https://github.com/Bitmoe/PortableHexo" target="_blank" rel="external">Github仓库</a> 提交<strong><code>Issues</code></strong>；</li>
+<li>Written with <a href="https://stackedit.io/" target="_blank" rel="external">StackEdit</a>.</li>
+</ul>
+</blockquote>
 
       
     </div>
@@ -340,13 +411,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2018/02/20/四边形不等式优化DP/">四边形不等式优化DP</a></p>
+        <p><span>本文标题:</span><a href="/2018/01/01/hello-world/">Hello World</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">attack</a></p>
-        <p><span>发布时间:</span>2018-02-20, 20:08:47</p>
-        <p><span>最后更新:</span>2018-02-21, 19:47:46</p>
+        <p><span>发布时间:</span>2018-01-01, 19:10:18</p>
+        <p><span>最后更新:</span>2018-02-22, 20:28:49</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2018/02/20/四边形不等式优化DP/" title="四边形不等式优化DP">http://attack204.com/2018/02/20/四边形不等式优化DP/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://attack204.com/2018/02/20/四边形不等式优化DP/　　作者: attack" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2018/01/01/hello-world/" title="Hello World">http://attack204.com/2018/01/01/hello-world/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://attack204.com/2018/01/01/hello-world/　　作者: attack" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
         <p>
@@ -359,17 +430,11 @@
     <nav id="article-nav">
         
             <div id="article-nav-newer" class="article-nav-title">
-                <a href="/2018/02/21/MatrixTree速成/">
-                    MatrixTree速成
-                </a>
-            </div>
-        
-        
-            <div id="article-nav-older" class="article-nav-title">
                 <a href="/2018/02/20/debug/">
                     debug
                 </a>
             </div>
+        
         
     </nav>
 
@@ -379,7 +444,7 @@
     <div id="toc" class="toc-article">
         <strong class="toc-title">文章目录</strong>
         
-            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#首先"><span class="toc-number">1.</span> <span class="toc-text">首先</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#定理1"><span class="toc-number">1.1.</span> <span class="toc-text">定理1</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#定理2"><span class="toc-number">1.2.</span> <span class="toc-text">定理2</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#性质1"><span class="toc-number">1.3.</span> <span class="toc-text">性质1</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#性质2"><span class="toc-number">1.4.</span> <span class="toc-text">性质2</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#性质3"><span class="toc-number">1.5.</span> <span class="toc-text">性质3</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#证明"><span class="toc-number">1.5.1.</span> <span class="toc-text">证明</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#例题"><span class="toc-number">1.6.</span> <span class="toc-text">例题</span></a></li></ol></li></ol>
+            
         
     </div>
     <style>
@@ -415,7 +480,7 @@
         </div>
         <script>
             window._bd_share_config={
-                "common":{"bdSnsKey":{},"bdText":"四边形不等式优化DP　| Attack博客　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+                "common":{"bdSnsKey":{},"bdText":"Hello World　| Attack博客　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
         </script>
     
 
@@ -449,7 +514,7 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2018/02/21/MatrixTree速成/" title="上一篇: MatrixTree速成">
+            <a href="/2018/02/20/debug/" title="上一篇: debug">
                 <i class="fa fa-angle-left"></i>
             </a>
         
@@ -457,9 +522,7 @@
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         
-            <a href="/2018/02/20/debug/" title="下一篇: debug">
-                <i class="fa fa-angle-right"></i>
-            </a>
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
     </div>
 
