@@ -27,7 +27,7 @@ nim游戏
 nim游戏
 有两个顶尖聪明的人在玩游戏，游戏规则是这样的：
 有$n$堆石子，两个人可以从任意一堆石子中拿任意多个石子(不能不拿)，没法拿的人失败。问谁会胜利">
-<meta property="og:updated_time" content="2018-02-22T13:37:31.000Z">
+<meta property="og:updated_time" content="2018-02-23T06:40:51.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="博弈论入门之nim游戏">
 <meta name="twitter:description" content="nim游戏
@@ -207,7 +207,7 @@ nim游戏
                 
                 <section class="switch-part switch-part2">
                     <div class="widget tagcloud" id="js-tagcloud">
-                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/DP优化/">DP优化</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MatrixTree定理/">MatrixTree定理</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/nim游戏/">nim游戏</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/oi/">oi</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/博弈论/">博弈论</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/四边形不等式/">四边形不等式</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/巴什博奕/">巴什博奕</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/最小生成树/">最小生成树</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/树链剖分/">树链剖分</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/线性代数/">线性代数</a></li></ul>
+                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/DP优化/">DP优化</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MatrixTree定理/">MatrixTree定理</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SG函数/">SG函数</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/nim游戏/">nim游戏</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/oi/">oi</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/博弈论/">博弈论</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/四边形不等式/">四边形不等式</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/巴什博奕/">巴什博奕</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/最小生成树/">最小生成树</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/树链剖分/">树链剖分</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/线性代数/">线性代数</a></li></ul>
                     </div>
                 </section>
                 
@@ -373,7 +373,7 @@ nim游戏
 <p>那么我们不可能将某一个$a_i$异或一个数字后使得</p>
 <p>$a_1 \oplus a_2 \oplus a_3 \oplus \dots \oplus a_n = 0$</p>
 <p>此时先手必败</p>
-<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstdio&gt;</span></span></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line"><span class="keyword">int</span> a[<span class="number">10001</span>]; </div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></div><div class="line">&#123;</div><div class="line">    <span class="keyword">int</span> Test;</div><div class="line">    <span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;Test);</div><div class="line">    <span class="keyword">while</span>(Test--)</div><div class="line">    &#123;</div><div class="line">        <span class="keyword">int</span> ans=<span class="number">0</span>,N;</div><div class="line">        <span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;N);</div><div class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=N;i++) <span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;a[i]);</div><div class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=N;i++) ans=ans^a[i];</div><div class="line">        ans==<span class="number">0</span>?<span class="built_in">printf</span>(<span class="string">"No\n"</span>):<span class="built_in">printf</span>(<span class="string">"Yes\n"</span>);</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">int</span> F[MAXN];<span class="comment">//可以转移的状态集合，一般题目会给出 </span></div><div class="line"><span class="keyword">int</span> S[MAXN];<span class="comment">//表示该点可以转移到的状态有哪些 </span></div><div class="line"><span class="keyword">int</span> SG[MAXN];<span class="comment">//该点的SG值 </span></div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">GetSG</span><span class="params">()</span></span></div><div class="line">&#123;</div><div class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=N;i++)<span class="comment">//枚举DAG中所有点 </span></div><div class="line">    &#123;</div><div class="line">        <span class="built_in">memset</span>(S,<span class="number">0</span>,<span class="keyword">sizeof</span>(S));<span class="comment">//初始化</span></div><div class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">1</span>;j&lt;=limit&amp;&amp;F[j]&lt;=i;j++)<span class="comment">//limit表示转移的集合的大小</span></div><div class="line">            S[SG[i-F[j]]]=<span class="number">1</span>; </div><div class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">1</span>;;j++)</div><div class="line">            <span class="keyword">if</span>(!S[j])</div><div class="line">                &#123;SG[i]=i;<span class="keyword">break</span>;&#125;<span class="comment">//根据定义计算SG函数 </span></div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><p>临时还没有做太多题目，以后做多了慢慢补吧</p>
 <ul>
 <li><a href="https://www.luogu.org/problemnew/show/P2197" target="_blank" rel="external">洛谷P2197</a></li>
@@ -395,7 +395,7 @@ nim游戏
         <p><span>本文标题:</span><a href="/2018/02/22/博弈论入门之nim游戏/">博弈论入门之nim游戏</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">attack</a></p>
         <p><span>发布时间:</span>2018-02-22, 21:31:49</p>
-        <p><span>最后更新:</span>2018-02-22, 21:37:31</p>
+        <p><span>最后更新:</span>2018-02-23, 14:40:51</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2018/02/22/博弈论入门之nim游戏/" title="博弈论入门之nim游戏">http://attack204.com/2018/02/22/博弈论入门之nim游戏/</a>
             <span class="copy-path" data-clipboard-text="原文: http://attack204.com/2018/02/22/博弈论入门之nim游戏/　　作者: attack" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
@@ -409,6 +409,12 @@ nim游戏
 
 
     <nav id="article-nav">
+        
+            <div id="article-nav-newer" class="article-nav-title">
+                <a href="/2018/02/23/博弈论进阶之SG函数/">
+                    博弈论进阶之SG函数
+                </a>
+            </div>
         
         
             <div id="article-nav-older" class="article-nav-title">
@@ -495,7 +501,9 @@ nim游戏
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
+            <a href="/2018/02/23/博弈论进阶之SG函数/" title="上一篇: 博弈论进阶之SG函数">
+                <i class="fa fa-angle-left"></i>
+            </a>
         
 
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
@@ -507,7 +515,7 @@ nim游戏
         
     </div>
 
-    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2018/02/22/博弈论入门之nim游戏/">博弈论入门之nim游戏</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/02/22/博弈论入门之巴什博奕/">博弈论入门之巴什博奕</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/02/22/树链剖分/">树链剖分</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/02/21/次小生成树/">次小生成树</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/02/21/MatrixTree速成/">MatrixTree速成</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/02/20/四边形不等式优化DP/">四边形不等式优化DP</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/02/20/debug/">debug</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/01/01/hello-world/">Hello World</a></li></ul>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2018/02/23/博弈论进阶之SG函数/">博弈论进阶之SG函数</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/02/22/博弈论入门之nim游戏/">博弈论入门之nim游戏</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/02/22/博弈论入门之巴什博奕/">博弈论入门之巴什博奕</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/02/22/树链剖分/">树链剖分</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/02/21/次小生成树/">次小生成树</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/02/21/MatrixTree速成/">MatrixTree速成</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/02/20/四边形不等式优化DP/">四边形不等式优化DP</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/02/20/debug/">debug</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/01/01/hello-world/">Hello World</a></li></ul>
 
 
 
