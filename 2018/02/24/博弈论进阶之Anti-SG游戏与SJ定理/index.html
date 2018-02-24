@@ -15,15 +15,19 @@
 
 
 
-<meta name="description" content="垃圾">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Attack博客">
-<meta property="og:url" content="http://attack204.com/tags/oi/index.html">
+<meta name="description" content="前言在上一节中，我们初步了解了一下SG函数与SG定理。
+今天我们来分析一下SG游戏的变式——Anti-SG游戏以及它所对应的SG定理">
+<meta property="og:type" content="article">
+<meta property="og:title" content="博弈论进阶之Anti-SG游戏与SJ定理">
+<meta property="og:url" content="http://attack204.com/2018/02/24/博弈论进阶之Anti-SG游戏与SJ定理/index.html">
 <meta property="og:site_name" content="Attack博客">
-<meta property="og:description" content="垃圾">
+<meta property="og:description" content="前言在上一节中，我们初步了解了一下SG函数与SG定理。
+今天我们来分析一下SG游戏的变式——Anti-SG游戏以及它所对应的SG定理">
+<meta property="og:updated_time" content="2018-02-24T00:21:40.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Attack博客">
-<meta name="twitter:description" content="垃圾">
+<meta name="twitter:title" content="博弈论进阶之Anti-SG游戏与SJ定理">
+<meta name="twitter:description" content="前言在上一节中，我们初步了解了一下SG函数与SG定理。
+今天我们来分析一下SG游戏的变式——Anti-SG游戏以及它所对应的SG定理">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
 
@@ -55,7 +59,7 @@
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>Tag: oi | Attack博客</title>
+<title>博弈论进阶之Anti-SG游戏与SJ定理 | Attack博客</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -65,9 +69,9 @@
         fancybox: true,
         animate: true,
         isHome: false,
-        isPost: false,
+        isPost: true,
         isArchive: false,
-        isTag: true,
+        isTag: false,
         isCategory: false,
         fancybox_js: "//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.js",
         scrollreveal: "//cdn.bootcss.com/scrollReveal.js/3.1.4/scrollreveal.min.js",
@@ -278,278 +282,242 @@
     </div>
     <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
 </nav>
-      <div class="body-wrap">
+      <div class="body-wrap"><article id="post-博弈论进阶之Anti-SG游戏与SJ定理" class="article article-type-post" itemscope itemprop="blogPost">
   
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-          <div class="article-meta">
-              <a href="/2018/02/24/博弈论进阶之Anti-SG游戏与SJ定理/" class="archive-article-date">
-      <time datetime="2018-02-24T00:16:27.000Z" itemprop="datePublished">02-24</time>
+    <div class="article-meta">
+      <a href="/2018/02/24/博弈论进阶之Anti-SG游戏与SJ定理/" class="article-date">
+      <time datetime="2018-02-24T00:16:27.000Z" itemprop="datePublished">2018-02-24</time>
 </a>
 
 
-        </div>
-         
+    </div>
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/02/24/博弈论进阶之Anti-SG游戏与SJ定理/">博弈论进阶之Anti-SG游戏与SJ定理</a>
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      博弈论进阶之Anti-SG游戏与SJ定理
     </h1>
   
 
-        <div class="article-info info-on-archive">
-          
+      </header>
+      
+      <div class="article-info article-info-post">
+        
     <div class="article-category tagcloud">
     <a class="article-category-link" href="/categories/oi/">oi</a>
     </div>
 
 
-          
+        
     <div class="article-tag tagcloud">
         <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Anti-SG/">Anti-SG</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/SJ定理/">SJ定理</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/oi/">oi</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/博弈论/">博弈论</a></li></ul>
     </div>
 
-        </div>
         <div class="clearfix"></div>
-    </header>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <excerpt in="" index="">
+
+<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>在<a href="http://attack204.com/2018/02/23/%E5%8D%9A%E5%BC%88%E8%AE%BA%E8%BF%9B%E9%98%B6%E4%B9%8BSG%E5%87%BD%E6%95%B0/">上一节</a>中，我们初步了解了一下SG函数与SG定理。</p>
+<p>今天我们来分析一下SG游戏的变式——Anti-SG游戏以及它所对应的SG定理</p>
+<a id="more"></a>
+<the rest="" of="" contents="">
+
+<p>首先从最基本的Anti-Nim游戏开始</p>
+<p>Anti-Nim游戏是这样的</p>
+<blockquote>
+<p>有两个顶尖聪明的人在玩游戏，游戏规则是这样的：<br>有$n$堆石子，两个人可以从任意一堆石子中拿任意多个石子(不能不拿)，<code>拿走最后一个石子的人失败</code>。问谁会胜利</p>
+</blockquote>
+<h2 id="博弈分析"><a href="#博弈分析" class="headerlink" title="博弈分析"></a>博弈分析</h2><p>Anti-Nim游戏与Nim游戏唯一的不同就是两人的胜利条件发生了改变，不过这并不影响我们对结论的推导</p>
+<p>对于这个游戏，先手必胜有两种情况</p>
+<ul>
+<li>当<code>每</code>堆石子都只有一个，且游戏的SG值<code>为</code>$0$ </li>
+<li><code>至少</code>一堆石子多于一个，且游戏的SG值<code>不为</code>$0$</li>
+</ul>
+<p>粗略的证明一下</p>
+<p>游戏大概可以被分为$3$种情况</p>
+<ul>
+<li>每堆只有一个石子<ul>
+<li>当异或值为$0$时，先手必胜</li>
+<li>当异或值不为$0$时，先手必败</li>
+</ul>
+</li>
+<li>只有一堆石子数大于1，先手必胜</li>
+</ul>
+<p>经过分析不难发现，先手可以对数量大于1的那堆石子下手脚，从而构造出后手必败的状态</p>
+<ul>
+<li>存在至少两堆石子数大于1<ul>
+<li>当异或和为0时，先手必败</li>
+<li>当异或和不为0时，先手必败</li>
+</ul>
+</li>
+</ul>
+<p>这一步的结论与Nim游戏非常相似，同时它们的证明也非常相似，大概就是从异或和为$0$的状态无论怎样都会变为异或和不为$0$的状态，反过来从异或和不为$0$的状态总有一步能到达异或和为$0$的状态</p>
+<h2 id="推广"><a href="#推广" class="headerlink" title="推广"></a>推广</h2><p>按照我们学习SG函数的思路，我们是否可以把Anti-Nim游戏推广开来呢？</p>
+<p>答案是肯定的</p>
+<p>定义Anti-SG游戏</p>
+<blockquote>
+<ul>
+<li>Anti-SG游戏规定：决策集合为空的游戏者赢</li>
+<li>其余规则与<a href="http://attack204.com/2018/02/23/%E5%8D%9A%E5%BC%88%E8%AE%BA%E8%BF%9B%E9%98%B6%E4%B9%8BSG%E5%87%BD%E6%95%B0/">SG游戏</a>相同</li>
+</ul>
+</blockquote>
+<p>同时我们定义SJ定理</p>
+<blockquote>
+<p>对于Anti-SG游戏，如果我们规定当局面中所有单一游戏的SG值为0时，游戏结束，则先手必胜当且仅当</p>
+<p>(1)游戏的SG函数不为0且游戏中某个单一游戏的SG函数值大于1</p>
+<p>(2)游戏的SG函数为0且没有某个单一游戏的SG函数大于1</p>
+</blockquote>
+<p>证明与SG函数类似，</p>
+<p>不追求完美的可以从DAG上归纳</p>
+<p>追求完美的可以用模仿棋证明出该游戏的等价性然后推出该游戏是可数集合然后通过计算推出在模$2$意义下线性空间的基可以为$nim(0),nim(1)$最后归纳证明一个后继是若干Anti-nim游戏的游戏等价于$mex(S)$</p>
+<h2 id="例题"><a href="#例题" class="headerlink" title="例题"></a>例题</h2><p>按照whx老师的说法</p>
+<blockquote>
+<p>Anti-SG不怎么重要，我至今为止就做到过一道题</p>
+</blockquote>
+<p>那道题在<a href="http://www.lydsy.com/JudgeOnline/problem.php?id=1022" target="_blank" rel="external">这儿</a></p>
+<p><a href="http://www.cnblogs.com/zwfymqz/p/8463493.html" target="_blank" rel="external">题解</a></p>
+</the></excerpt>
+      
+    </div>
+    
   </div>
+  
+    
+    <div class="copyright">
+        <p><span>本文标题:</span><a href="/2018/02/24/博弈论进阶之Anti-SG游戏与SJ定理/">博弈论进阶之Anti-SG游戏与SJ定理</a></p>
+        <p><span>文章作者:</span><a href="/" title="回到主页">attack</a></p>
+        <p><span>发布时间:</span>2018-02-24, 08:16:27</p>
+        <p><span>最后更新:</span>2018-02-24, 08:21:40</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/2018/02/24/博弈论进阶之Anti-SG游戏与SJ定理/" title="博弈论进阶之Anti-SG游戏与SJ定理">http://attack204.com/2018/02/24/博弈论进阶之Anti-SG游戏与SJ定理/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://attack204.com/2018/02/24/博弈论进阶之Anti-SG游戏与SJ定理/　　作者: attack" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+        </p>
+    </div>
+
+
+
+    <nav id="article-nav">
+        
+        
+            <div id="article-nav-older" class="article-nav-title">
+                <a href="/2018/02/23/博弈论进阶之SG函数/">
+                    博弈论进阶之SG函数
+                </a>
+            </div>
+        
+    </nav>
+
+  
 </article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-          <div class="article-meta">
-              <a href="/2018/02/23/博弈论进阶之SG函数/" class="archive-article-date">
-      <time datetime="2018-02-23T06:32:47.000Z" itemprop="datePublished">02-23</time>
-</a>
+
+    <div id="toc" class="toc-article">
+        <strong class="toc-title">文章目录</strong>
+        
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#前言"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#博弈分析"><span class="toc-number">2.</span> <span class="toc-text">博弈分析</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#推广"><span class="toc-number">3.</span> <span class="toc-text">推广</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#例题"><span class="toc-number">4.</span> <span class="toc-text">例题</span></a></li></ol>
+        
+    </div>
+    <style>
+        .left-col .switch-btn,
+        .left-col .switch-area {
+            display: none;
+        }
+        .toc-level-3 i,
+        .toc-level-3 ol {
+            display: none !important;
+        }
+    </style>
+
+    <input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+
+    <script>
+        yiliaConfig.toc = ["隐藏目录", "显示目录", !!"false"];
+    </script>
 
 
+
+    
+<div class="share">
+    
+        <div class="bdsharebuttonbox">
+            <a href="#" class="fa fa-twitter bds_twi" data-cmd="twi" title="分享到推特"></a>
+            <a href="#" class="fa fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+            <a href="#" class="fa fa-qq bds_sqq" data-cmd="sqq" title="分享给 QQ 好友"></a>
+            <a href="#" class="fa fa-files-o bds_copy" data-cmd="copy" title="复制网址"></a>
+            <a href="#" class="fa fa fa-envelope-o bds_mail" data-cmd="mail" title="通过邮件分享"></a>
+            <a href="#" class="fa fa-weixin bds_weixin" data-cmd="weixin" title="生成文章二维码"></a>
+            <a href="#" class="fa fa-share-alt bds_more" data-cmd="more"></i></a>
         </div>
-         
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/02/23/博弈论进阶之SG函数/">博弈论进阶之SG函数</a>
-    </h1>
-  
+        <script>
+            window._bd_share_config={
+                "common":{"bdSnsKey":{},"bdText":"博弈论进阶之Anti-SG游戏与SJ定理　| Attack博客　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+        </script>
+    
 
-        <div class="article-info info-on-archive">
-          
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/oi/">oi</a>
+    
+</div>
+
+
+
+
+
+
+
+    
+        <section class="youyan" id="comments">
+    <script>
+        var loadComment = function(){
+            var d = document, s = d.createElement('script');
+            s.src = 'http://v2.uyan.cc/code/uyan.js?uid=2157856';
+            (d.head || d.body).appendChild(s);
+        }
+    </script>
+    
+    <script> loadComment(); </script>
+
+    <div id="uyan_frame"></div>
+</section>
+    
+
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
+        
+
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+
+        
+            <a href="/2018/02/23/博弈论进阶之SG函数/" title="下一篇: 博弈论进阶之SG函数">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
     </div>
 
-
-          
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/SG函数/">SG函数</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/oi/">oi</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/博弈论/">博弈论</a></li></ul>
-    </div>
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-          <div class="article-meta">
-              <a href="/2018/02/22/博弈论入门之nim游戏/" class="archive-article-date">
-      <time datetime="2018-02-22T13:31:49.000Z" itemprop="datePublished">02-22</time>
-</a>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2018/02/24/博弈论进阶之Anti-SG游戏与SJ定理/">博弈论进阶之Anti-SG游戏与SJ定理</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/02/23/博弈论进阶之SG函数/">博弈论进阶之SG函数</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/02/22/博弈论入门之nim游戏/">博弈论入门之nim游戏</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/02/22/博弈论入门之巴什博奕/">博弈论入门之巴什博奕</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/02/22/树链剖分/">树链剖分</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/02/21/次小生成树/">次小生成树</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/02/21/MatrixTree速成/">MatrixTree速成</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/02/20/四边形不等式优化DP/">四边形不等式优化DP</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/02/20/debug/">debug</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/01/01/hello-world/">Hello World</a></li></ul>
 
 
-        </div>
-         
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/02/22/博弈论入门之nim游戏/">博弈论入门之nim游戏</a>
-    </h1>
-  
-
-        <div class="article-info info-on-archive">
-          
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/oi/">oi</a>
-    </div>
 
 
-          
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/nim游戏/">nim游戏</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/oi/">oi</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/博弈论/">博弈论</a></li></ul>
-    </div>
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-          <div class="article-meta">
-              <a href="/2018/02/22/博弈论入门之巴什博奕/" class="archive-article-date">
-      <time datetime="2018-02-22T12:21:50.000Z" itemprop="datePublished">02-22</time>
-</a>
-
-
-        </div>
-         
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/02/22/博弈论入门之巴什博奕/">博弈论入门之巴什博奕</a>
-    </h1>
-  
-
-        <div class="article-info info-on-archive">
-          
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/oi/">oi</a>
-    </div>
-
-
-          
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/oi/">oi</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/博弈论/">博弈论</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/巴什博奕/">巴什博奕</a></li></ul>
-    </div>
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-          <div class="article-meta">
-              <a href="/2018/02/22/树链剖分/" class="archive-article-date">
-      <time datetime="2018-02-22T00:49:23.000Z" itemprop="datePublished">02-22</time>
-</a>
-
-
-        </div>
-         
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/02/22/树链剖分/">树链剖分</a>
-    </h1>
-  
-
-        <div class="article-info info-on-archive">
-          
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/oi/">oi</a>
-    </div>
-
-
-          
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/oi/">oi</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/树链剖分/">树链剖分</a></li></ul>
-    </div>
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-          <div class="article-meta">
-              <a href="/2018/02/21/次小生成树/" class="archive-article-date">
-      <time datetime="2018-02-21T13:55:45.000Z" itemprop="datePublished">02-21</time>
-</a>
-
-
-        </div>
-         
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/02/21/次小生成树/">次小生成树</a>
-    </h1>
-  
-
-        <div class="article-info info-on-archive">
-          
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/oi/">oi</a>
-    </div>
-
-
-          
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/oi/">oi</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/最小生成树/">最小生成树</a></li></ul>
-    </div>
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-          <div class="article-meta">
-              <a href="/2018/02/21/MatrixTree速成/" class="archive-article-date">
-      <time datetime="2018-02-21T11:10:18.000Z" itemprop="datePublished">02-21</time>
-</a>
-
-
-        </div>
-         
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/02/21/MatrixTree速成/">MatrixTree速成</a>
-    </h1>
-  
-
-        <div class="article-info info-on-archive">
-          
-
-          
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/MatrixTree定理/">MatrixTree定理</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/oi/">oi</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/线性代数/">线性代数</a></li></ul>
-    </div>
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
-
+    <script>
+        
+    </script>
 </div>
       <footer id="footer">
     <div class="outer">
