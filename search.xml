@@ -3,6 +3,30 @@
   
     
     <entry>
+      <title>博弈论进阶之Multi-SG</title>
+      <link href="/2018/02/25/%E5%8D%9A%E5%BC%88%E8%AE%BA%E8%BF%9B%E9%98%B6%E4%B9%8BMulti-SG/"/>
+      <content type="html"><![CDATA[<p><excerpt in="" index=""></excerpt></p><h2 id="Multi-Nim"><a href="#Multi-Nim" class="headerlink" title="Multi-Nim"></a>Multi-Nim</h2><p>从最简单的Nim模型开始</p><p>它的定义是这样的</p><blockquote><p>有$n$堆石子，两个人可以从任意一堆石子中拿任意多个石子(不能不拿)<strong>或把一堆数量不少于$2$石子分为两堆不为空的石子</strong>，没法拿的人失败。问谁会胜利<br><a id="more"></a></p></blockquote><the rest="" of="" contents=""><h2 id="博弈分析"><a href="#博弈分析" class="headerlink" title="博弈分析"></a>博弈分析</h2><p>这个问题的本质还是Nim游戏，可以利用<a href="http://attack204.com/2018/02/23/%E5%8D%9A%E5%BC%88%E8%AE%BA%E8%BF%9B%E9%98%B6%E4%B9%8BSG%E5%87%BD%E6%95%B0/">SG定理</a>来解释</p><p>通过观察不难不发现，操作一与普通的Nim游戏等价</p><p>操作二实际上是将一个游戏分解为两个游戏，根据SG定理，我们可以通过异或运算把两个游戏连接到一起，作为一个后继状态</p><p>煮个栗子</p><p>SG(3)的后继状态有${ (0),(1),(2),(1,2) }$他们的SG值分别为${ 0,1,2,3 }$，因此$SG(3)=mex{ 0,1,2,3 }=4$</p><p>另外这种游戏还有一个非常神奇的性质</p><p>$$SG\left( x\right) =\begin{cases}x-1\left( x\mod4=0\right) \ x\left( x\mod4=1 \lor 2\right) \ x+1\left( x\mod4=3\right) \end{cases}$$</p><p>然后把这个结论背过就好啦233</p><h2 id="Multi-SG"><a href="#Multi-SG" class="headerlink" title="Multi-SG"></a>Multi-SG</h2><p>根据上面的游戏，我们定义Multi-SG游戏</p><ul><li>Multi-SG 游戏规定，在符合拓扑原则的前提下，一个单一游戏的<code>后继</code>可以为<code>多个单一游戏</code>。</li><li>Multi-SG其他规则与SG游戏相同。</li></ul><p>注意在这里要分清楚<code>后继</code>与<code>多个单一游戏</code></p><p>对于一个状态来说，不同的划分方法会产生多个不同的后继，而在一个后继中可能含有多个独立的游戏</p><p>一个后继状态的SG值即为后继状态中独立游戏的异或和</p><p>该状态的SG值即为后继状态的SG值中未出现过的最小值</p><h2 id="例题"><a href="#例题" class="headerlink" title="例题"></a>例题</h2><p>难度跨度好大啊QWQ。。</p><p>直接放题解吧</p><p><a href="http://www.cnblogs.com/zwfymqz/p/8464819.html" target="_blank" rel="external">HDU 3032</a></p><p><a href="http://www.cnblogs.com/zwfymqz/p/8465524.html" target="_blank" rel="external">POJ 2311</a></p><p><a href="http://www.cnblogs.com/zwfymqz/p/8468781.html" target="_blank" rel="external">BZOJ 2940</a></p><p><a href="http://www.cnblogs.com/zwfymqz/p/8469290.html" target="_blank" rel="external">BZOJ 1188</a></p><p><a href="https://www.luogu.org/problemnew/show/P3235" target="_blank" rel="external">洛谷 3235</a></p></the>]]></content>
+      
+      <categories>
+          
+          <category> oi </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> oi </tag>
+            
+            <tag> 博弈论 </tag>
+            
+            <tag> Multi-SG </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
       <title>博弈论入门之斐波那契博弈</title>
       <link href="/2018/02/25/%E5%8D%9A%E5%BC%88%E8%AE%BA%E5%85%A5%E9%97%A8%E4%B9%8B%E6%96%90%E6%B3%A2%E9%82%A3%E5%A5%91%E5%8D%9A%E5%BC%88/"/>
       <content type="html"><![CDATA[<p><excerpt in="" index=""></excerpt></p><h2 id="斐波那契博弈"><a href="#斐波那契博弈" class="headerlink" title="斐波那契博弈"></a>斐波那契博弈</h2><p>斐波那契博弈是一种经典的博弈问题</p><blockquote><p>有一堆石子，两个顶尖聪明的人玩游戏，先取者可以取走任意多个，但不能全取完，以后每人取的石子数不能超过上个人的两倍</p></blockquote><a id="more"></a><the rest="" of="" contents=""><h2 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h2><p>斐波那契博弈有一个非常重要的性质：</p><p><strong>先手必败，当且仅当石子数为<code>斐波那契数</code></strong></p><p>是不是很神奇？？</p><p>证明：</p><p>懒得看了，<a href="http://blog.csdn.net/dgq8211/article/details/7602807" target="_blank" rel="external">这里</a>有</p><h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><p><a href="http://acm.hdu.edu.cn/showproblem.php?pid=2516" target="_blank" rel="external">HDU 2516</a></p><figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstdio&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;map&gt;</span></span></div><div class="line"><span class="keyword">int</span> fib[<span class="number">233</span>],x;</div><div class="line"><span class="built_in">std</span>::<span class="built_in">map</span>&lt;<span class="keyword">int</span>,<span class="keyword">bool</span>&gt;mp;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></div><div class="line">&#123;</div><div class="line">fib[<span class="number">1</span>]=<span class="number">1</span>;fib[<span class="number">2</span>]=<span class="number">1</span>;</div><div class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">3</span>;i&lt;=<span class="number">50</span>;i++) fib[i]=fib[i<span class="number">-1</span>]+fib[i<span class="number">-2</span>],mp[fib[i]]=<span class="number">1</span>;</div><div class="line"><span class="keyword">while</span>(<span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;x)&amp;&amp;x!=<span class="number">0</span>)</div><div class="line"><span class="built_in">puts</span>(mp[x]==<span class="number">1</span>?<span class="string">"Second win"</span>:<span class="string">"First win"</span>);</div><div class="line">    <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure></the>]]></content>
