@@ -267,6 +267,10 @@ a {
   width: auto;
 }
 @media screen and (max-width: 800px) {
+  #container #comments {
+    margin: 0.625rem 10px !important;
+    padding: 1rem !important;
+  }
   #container .left-col {
     display: none;
   }
