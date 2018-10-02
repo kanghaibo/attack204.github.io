@@ -3,6 +3,21 @@
   
     
     <entry>
+      <title>sublime实现一键代码格式化</title>
+      <link href="/2018/10/02/sublime%E5%AE%9E%E7%8E%B0%E4%B8%80%E9%94%AE%E4%BB%A3%E7%A0%81%E6%A0%BC%E5%BC%8F%E5%8C%96/"/>
+      <url>/2018/10/02/sublime%E5%AE%9E%E7%8E%B0%E4%B8%80%E9%94%AE%E4%BB%A3%E7%A0%81%E6%A0%BC%E5%BC%8F%E5%8C%96/</url>
+      <content type="html"><![CDATA[<!-- build time:Tue Oct 02 2018 21:35:52 GMT+0800 (中国标准时间) --><excerpt in="" index="" |="" 首页摘要=""><p>用Astyle实现sublime代码一键格式化</p><a id="more"></a><the rest="" of="" contents="" |="" 余下全文=""><h2 id="效果预览"><a href="#效果预览" class="headerlink" title="效果预览"></a>效果预览</h2><p><img src="https://ws1.sinaimg.cn/large/005S5cb6ly1fvp25dryq1g30qu0j94qp.jpg" alt=""></p><h2 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h2><p>首先下载插件<code>SublimeAstyleFormatter</code></p><p>方法：<code>ctrl + shift + P</code>后输入<code>install Package</code>。</p><p>等待一段时间后输入<code>SublimeAstyleFormatter</code>即可自动下载</p><h2 id="使用方法"><a href="#使用方法" class="headerlink" title="使用方法"></a>使用方法</h2><p>按下<code>ctrl + Alt + F</code>是默认格式化整个文件</p><p>按下<code>ctrl + K + F</code>即可格式化选中区域</p><p>该插件中有许多不同的风格可以选择</p><p>我比较习惯google代码风格，可以这样设置</p><p><img src="https://ws1.sinaimg.cn/large/005S5cb6ly1fvp1nmvnxqj30f00b074x.jpg" alt=""></p><p>然后把第$28$行改为</p><pre><code>&quot;style&quot;: &quot;google&quot;,</code></pre><p><img src="https://ws1.sinaimg.cn/large/005S5cb6ly1fvp1oh2es1j30bg02574d.jpg" alt=""></p><p>完成！</p></the></excerpt><!-- rebuild by neat -->]]></content>
+      
+      
+        <tags>
+            
+            <tag> sublime </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
       <title>关于本博客的说明</title>
       <link href="/2018/04/30/%E5%85%B3%E4%BA%8E%E6%9C%AC%E5%8D%9A%E5%AE%A2%E7%9A%84%E8%AF%B4%E6%98%8E/"/>
       <url>/2018/04/30/%E5%85%B3%E4%BA%8E%E6%9C%AC%E5%8D%9A%E5%AE%A2%E7%9A%84%E8%AF%B4%E6%98%8E/</url>
