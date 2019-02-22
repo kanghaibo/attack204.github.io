@@ -1,0 +1,511 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Attck204</title>
+  
+  
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="https://blog.attack204.com/"/>
+  <updated>2019-02-22T12:11:19.100Z</updated>
+  <id>https://blog.attack204.com/</id>
+  
+  <author>
+    <name>attack204</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>浅谈莫比乌斯反演常见套路</title>
+    <link href="https://blog.attack204.com/2019/02/22/%E6%B5%85%E8%B0%88%E8%8E%AB%E6%AF%94%E4%B9%8C%E6%96%AF%E5%8F%8D%E6%BC%94%E5%B8%B8%E8%A7%81%E5%A5%97%E8%B7%AF/"/>
+    <id>https://blog.attack204.com/2019/02/22/浅谈莫比乌斯反演常见套路/</id>
+    <published>2019-02-22T11:15:21.000Z</published>
+    <updated>2019-02-22T12:11:19.100Z</updated>
+    
+    <summary type="html">
+    
+      做不动的分块，推不完的反演
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>浅谈贝叶斯公式</title>
+    <link href="https://blog.attack204.com/2019/01/19/%E6%B5%85%E8%B0%88%E8%B4%9D%E5%8F%B6%E6%96%AF%E5%85%AC%E5%BC%8F/"/>
+    <id>https://blog.attack204.com/2019/01/19/浅谈贝叶斯公式/</id>
+    <published>2019-01-19T07:21:07.000Z</published>
+    <updated>2019-02-21T05:46:57.076Z</updated>
+    
+    <summary type="html">
+    
+      &lt;excerpt in index&gt;
+
+&lt;p&gt;感觉这玩意儿挺好玩的，顺便填一下以前留下的坑。&lt;/p&gt;
+&lt;p&gt;有些内容是抄袭的以前的文章，有些是自己瞎编的。&lt;/p&gt;
+&lt;p&gt;warning：博主并不知道什么叫深度学习/机器学习/AI，只是一个数学爱好者/oier&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="学习笔记" scheme="https://blog.attack204.com/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="贝叶斯公式" scheme="https://blog.attack204.com/tags/%E8%B4%9D%E5%8F%B6%E6%96%AF%E5%85%AC%E5%BC%8F/"/>
+    
+      <category term="概率" scheme="https://blog.attack204.com/tags/%E6%A6%82%E7%8E%87/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>css学习笔记</title>
+    <link href="https://blog.attack204.com/2019/01/19/CSS%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    <id>https://blog.attack204.com/2019/01/19/CSS学习笔记/</id>
+    <published>2019-01-19T04:34:07.000Z</published>
+    <updated>2019-02-19T13:25:48.059Z</updated>
+    
+    <summary type="html">
+    
+      &lt;excerpt in index&gt;
+
+&lt;p&gt;css好神奇啊qwq&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="学习笔记" scheme="https://blog.attack204.com/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="css" scheme="https://blog.attack204.com/tags/css/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>git使用小结</title>
+    <link href="https://blog.attack204.com/2019/01/18/git%E4%BD%BF%E7%94%A8%E5%B0%8F%E7%BB%93/"/>
+    <id>https://blog.attack204.com/2019/01/18/git使用小结/</id>
+    <published>2019-01-18T13:29:07.000Z</published>
+    <updated>2019-02-19T13:31:14.699Z</updated>
+    
+    <summary type="html">
+    
+      &lt;excerpt in index&gt;
+
+&lt;p&gt;记录一下，忘的太快了qwq&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="学习笔记" scheme="https://blog.attack204.com/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="git" scheme="https://blog.attack204.com/tags/git/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>html学习笔记</title>
+    <link href="https://blog.attack204.com/2019/01/18/html%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    <id>https://blog.attack204.com/2019/01/18/html学习笔记/</id>
+    <published>2019-01-18T10:42:07.000Z</published>
+    <updated>2019-02-19T13:26:29.225Z</updated>
+    
+    <summary type="html">
+    
+      &lt;excerpt in index&gt;
+
+&lt;p&gt;html好神奇啊qwq&lt;/p&gt;
+&lt;p&gt;记录一下颓的时候学的东西。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="学习笔记" scheme="https://blog.attack204.com/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="html" scheme="https://blog.attack204.com/tags/html/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Hexo-Theme-Sakura</title>
+    <link href="https://blog.attack204.com/2018/12/12/Hexo-Theme-Sakura/"/>
+    <id>https://blog.attack204.com/2018/12/12/Hexo-Theme-Sakura/</id>
+    <published>2018-12-12T14:16:01.000Z</published>
+    <updated>2019-02-19T03:43:27.191Z</updated>
+    
+    <summary type="html">
+    
+      最近又一次接触到了web端全景，是在720yun上，发现有好多用户上传的全景照片。再也按捺不住那颗好奇的心，去探究了下720云是怎么实现web端全景展示的。
+    
+    </summary>
+    
+      <category term="技术" scheme="https://blog.attack204.com/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    
+      <category term="web" scheme="https://blog.attack204.com/tags/web/"/>
+    
+      <category term="悦读" scheme="https://blog.attack204.com/tags/%E6%82%A6%E8%AF%BB/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Berlekamp-Massey算法学习笔记</title>
+    <link href="https://blog.attack204.com/2018/12/11/Berlekamp-Massey%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    <id>https://blog.attack204.com/2018/12/11/Berlekamp-Massey算法学习笔记/</id>
+    <published>2018-12-11T13:40:07.000Z</published>
+    <updated>2019-02-19T13:26:20.834Z</updated>
+    
+    <summary type="html">
+    
+      &lt;excerpt in index&gt;
+
+&lt;p&gt;很久之前就听说过这个算法，当时六校联考的时候Day1T1是一道很有意思的递推，神仙zzx不会做于是就拿BM算法艹出了递推式Orzzzzzzzzzzx&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="oi" scheme="https://blog.attack204.com/categories/oi/"/>
+    
+    
+      <category term="oi" scheme="https://blog.attack204.com/tags/oi/"/>
+    
+      <category term="Berlekamp-Massey算法" scheme="https://blog.attack204.com/tags/Berlekamp-Massey%E7%AE%97%E6%B3%95/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Yelee换用Gitalk评论系统</title>
+    <link href="https://blog.attack204.com/2018/12/11/Yelee%E6%8D%A2%E7%94%A8Gitalk%E8%AF%84%E8%AE%BA%E7%B3%BB%E7%BB%9F/"/>
+    <id>https://blog.attack204.com/2018/12/11/Yelee换用Gitalk评论系统/</id>
+    <published>2018-12-11T04:25:01.000Z</published>
+    <updated>2019-02-19T13:33:10.542Z</updated>
+    
+    <summary type="html">
+    
+      &lt;excerpt in index&gt;
+
+&lt;p&gt;嗯。。又换了个评论系统&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Hexo" scheme="https://blog.attack204.com/categories/Hexo/"/>
+    
+    
+      <category term="Hexo" scheme="https://blog.attack204.com/tags/Hexo/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>sublime实现markdown浏览器预览</title>
+    <link href="https://blog.attack204.com/2018/10/03/sublime%E5%AE%9E%E7%8E%B0markdown%E6%B5%8F%E8%A7%88%E5%99%A8%E9%A2%84%E8%A7%88/"/>
+    <id>https://blog.attack204.com/2018/10/03/sublime实现markdown浏览器预览/</id>
+    <published>2018-10-03T00:31:18.000Z</published>
+    <updated>2019-02-19T13:32:31.768Z</updated>
+    
+    <summary type="html">
+    
+      &lt;excerpt in index | 首页摘要&gt; 
+
+&lt;p&gt;利用sublime实现markdown浏览器预览&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="sublime" scheme="https://blog.attack204.com/tags/sublime/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>sublime实现背景透明化</title>
+    <link href="https://blog.attack204.com/2018/10/03/sublime%E5%AE%9E%E7%8E%B0%E8%83%8C%E6%99%AF%E9%80%8F%E6%98%8E%E5%8C%96/"/>
+    <id>https://blog.attack204.com/2018/10/03/sublime实现背景透明化/</id>
+    <published>2018-10-03T00:01:18.000Z</published>
+    <updated>2019-02-19T13:32:58.357Z</updated>
+    
+    <summary type="html">
+    
+      &lt;excerpt in index | 首页摘要&gt; 
+
+&lt;p&gt;sublime不能自定义背景图片好气啊qwq&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="sublime" scheme="https://blog.attack204.com/tags/sublime/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>sublime实现一键代码格式化</title>
+    <link href="https://blog.attack204.com/2018/10/02/sublime%E5%AE%9E%E7%8E%B0%E4%B8%80%E9%94%AE%E4%BB%A3%E7%A0%81%E6%A0%BC%E5%BC%8F%E5%8C%96/"/>
+    <id>https://blog.attack204.com/2018/10/02/sublime实现一键代码格式化/</id>
+    <published>2018-10-02T13:35:18.000Z</published>
+    <updated>2019-02-19T13:32:46.954Z</updated>
+    
+    <summary type="html">
+    
+      &lt;excerpt in index | 首页摘要&gt; 
+
+&lt;p&gt;用Astyle实现sublime代码一键格式化&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="sublime" scheme="https://blog.attack204.com/tags/sublime/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>关于本博客的说明</title>
+    <link href="https://blog.attack204.com/2018/04/30/%E5%85%B3%E4%BA%8E%E6%9C%AC%E5%8D%9A%E5%AE%A2%E7%9A%84%E8%AF%B4%E6%98%8E/"/>
+    <id>https://blog.attack204.com/2018/04/30/关于本博客的说明/</id>
+    <published>2018-04-30T12:30:03.000Z</published>
+    <updated>2018-10-02T13:40:29.316Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;excerpt in index&gt;
+
+
+
+&lt;the rest of
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>博弈论进阶之Multi-SG</title>
+    <link href="https://blog.attack204.com/2018/02/25/%E5%8D%9A%E5%BC%88%E8%AE%BA%E8%BF%9B%E9%98%B6%E4%B9%8BMulti-SG/"/>
+    <id>https://blog.attack204.com/2018/02/25/博弈论进阶之Multi-SG/</id>
+    <published>2018-02-25T08:53:07.000Z</published>
+    <updated>2018-02-25T08:55:56.516Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;excerpt in index&gt;&lt;/excerpt&gt;&lt;/p&gt;
+&lt;h2 id=&quot;Multi-Nim&quot;&gt;&lt;a href=&quot;#Multi-Nim&quot; class=&quot;headerlink&quot; title=&quot;Multi-Nim&quot;&gt;&lt;/a&gt;Multi-Nim&lt;/h2&gt;&lt;p&gt;从最简单的Nim模型开始&lt;/p&gt;
+&lt;p&gt;它的定义是这样的&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;有$n$堆石子，两个人可以从任意一堆石子中拿任意多个石子(不能不拿)&lt;strong&gt;或把一堆数量不少于$2$石子分为两堆不为空的石子&lt;/strong&gt;，没法拿的人失败。问谁会胜利&lt;br&gt;
+    
+    </summary>
+    
+      <category term="oi" scheme="https://blog.attack204.com/categories/oi/"/>
+    
+    
+      <category term="oi" scheme="https://blog.attack204.com/tags/oi/"/>
+    
+      <category term="博弈论" scheme="https://blog.attack204.com/tags/%E5%8D%9A%E5%BC%88%E8%AE%BA/"/>
+    
+      <category term="Multi-SG" scheme="https://blog.attack204.com/tags/Multi-SG/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>博弈论入门之斐波那契博弈</title>
+    <link href="https://blog.attack204.com/2018/02/25/%E5%8D%9A%E5%BC%88%E8%AE%BA%E5%85%A5%E9%97%A8%E4%B9%8B%E6%96%90%E6%B3%A2%E9%82%A3%E5%A5%91%E5%8D%9A%E5%BC%88/"/>
+    <id>https://blog.attack204.com/2018/02/25/博弈论入门之斐波那契博弈/</id>
+    <published>2018-02-25T02:03:11.000Z</published>
+    <updated>2018-02-25T02:10:23.844Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;excerpt in index&gt;&lt;/excerpt&gt;&lt;/p&gt;
+&lt;h2 id=&quot;斐波那契博弈&quot;&gt;&lt;a href=&quot;#斐波那契博弈&quot; class=&quot;headerlink&quot; title=&quot;斐波那契博弈&quot;&gt;&lt;/a&gt;斐波那契博弈&lt;/h2&gt;&lt;p&gt;斐波那契博弈是一种经典的博弈问题&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;有一堆石子，两个顶尖聪明的人玩游戏，先取者可以取走任意多个，但不能全取完，以后每人取的石子数不能超过上个人的两倍&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+      <category term="oi" scheme="https://blog.attack204.com/categories/oi/"/>
+    
+    
+      <category term="oi" scheme="https://blog.attack204.com/tags/oi/"/>
+    
+      <category term="博弈论" scheme="https://blog.attack204.com/tags/%E5%8D%9A%E5%BC%88%E8%AE%BA/"/>
+    
+      <category term="斐波那契博弈" scheme="https://blog.attack204.com/tags/%E6%96%90%E6%B3%A2%E9%82%A3%E5%A5%91%E5%8D%9A%E5%BC%88/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>博弈论入门之威佐夫博弈</title>
+    <link href="https://blog.attack204.com/2018/02/25/%E5%8D%9A%E5%BC%88%E8%AE%BA%E5%85%A5%E9%97%A8%E4%B9%8B%E5%A8%81%E4%BD%90%E5%A4%AB%E5%8D%9A%E5%BC%88/"/>
+    <id>https://blog.attack204.com/2018/02/25/博弈论入门之威佐夫博弈/</id>
+    <published>2018-02-25T01:12:34.000Z</published>
+    <updated>2018-02-25T01:14:22.828Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;excerpt in index&gt;&lt;/excerpt&gt;&lt;/p&gt;
+&lt;h2 id=&quot;威佐夫博弈&quot;&gt;&lt;a href=&quot;#威佐夫博弈&quot; class=&quot;headerlink&quot; title=&quot;威佐夫博弈&quot;&gt;&lt;/a&gt;威佐夫博弈&lt;/h2&gt;&lt;p&gt;威佐夫博弈是一类经典的博弈问题&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;有两堆石子，两个顶尖聪明的人在玩游戏，每次每个人可以从任意一堆石子中取任意多的石子或者从两堆石子中取同样多的石子，不能取得人输，分析谁会获得胜利&lt;br&gt;
+    
+    </summary>
+    
+      <category term="oi" scheme="https://blog.attack204.com/categories/oi/"/>
+    
+    
+      <category term="oi" scheme="https://blog.attack204.com/tags/oi/"/>
+    
+      <category term="博弈论" scheme="https://blog.attack204.com/tags/%E5%8D%9A%E5%BC%88%E8%AE%BA/"/>
+    
+      <category term="威佐夫博弈" scheme="https://blog.attack204.com/tags/%E5%A8%81%E4%BD%90%E5%A4%AB%E5%8D%9A%E5%BC%88/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>博弈论进阶之Anti-SG游戏与SJ定理</title>
+    <link href="https://blog.attack204.com/2018/02/24/%E5%8D%9A%E5%BC%88%E8%AE%BA%E8%BF%9B%E9%98%B6%E4%B9%8BAnti-SG%E6%B8%B8%E6%88%8F%E4%B8%8ESJ%E5%AE%9A%E7%90%86/"/>
+    <id>https://blog.attack204.com/2018/02/24/博弈论进阶之Anti-SG游戏与SJ定理/</id>
+    <published>2018-02-24T00:16:27.000Z</published>
+    <updated>2018-02-24T00:21:40.063Z</updated>
+    
+    <summary type="html">
+    
+      &lt;excerpt in index&gt;
+
+&lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;在&lt;a href=&quot;http://attack204.com/2018/02/23/%E5%8D%9A%E5%BC%88%E8%AE%BA%E8%BF%9B%E9%98%B6%E4%B9%8BSG%E5%87%BD%E6%95%B0/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;上一节&lt;/a&gt;中，我们初步了解了一下SG函数与SG定理。&lt;/p&gt;
+&lt;p&gt;今天我们来分析一下SG游戏的变式——Anti-SG游戏以及它所对应的SG定理&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="oi" scheme="https://blog.attack204.com/categories/oi/"/>
+    
+    
+      <category term="oi" scheme="https://blog.attack204.com/tags/oi/"/>
+    
+      <category term="博弈论" scheme="https://blog.attack204.com/tags/%E5%8D%9A%E5%BC%88%E8%AE%BA/"/>
+    
+      <category term="Anti-SG" scheme="https://blog.attack204.com/tags/Anti-SG/"/>
+    
+      <category term="SJ定理" scheme="https://blog.attack204.com/tags/SJ%E5%AE%9A%E7%90%86/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>博弈论进阶之SG函数</title>
+    <link href="https://blog.attack204.com/2018/02/23/%E5%8D%9A%E5%BC%88%E8%AE%BA%E8%BF%9B%E9%98%B6%E4%B9%8BSG%E5%87%BD%E6%95%B0/"/>
+    <id>https://blog.attack204.com/2018/02/23/博弈论进阶之SG函数/</id>
+    <published>2018-02-23T06:32:47.000Z</published>
+    <updated>2018-02-23T06:46:41.904Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;excerpt in index&gt;&lt;/excerpt&gt;&lt;/p&gt;
+&lt;h2 id=&quot;SG函数&quot;&gt;&lt;a href=&quot;#SG函数&quot; class=&quot;headerlink&quot; title=&quot;SG函数&quot;&gt;&lt;/a&gt;SG函数&lt;/h2&gt;&lt;p&gt;个人理解：SG函数是人们在研究博弈论的道路上迈出的重要一步，它把许多杂乱无章的博弈游戏通过某种规则结合在了一起，使得一类普遍的博弈问题得到了解决。&lt;/p&gt;
+&lt;p&gt;从SG函数开始，我们不再是单纯的同过找规律等方法去解决博弈问题，而是需要学习一些博弈论中基本的定理，来找到他们的共同特点&lt;br&gt;
+    
+    </summary>
+    
+      <category term="oi" scheme="https://blog.attack204.com/categories/oi/"/>
+    
+    
+      <category term="oi" scheme="https://blog.attack204.com/tags/oi/"/>
+    
+      <category term="博弈论" scheme="https://blog.attack204.com/tags/%E5%8D%9A%E5%BC%88%E8%AE%BA/"/>
+    
+      <category term="SG函数" scheme="https://blog.attack204.com/tags/SG%E5%87%BD%E6%95%B0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>博弈论入门之nim游戏</title>
+    <link href="https://blog.attack204.com/2018/02/22/%E5%8D%9A%E5%BC%88%E8%AE%BA%E5%85%A5%E9%97%A8%E4%B9%8Bnim%E6%B8%B8%E6%88%8F/"/>
+    <id>https://blog.attack204.com/2018/02/22/博弈论入门之nim游戏/</id>
+    <published>2018-02-22T13:31:49.000Z</published>
+    <updated>2018-02-23T06:46:20.919Z</updated>
+    
+    <summary type="html">
+    
+      &lt;excerpt in index&gt;
+
+&lt;h2 id=&quot;nim游戏&quot;&gt;&lt;a href=&quot;#nim游戏&quot; class=&quot;headerlink&quot; title=&quot;nim游戏&quot;&gt;&lt;/a&gt;nim游戏&lt;/h2&gt;&lt;blockquote&gt;
+&lt;p&gt;nim游戏&lt;/p&gt;
+&lt;p&gt;有两个顶尖聪明的人在玩游戏，游戏规则是这样的：&lt;/p&gt;
+&lt;p&gt;有$n$堆石子，两个人可以从任意一堆石子中拿任意多个石子(不能不拿)，没法拿的人失败。问谁会胜利&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+      <category term="oi" scheme="https://blog.attack204.com/categories/oi/"/>
+    
+    
+      <category term="oi" scheme="https://blog.attack204.com/tags/oi/"/>
+    
+      <category term="博弈论" scheme="https://blog.attack204.com/tags/%E5%8D%9A%E5%BC%88%E8%AE%BA/"/>
+    
+      <category term="nim游戏" scheme="https://blog.attack204.com/tags/nim%E6%B8%B8%E6%88%8F/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>博弈论入门之巴什博奕</title>
+    <link href="https://blog.attack204.com/2018/02/22/%E5%8D%9A%E5%BC%88%E8%AE%BA%E5%85%A5%E9%97%A8%E4%B9%8B%E5%B7%B4%E4%BB%80%E5%8D%9A%E5%A5%95/"/>
+    <id>https://blog.attack204.com/2018/02/22/博弈论入门之巴什博奕/</id>
+    <published>2018-02-22T12:21:50.000Z</published>
+    <updated>2018-02-22T12:26:06.981Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;excerpt in index | 首页摘要&gt; &lt;/excerpt&gt;&lt;/p&gt;
+&lt;h2 id=&quot;巴什博奕&quot;&gt;&lt;a href=&quot;#巴什博奕&quot; class=&quot;headerlink&quot; title=&quot;巴什博奕&quot;&gt;&lt;/a&gt;巴什博奕&lt;/h2&gt;&lt;blockquote&gt;
+&lt;p&gt;巴什博奕：&lt;/p&gt;
+&lt;p&gt;两个顶尖聪明的人在玩游戏，有$n$个石子，每人可以随便拿$1-m$个石子，不能拿的人为败者，问谁会胜利&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;巴什博奕是博弈论问题中基础的问题&lt;/p&gt;
+&lt;p&gt;它是最简单的一种情形对应一种状态的博弈&lt;br&gt;
+    
+    </summary>
+    
+      <category term="oi" scheme="https://blog.attack204.com/categories/oi/"/>
+    
+    
+      <category term="oi" scheme="https://blog.attack204.com/tags/oi/"/>
+    
+      <category term="博弈论" scheme="https://blog.attack204.com/tags/%E5%8D%9A%E5%BC%88%E8%AE%BA/"/>
+    
+      <category term="巴什博奕" scheme="https://blog.attack204.com/tags/%E5%B7%B4%E4%BB%80%E5%8D%9A%E5%A5%95/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>树链剖分</title>
+    <link href="https://blog.attack204.com/2018/02/22/%E6%A0%91%E9%93%BE%E5%89%96%E5%88%86/"/>
+    <id>https://blog.attack204.com/2018/02/22/树链剖分/</id>
+    <published>2018-02-22T00:49:23.000Z</published>
+    <updated>2018-02-22T00:50:14.078Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;excerpt in index | 首页摘要&gt; &lt;/excerpt&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;树链剖分是什么？&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;树链剖分，说白了就是一种让你代码不得不强行增加1k的数据结构-dms&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;有什么用？&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;del&gt;证明出题人非常毒瘤&lt;/del&gt;&lt;/p&gt;
+&lt;p&gt;可以非常友(bao)好(li)的解决一些树上问题&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="oi" scheme="https://blog.attack204.com/categories/oi/"/>
+    
+    
+      <category term="oi" scheme="https://blog.attack204.com/tags/oi/"/>
+    
+      <category term="树链剖分" scheme="https://blog.attack204.com/tags/%E6%A0%91%E9%93%BE%E5%89%96%E5%88%86/"/>
+    
+  </entry>
+  
+</feed>

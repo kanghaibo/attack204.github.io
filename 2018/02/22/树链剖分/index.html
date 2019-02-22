@@ -1,0 +1,978 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+  
+  <title itemprop="name">树链剖分 | Attck204</title>
+  
+    <link rel="shortcut icon" href="/images/favicon.ico">
+  
+  <meta http-equiv="x-dns-prefetch-control" content="on">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+SerifMerriweather|Merriweather+Sans|Source+Code+Pro|Ubuntu:400,700|Noto+Serif+SC" media="all">
+  <link rel="dns-prefetch" href="//cdn.jsdelivr.net">
+  <link rel="stylesheet" id="saukra_css-css" href="/css/style.css" type="text/css" media="all">
+  <link rel="stylesheet" href="/css/lib.min.css" media="all">
+  <link rel="stylesheet" href="/css/font.css" media="all">
+  <link rel="stylesheet" href="/css/insight.css" media="all">
+  <link rel="stylesheet" href="/css/jquery.fancybox.min.css" media="all">
+  <link rel="stylesheet" href="/css/zoom.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/css/sharejs.css">
+<!--   <link rel="stylesheet" id="saukra_css-css" href="https://2heng.xin/wp-content/cache/autoptimize/css/autoptimize_ad42a61f4c7d4bdd9f91afcff6b5dda5.css
+" type="text/css" media="all"> -->
+  <script>
+  /*Initial Variables*/
+  var mashiro_option = new Object();
+  var mashiro_global = new Object();
+  mashiro_option.NProgressON = true;
+  /* 
+   * 邮箱信息之类的东西可以填在这里，这些js变量基本都作用于sakura-app.js
+   * 这样的设置仅是为了方便在基于PHP开发的主题中设置js变量，既然移植到了Node上，我想或许可以精简这一逻辑吧
+   */
+  mashiro_option.email_domain = "";
+  mashiro_option.email_name = "";
+  mashiro_option.cookie_version_control = "";
+  mashiro_option.qzone_autocomplete = false;
+  mashiro_option.site_name = "Attack204";
+  mashiro_option.author_name = "";
+  mashiro_option.site_url = "http://blog.attack204.com";
+  mashiro_option.v_appId = "koz7QJsC5UmO6cQSQJbbynX1-gzGzoHsz";
+  mashiro_option.v_appKey = "pwpT2rxLPwDQYCxi9rjeovTS";
+  mashiro_option.mathjax = "0";
+  mashiro_option.qq_api_url = "https://api.mashiro.top/qqinfo/"; 
+  mashiro_option.qq_avatar_api_url = "https://api.mashiro.top/qqinfo/";
+  // mashiro_option.jsdelivr_css_src = "https://cdn.jsdelivr.net/gh/moezx/cdn@3.4.5/css/lib.min.css";
+  // mashiro_option.float_player_on = true;
+  /*End of Initial Variables*/
+  </script>
+  <script type="text/javascript">
+  var bgn = Math.floor(Math.random()*8);
+  if (!!window.ActiveXObject || "ActiveXObject" in window) { //is IE?
+    alert('朋友，IE浏览器未适配哦~');
+  }
+  </script>
+  <style type="text/css">
+  .hljs-ln{border-collapse:collapse}.hljs-ln td{padding:0}.hljs-ln-n:before{content:attr(data-line-number)}
+  </style>
+  <style type="text/css">.site-top .lower nav{display:block !important;}.author-profile i,.post-like a,.post-share .show-share,.sub-text,.we-info a,span.sitename,.post-more i:hover,#pagination a:hover,.post-content a:hover,.float-content i:hover{color:#FE9600}.feature i,.download,.navigator i:hover,.links ul li:before,.ar-time i,span.ar-circle,.object,.comment .comment-reply-link,.siren-checkbox-radio:checked + .siren-checkbox-radioInput:after{background:#FE9600}::-webkit-scrollbar-thumb{background:#FE9600}.download,.navigator i:hover,.link-title,.links ul li:hover,#pagination a:hover,.comment-respond input[type='submit']:hover{border-color:#FE9600}.entry-content a:hover,.site-info a:hover,.comment h4 a,#comments-navi a.prev,#comments-navi a.next,.comment h4 a:hover,.site-top ul li a:hover,.entry-title a:hover,#archives-temp h3,span.page-numbers.current,.sorry li a:hover,.site-title a:hover,i.iconfont.js-toggle-search.iconsearch:hover,.comment-respond input[type='submit']:hover{color:#FE9600}.comments .comments-main{display:block !important;}.comments .comments-hidden{display:none !important;}background-position:center center;background-attachment:inherit;}
+  </style>
+</head></html>
+<body class="page-template page-template-user page-template-page-analytics page-template-userpage-analytics-php page page-id-1297 chinese-font serif isWebKit">
+  <div class="scrollbar" id="bar">
+  </div>
+  <a href="#" class="cd-top faa-float animated"></a>
+  <section id="main-container">
+    <div class="headertop filter-dot">
+  <div id="banner_wave_1"></div>
+  <div id="banner_wave_2"></div>
+  <figure id="centerbg" class="centerbg">
+    <div class="focusinfo no-select">
+      <div class="header-tou">
+        <a href="http://blog.attack204.com">
+          <img src="https://cdn.jsdelivr.net/gh/attack204/cdn@1.1/img/custom/avatar.png">
+        </a>
+      </div>
+      <div class="header-info">
+        <p>Live your life with passion! With some drive!</p>
+        <div class="top-social_v2">
+          <li id="bg-pre">
+            <img class="flipx" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/other/next-b.svg">
+          </li>
+          
+            
+              
+                <li>
+                  <a href="http://github.com/attack204" target="_blank" class="social-github" title="github">
+                    <img src="https://cdn.jsdelivr.net/gh/attack204/cdn@1.1/img/social/github.png">
+                  </a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="https://music.163.com/#/user/home?id=364977201" target="_blank" class="social-github" title="wangyiyun">
+                    <img src="https://cdn.jsdelivr.net/gh/attack204/cdn@1.1/img/social/wangyiyun.png">
+                  </a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="https://www.zhihu.com/people/attack-61/activities" target="_blank" class="social-github" title="zhihu">
+                    <img src="https://cdn.jsdelivr.net/gh/attack204/cdn@1.1/img/social/zhihu.png">
+                  </a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="mailto:757394026@qq.com" target="_blank" class="social-github" title="email">
+                    <img src="https://cdn.jsdelivr.net/gh/attack204/cdn@1.1/img/social/email.svg">
+                  </a>
+                </li>
+              
+            
+          
+          <li id="bg-next">
+            <img src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/other/next-b.svg">
+          </li>
+        </div>
+      </div>
+    </div>
+  </figure>
+  <div id="video-container" style>
+    <video style="object-fit: fill" id="bgvideo" class="video" video-name src width="auto" preload="auto">
+    </video>
+    <div id="video-btn" class="loadvideo videolive">
+    </div>
+    <div id="video-add">
+    </div>
+    <div class="video-stu">
+    </div>
+  </div>
+  <div class="headertop-down faa-float animated" onclick="headertop_down()">
+    <span>
+      <i class="fa fa-chevron-down" aria-hidden="true">
+      </i>
+    </span>
+  </div>
+</div>
+    <div id="page" class="site wrapper">
+      <header class="site-header no-select gizle sabit" role="banner">
+  <div class="site-top">
+    <div class="site-branding">
+      <span class="site-title">
+        <span class="logolink moe-mashiro">
+          <a href="/">
+            <span class="sakurasono">Attack204</span>
+            <span class="shironeko"></span>
+          </a>
+        </span>
+      </span>
+    </div>
+    <div class="searchbox search-form-submit">
+      <i class="iconfont js-toggle-search iconsearch icon-search">
+      </i>
+    </div>
+    <div id="show-nav" class="showNav mobile-fit">
+      <div class="line line1">
+      </div>
+      <div class="line line2">
+      </div>
+      <div class="line line3">
+      </div>
+    </div>
+    <div class="lower-cantiner">
+      <div class="lower">
+        <nav class="mobile-fit-control hide">
+          <ul id="menu-new" class="menu">
+            
+              <li>
+                <a href="/">
+                  <span class="faa-parent animated-hover">
+                    <i class="fa  fa-fort-awesome faa-shake" aria-hidden="true"></i>
+                    首页
+                  </span>
+                </a>
+                
+              </li>
+            
+              <li>
+                <a href="/archives">
+                  <span class="faa-parent animated-hover">
+                    <i class="fa  fa-archive faa-shake" aria-hidden="true"></i>
+                    归档
+                  </span>
+                </a>
+                
+              </li>
+            
+              <li>
+                <a href="/comment/">
+                  <span class="faa-parent animated-hover">
+                    <i class="fa  fa-pencil-square-o faa-tada" aria-hidden="true"></i>
+                    留言板
+                  </span>
+                </a>
+                
+              </li>
+            
+              <li>
+                <a href="/links/">
+                  <span class="faa-parent animated-hover">
+                    <i class="fa  fa-link faa-shake" aria-hidden="true"></i>
+                    友人帐
+                  </span>
+                </a>
+                
+              </li>
+            
+              <li>
+                <a href="/donate/">
+                  <span class="faa-parent animated-hover">
+                    <i class="fa  fa-heart faa-pulse" aria-hidden="true"></i>
+                    赞赏
+                  </span>
+                </a>
+                
+              </li>
+            
+              <li>
+                <a href="/about/">
+                  <span class="faa-parent animated-hover">
+                    <i class="fa  fa-leaf faa-wrench" aria-hidden="true"></i>
+                    关于我
+                  </span>
+                </a>
+                
+              </li>
+            
+              <li>
+                <a href="/atom.xml">
+                  <span class="faa-parent animated-hover">
+                    <i class="fa  fa-rss faa-pulse" aria-hidden="true"></i>
+                    RSS
+                  </span>
+                </a>
+                
+              </li>
+            
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </div>
+</header>
+
+        <link rel="stylesheet" type="text/css" href="/css/sharejs.css">
+  <div class="pattern-center-blank"></div>
+  
+  <div id="content" class="site-content"> <div id="primary" class="content-area">
+    <main id="main" class="site-main" role="main">
+      
+      <article id="post-1" class="post-1 post type-post status-publish format-standard has-post-thumbnail hentry category-uncategorized">
+        <!--<div class="toc-entry-content"><!-- 套嵌目录使用（主要为了支援评论）-->
+        
+          <header class="entry-header">
+            <h1 class="entry-title">树链剖分</h1>
+            <p class="entry-census">2018-2-22 08:02</p>
+            <hr>
+          </header>
+        
+        <div class="entry-content">
+          <p><excerpt in index | 首页摘要> </excerpt></p>
+<ul>
+<li>树链剖分是什么？</li>
+</ul>
+<p>树链剖分，说白了就是一种让你代码不得不强行增加1k的数据结构-dms</p>
+<ul>
+<li>有什么用？</li>
+</ul>
+<p><del>证明出题人非常毒瘤</del></p>
+<p>可以非常友(bao)好(li)的解决一些树上问题</p>
+<a id="more"></a>
+<the rest of contents | 余下全文>
+
+
+<h2 id="核心思想"><a href="#核心思想" class="headerlink" title="核心思想"></a>核心思想</h2><p>树链剖分的思想比较神奇<br>它的思想是：<strong>把一棵树拆成若干个不相交的链，然后用一些数据结构去维护这些链</strong></p>
+<p>那么问题来了</p>
+<ul>
+<li>如何把树拆成链？</li>
+</ul>
+<p>首先明确一些定义</p>
+<ol>
+<li><strong>重儿子</strong>：该节点的子树中,节点个数最多的子树的根节点(也就是和该节点相连的点)，即为该节点的重儿子</li>
+<li><strong>重边</strong>：连接该节点与它的重儿子的边</li>
+<li><strong>重链</strong>：由一系列重边相连得到的链</li>
+<li><strong>轻链</strong>：由一系列非重边相连得到的链</li>
+</ol>
+<p>这样就不难得到拆树的方法</p>
+<p><strong>对于每一个节点，找出它的重儿子，那么这棵树就自然而然的被拆成了许多重链与许多轻链</strong></p>
+<ul>
+<li>如何对这些链进行维护？</li>
+</ul>
+<p>首先，要对这些链进行维护，就要确保每个链上的节点都是连续的，</p>
+<p>因此我们需要对整棵树进行重新编号，然后利用dfs序的思想，用线段树或树状数组等进行维护（具体用什么需要看题目要求，因为线段树的功能比树状数组强大，所以在这里我就不提供树状数组的写法了）</p>
+<p>注意在进行重新编号的时候先访问重链</p>
+<p>这样可以保证重链内的节点编号连续</p>
+<p>上面说的太抽象了，结合一张图来理解一下</p>
+<p><img src="http://ou46et6i2.bkt.clouddn.com/%E6%A0%91%E9%93%BE%E5%89%96%E5%88%861.png" alt></p>
+<p>对于一棵最基本的树</p>
+<p>给他标记重儿子，</p>
+<p><img src="http://ou46et6i2.bkt.clouddn.com/%E6%A0%91%E9%93%BE%E5%89%96%E5%88%862.png" alt></p>
+<p>蓝色为重儿子，红色为重边</p>
+<p>然后对树进行重新编号</p>
+<p><img src="http://ou46et6i2.bkt.clouddn.com/%E6%A0%91%E9%93%BE%E5%89%96%E5%88%863.png" alt></p>
+<p>橙色表示的是该节点重新编号后的序号</p>
+<p>不难看出重链内的节点编号是连续的</p>
+<p>然后就可以在线段树上搞事情啦</p>
+<p>像什么区间加区间求和什么的</p>
+<p>另外有一个性质：以$i$为根的子树的树在线段树上的编号为$[i,i+子树节点数-1]$</p>
+<p>接下来结合一道例题，加深一下对于代码的理解</p>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><p>首先来一坨定义</p>
+<pre><code class="lang-cpp">int deep[MAXN];//节点的深度 
+int fa[MAXN];//节点的父亲 
+int son[MAXN];//节点的重儿子 
+int tot[MAXN];//节点子树的大小
+</code></pre>
+<h3 id="第一步"><a href="#第一步" class="headerlink" title="第一步"></a>第一步</h3><p>按照我们上面说的，我们首先要对整棵树dfs一遍，找出每个节点的重儿子</p>
+<p>顺便处理出每个节点的深度，以及他们的父亲节点</p>
+<pre><code class="lang-cpp">int dfs1(int now,int f,int dep)
+{
+    deep[now]=dep;
+    fa[now]=f;
+    tot[now]=1;
+    int maxson=-1;
+    for(int i=head[now];i!=-1;i=edge[i].nxt)
+    {
+        if(edge[i].v==f) continue;
+        tot[now]+=dfs1(edge[i].v,now,dep+1);
+        if(tot[edge[i].v]&gt;maxson) maxson=tot[edge[i].v],son[now]=edge[i].v;
+    }
+    return tot[now];
+}
+</code></pre>
+<h3 id="第二步"><a href="#第二步" class="headerlink" title="第二步"></a>第二步</h3><p>然后我们需要对整棵树进行重新编号</p>
+<p>我把一开始的每个节点的权值存在了$b$数组内</p>
+<pre><code class="lang-c++">void dfs2(int now,int topf)
+{
+    idx[now]=++cnt;
+    a[cnt]=b[now];
+    top[now]=topf;
+    if(!son[now]) return ;
+    dfs2(son[now],topf);
+    for(int i=head[now];i!=-1;i=edge[i].nxt)
+        if(!idx[edge[i].v])
+            dfs2(edge[i].v,edge[i].v);
+}
+</code></pre>
+<p>$idx$表示重新编号后该节点的编号是多少</p>
+<p>另外，这里引入了一个$top$数组，<br>$top[i]$表示$i$号节点所在重链的头节点(最顶上的节点)<br>至于这个数组有啥用，后面再说</p>
+<h3 id="第三步"><a href="#第三步" class="headerlink" title="第三步"></a>第三步</h3><p>我们需要根据重新编完号的树，把这棵树的上每个点映射到线段树上，</p>
+<pre><code class="lang-c++">struct Tree
+{
+    int l,r,w,siz,f;
+}T[MAXN];
+void Build(int k,int ll,int rr)
+{
+    T[k].l=ll;T[k].r=rr;T[k].siz=rr-ll+1;
+    if(ll==rr)
+    {
+        T[k].w=a[ll];
+        return ;
+    }
+    int mid=(ll+rr)&gt;&gt;1;
+    Build(ls,ll,mid);
+    Build(rs,mid+1,rr);
+    update(k);
+}
+</code></pre>
+<p>另外线段树的基本操作，<br>这里就不详细解释了</p>
+<p>直接放代码</p>
+<pre><code class="lang-c++">void update(int k)//更新
+{
+    T[k].w=(T[ls].w+T[rs].w+MOD)%MOD;
+}
+void IntervalAdd(int k,int ll,int rr,int val)//区间加
+{
+    if(ll&lt;=T[k].l&amp;&amp;T[k].r&lt;=rr)
+    {
+        T[k].w+=T[k].siz*val;
+        T[k].f+=val;
+        return ;
+    }
+    pushdown(k);
+    int mid=(T[k].l+T[k].r)&gt;&gt;1;
+    if(ll&lt;=mid)    IntervalAdd(ls,ll,rr,val);
+    if(rr&gt;mid)    IntervalAdd(rs,ll,rr,val);
+    update(k);
+}
+int IntervalSum(int k,int ll,int rr)//区间求和
+{
+    int ans=0;
+    if(ll&lt;=T[k].l&amp;&amp;T[k].r&lt;=rr)
+        return T[k].w;
+    pushdown(k);
+    int mid=(T[k].l+T[k].r)&gt;&gt;1;
+    if(ll&lt;=mid) ans=(ans+IntervalSum(ls,ll,rr))%MOD;
+    if(rr&gt;mid)  ans=(ans+IntervalSum(rs,ll,rr))%MOD;
+    return ans;
+}
+void pushdown(int k)//下传标记
+{
+    if(!T[k].f) return ;
+    T[ls].w=(T[ls].w+T[ls].siz*T[k].f)%MOD;
+    T[rs].w=(T[rs].w+T[rs].siz*T[k].f)%MOD;
+    T[ls].f=(T[ls].f+T[k].f)%MOD;
+    T[rs].f=(T[rs].f+T[k].f)%MOD;
+    T[k].f=0;
+}
+</code></pre>
+<h3 id="第四步"><a href="#第四步" class="headerlink" title="第四步"></a>第四步</h3><p>我们考虑如何实现对于树上的操作</p>
+<p>树链剖分的思想是:对于两个不在同一重链内的节点,让他们不断地跳,使得他们处于同一重链上</p>
+<p>那么如何”跳”呢？</p>
+<p>还记得我们在第二次$dfs$中记录的$top$数组么？</p>
+<p>有一个显然的结论：$x$到$top[x]$中的节点在线段树上是连续的，</p>
+<p>结合$deep$数组</p>
+<p>假设两个节点为$x$,$y$</p>
+<p>我们每次让$deep[top[x]]$与$deep[top[y]]$中大的(在下面的)往上跳(有点类似于树上倍增)</p>
+<p>让x节点直接跳到$top[x]$,然后在线段树上更新</p>
+<p>最后两个节点一定是处于同一条重链的，前面我们提到过重链上的节点都是连续的，直接在<br>线段树上进行一次查询就好</p>
+<pre><code class="lang-c++">void TreeSum(int x,int y)//x与y路径上的和
+{
+    int ans=0;
+    while(top[x]!=top[y])
+    {
+        if(deep[top[x]]&lt;deep[top[y]]) swap(x,y);
+        ans=(ans+IntervalSum(1,idx[ top[x] ],idx[x]))%MOD;
+        x=fa[ top[x] ];
+    }
+    if(deep[x]&gt;deep[y]) swap(x,y);
+    ans=(ans+IntervalSum(1,idx[x],idx[y]))%MOD;
+    printf(&quot;%d\n&quot;,ans);
+}
+void TreeAdd(int x,int y,int val)//对于x,y路径上的点加val的权值
+{
+    while(top[x]!=top[y])
+    {
+        if(deep[top[x]]&lt;deep[top[y]]) swap(x,y);
+        IntervalAdd(1,idx[ top[x] ],idx[x],val);
+        x=fa[ top[x] ];
+    }
+    if(deep[x]&gt;deep[y])    swap(x,y);
+    IntervalAdd(1,idx[x],idx[y],val);
+}
+</code></pre>
+<p>在树上查询的这一步可能有些抽象，我们结合一个例子来理解一下</p>
+<p><img src="http://ou46et6i2.bkt.clouddn.com/%E6%A0%91%E9%93%BE%E5%89%96%E5%88%864.png" alt></p>
+<p>还是上面那张图，假设我们要查询$3.6$这两个节点的之间的点权合，为了方便理解我们假设每个点的点权都是$1$</p>
+<p>刚开始时</p>
+<p>$top[3]=2,top[6]=1$</p>
+<p>$deep[top[3]]=2,deep[top[6]]=1$</p>
+<p>我们会让$3$向上跳,跳到$top[3]$的爸爸,也就是$1$号节点</p>
+<p><img src="http://ou46et6i2.bkt.clouddn.com/%E6%A0%91%E9%93%BE%E5%89%96%E5%88%865.png" alt></p>
+<p>这时$1$号节点和$6$号节点已经在同一条重链内,所以直接对线段树进行一次查询即可</p>
+<h3 id="对于子树的操作"><a href="#对于子树的操作" class="headerlink" title="对于子树的操作"></a>对于子树的操作</h3><p>这个就更简单了</p>
+<p>因为一棵树的子树在线段树上是连续的</p>
+<p>所以修改的时候直接这样</p>
+<p>IntervalAdd(1,idx[x],idx[x]+tot[x]-1,z%MOD);</p>
+<h2 id="时间复杂度"><a href="#时间复杂度" class="headerlink" title="时间复杂度"></a>时间复杂度</h2><h3 id="性质1"><a href="#性质1" class="headerlink" title="性质1"></a>性质1</h3><p>如果边$\left( u,v\right)$,为轻边,那么$Size\left( v\right) \leq Size\left( u\right) /2$。</p>
+<p>证明：显然，否则该边会成为重边</p>
+<h3 id="性质2"><a href="#性质2" class="headerlink" title="性质2"></a>性质2</h3><p>树中任意两个节点之间的路径中轻边的条数不会超过$\log _{2}n$,重路径的数目不会超过$\log _{2}n$</p>
+<p>证明：不会</p>
+<p>有了上面两条性质，我们就可以来分析时间复杂度了</p>
+<p>由于重路径的数量的上界为$\log _{2}n$，</p>
+<p>线段树中查询/修改的复杂度为$\log _{2}n$</p>
+<p>那么总的复杂度就是$\left( \log _{2}n\right) ^{2}$</p>
+<h2 id="完整代码"><a href="#完整代码" class="headerlink" title="完整代码"></a>完整代码</h2><pre><code class="lang-c++">#include&lt;iostream&gt;
+#include&lt;cstdio&gt;
+#include&lt;cstring&gt;
+using namespace std;
+const int MAXN=2*1e6+10;
+#define ls k&lt;&lt;1
+#define rs k&lt;&lt;1|1
+inline char nc()
+{
+    static char buf[MAXN],*p1=buf,*p2=buf;
+    return p1==p2&amp;&amp;(p2=(p1=buf)+fread(buf,1,MAXN,stdin),p1==p2)?EOF:*p1++;
+}
+inline int read()
+{
+    char c=nc();int x=0,f=1;
+    while(c&lt;&#39;0&#39;||c&gt;&#39;9&#39;){if(c==&#39;-&#39;)f=-1;c=nc();}
+    while(c&gt;=&#39;0&#39;&amp;&amp;c&lt;=&#39;9&#39;){x=x*10+c-&#39;0&#39;,c=nc();}
+    return x*f;
+}
+struct node
+{
+    int u,v,nxt;
+}edge[MAXN];
+int head[MAXN];
+int num=1;
+struct Tree
+{
+    int l,r,w,siz,f;
+}T[MAXN];
+int N,M,root,MOD,cnt=0,a[MAXN],b[MAXN];
+inline void AddEdge(int x,int y)
+{
+    edge[num].u=x;
+    edge[num].v=y;
+    edge[num].nxt=head[x];
+    head[x]=num++;
+}
+int deep[MAXN],fa[MAXN],son[MAXN],tot[MAXN],top[MAXN],idx[MAXN];
+int dfs1(int now,int f,int dep)
+{
+    deep[now]=dep;
+    fa[now]=f;
+    tot[now]=1;
+    int maxson=-1;
+    for(int i=head[now];i!=-1;i=edge[i].nxt)
+    {
+        if(edge[i].v==f) continue;
+        tot[now]+=dfs1(edge[i].v,now,dep+1);
+        if(tot[edge[i].v]&gt;maxson) maxson=tot[edge[i].v],son[now]=edge[i].v;
+    }
+    return tot[now];
+}
+void update(int k)
+{
+    T[k].w=(T[ls].w+T[rs].w+MOD)%MOD;
+}
+void Build(int k,int ll,int rr)
+{
+    T[k].l=ll;T[k].r=rr;T[k].siz=rr-ll+1;
+    if(ll==rr)
+    {
+        T[k].w=a[ll];
+        return ;
+    }
+    int mid=(ll+rr)&gt;&gt;1;
+    Build(ls,ll,mid);
+    Build(rs,mid+1,rr);
+    update(k);
+}
+void dfs2(int now,int topf)
+{
+    idx[now]=++cnt;
+    a[cnt]=b[now];
+    top[now]=topf;
+    if(!son[now]) return ;
+    dfs2(son[now],topf);
+    for(int i=head[now];i!=-1;i=edge[i].nxt)
+        if(!idx[edge[i].v])
+            dfs2(edge[i].v,edge[i].v);
+}
+void pushdown(int k)
+{
+    if(!T[k].f) return ;
+    T[ls].w=(T[ls].w+T[ls].siz*T[k].f)%MOD;
+    T[rs].w=(T[rs].w+T[rs].siz*T[k].f)%MOD;
+    T[ls].f=(T[ls].f+T[k].f)%MOD;
+    T[rs].f=(T[rs].f+T[k].f)%MOD;
+    T[k].f=0;
+}
+void IntervalAdd(int k,int ll,int rr,int val)
+{
+    if(ll&lt;=T[k].l&amp;&amp;T[k].r&lt;=rr)
+    {
+        T[k].w+=T[k].siz*val;
+        T[k].f+=val;
+        return ;
+    }
+    pushdown(k);
+    int mid=(T[k].l+T[k].r)&gt;&gt;1;
+    if(ll&lt;=mid)    IntervalAdd(ls,ll,rr,val);
+    if(rr&gt;mid)    IntervalAdd(rs,ll,rr,val);
+    update(k);
+}
+void TreeAdd(int x,int y,int val)
+{
+    while(top[x]!=top[y])
+    {
+        if(deep[top[x]]&lt;deep[top[y]]) swap(x,y);
+        IntervalAdd(1,idx[ top[x] ],idx[x],val);
+        x=fa[ top[x] ];
+    }
+    if(deep[x]&gt;deep[y])    swap(x,y);
+    IntervalAdd(1,idx[x],idx[y],val);
+}
+int IntervalSum(int k,int ll,int rr)
+{
+    int ans=0;
+    if(ll&lt;=T[k].l&amp;&amp;T[k].r&lt;=rr)
+        return T[k].w;
+    pushdown(k);
+    int mid=(T[k].l+T[k].r)&gt;&gt;1;
+    if(ll&lt;=mid) ans=(ans+IntervalSum(ls,ll,rr))%MOD;
+    if(rr&gt;mid)  ans=(ans+IntervalSum(rs,ll,rr))%MOD;
+    return ans;
+}
+void TreeSum(int x,int y)
+{
+    int ans=0;
+    while(top[x]!=top[y])
+    {
+        if(deep[top[x]]&lt;deep[top[y]]) swap(x,y);
+        ans=(ans+IntervalSum(1,idx[ top[x] ],idx[x]))%MOD;
+        x=fa[ top[x] ];
+    }
+    if(deep[x]&gt;deep[y]) swap(x,y);
+    ans=(ans+IntervalSum(1,idx[x],idx[y]))%MOD;
+    printf(&quot;%d\n&quot;,ans);
+}
+int main()
+{
+    #ifdef WIN32
+    freopen(&quot;a.in&quot;,&quot;r&quot;,stdin);
+    #else
+    #endif
+    memset(head,-1,sizeof(head));
+    N=read();M=read();root=read();MOD=read();
+    for(int i=1;i&lt;=N;i++) b[i]=read();
+    for(int i=1;i&lt;=N-1;i++)
+    {
+        int x=read(),y=read();
+        AddEdge(x,y);AddEdge(y,x);
+    }
+    dfs1(root,0,1);
+    dfs2(root,root);
+    Build(1,1,N);
+    while(M--)
+    {
+        int opt=read(),x,y,z;
+        if(opt==1)
+        {    
+            x=read();y=read();z=read();z=z%MOD;
+            TreeAdd(x,y,z);
+        }
+        else if(opt==2)
+        {
+            x=read();y=read();
+            TreeSum(x,y);
+        }
+        else if(opt==3)
+        {
+            x=read(),z=read();
+            IntervalAdd(1,idx[x],idx[x]+tot[x]-1,z%MOD);
+        }
+        else if(opt==4)
+        {
+            x=read();
+            printf(&quot;%d\n&quot;,IntervalSum(1,idx[x],idx[x]+tot[x]-1));
+        }
+    }
+    return 0;
+}
+</code></pre>
+</the>
+        </div>
+        <!-- .entry-content -->
+        <div class="single-reward">
+          <div class="reward-open">赏<div class="reward-main">
+              <ul class="reward-row">
+                <li class="alipay-code"><img src="https://cdn.jsdelivr.net/gh/attack204/cdn@1.1/img/custom/donate/AliPayQR.jpg"></li>
+                <li class="wechat-code"><img src="https://cdn.jsdelivr.net/gh/attack204/cdn@1.1/img/custom/donate/WeChanQR.jpg"></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div style="text-align:center; width: 100%" class="social-share share-mobile" data-disabled="diandian, tencent"></div>
+        <footer class="post-footer">
+          <div class="post-lincenses"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="nofollow"><i class="fa fa-creative-commons" aria-hidden="true"></i> 知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a></div>
+          <div class="post-tags">
+          </div>
+          <div class="post-share">
+            <div class="social-share sharehidden share-component"></div>
+            <i class="iconfont show-share icon-forward"></i>
+          </div>
+        </footer><!-- .entry-footer -->
+      </article>
+      <!-- #post-## -->
+      <div class="toc-container" style="height: 1053px;">
+      <div class="toc" style="background: none;"></div>
+      </div>
+      <section class="post-squares nextprev">
+        
+          
+            <div class="post-nepre half previous">
+          
+            <a href="/2018/02/22/博弈论入门之巴什博奕/" rel="prev">
+              <div class="background">
+                <img class="lazyload" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)">
+              </div>
+              <span class="label">
+              Previous Post</span>
+              <div class="info">
+                <h3>
+                博弈论入门之巴什博奕</h3>
+                <hr>
+              </div>
+            </a>
+          </div>
+        
+        
+          
+            <div class="post-nepre half next">
+          
+            <a href="/2018/02/21/次小生成树/" rel="next">
+              <div class="background">
+                <img class="lazyload" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)">
+              </div>
+              <span class="label">
+              Next Post</span>
+              <div class="info">
+                <h3>
+                次小生成树</h3>
+                <hr>
+              </div>
+            </a>
+          </div>
+        
+      </section>
+      
+<div id="vcomments"></div>
+<script>
+  window.onload = function(){
+      var valine = new Valine();
+      valine.init({
+        el: '#vcomments',
+        appId: "koz7QJsC5UmO6cQSQJbbynX1-gzGzoHsz",
+        appKey: "pwpT2rxLPwDQYCxi9rjeovTS",
+        path: window.location.pathname,
+        placeholder: "你是我一生只会遇见一次的惊喜 ..."
+      })
+  }
+</script>
+
+      <section class="author-profile">
+        <div class="info" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <a href class="profile gravatar"><img src itemprop="image" alt height="70" width="70"></a>
+          <div class="meta">
+            <span class="title">Author</span>
+            <h3 itemprop="name">
+            <a href itemprop="url" rel="author"></a>
+            </h3>
+          </div>
+        </div>
+        <hr>
+        <p><i class="iconfont icon-write"></i></p>
+      </section>
+    </main><!-- #main -->
+  </div><!-- #primary -->
+</div>
+<!-- 不蒜子 网页计数器 -->
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+    </div>    
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="请输入关键词...">
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: '文章',
+            // PAGES: '页面',
+            CATEGORIES: '分类',
+            TAGS: '标签',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+    <!-- <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2019 attack204<br>
+      powered_by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer> -->
+<footer id="colophon" class="site-footer" role="contentinfo">
+  <div class="site-info">
+    <div class="footertext">
+      <div class="img-preload">
+        <img src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/other/wordpress-rotating-ball-o.svg">
+        <img src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/other/disqus-preloader.svg">
+      </div>
+      <p style="color: #666666;">&copy 2018</p>
+    </div>
+    <div class="footer-device">
+    <p style="font-family: 'Ubuntu', sans-serif;">
+        <span style="color: #b9b9b9;">Theme <a href="https://github.com/honjun/hexo-theme-sakura" target="_blank" style="color: #b9b9b9;;text-decoration: underline dotted rgba(0, 0, 0, .1);">Sakura</a> <i class="iconfont icon-sakura rotating" style="color: #ffc0cb;display:inline-block"></i> by <a href="https://2heng.xin/" target="_blank" style="color: #b9b9b9;;text-decoration: underline dotted rgba(0, 0, 0, .1);">Mashiro</a>&<a href="https://www.hojun.cn/" target="_blank" style="color: #b9b9b9;;text-decoration: underline dotted rgba(0, 0, 0, .1);">Hojun</a>, Powered by Hexo, Hosted by Coding Pages
+        </span>
+      </p>
+    </div>
+  </div><!-- .site-info -->
+</footer>
+
+
+
+<script type="text/javascript" src="/js/lib.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+<script type="text/javascript" src="/js/InsightSearch.js"></script>
+<script type="text/javascript" src="/js/jquery.fancybox.min.js"></script>
+<script type="text/javascript" src="/js/zoom.min.js"></script>
+<script type="text/javascript" src="/js/sakura-app.js"></script>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="//unpkg.com/valine@1.3.4/dist/Valine.min.js"></script>
+<script type="text/javascript">
+/* <![CDATA[ */
+if (/Android|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent)) {
+  var Poi = {"pjax":"1","movies":{"url": "https://cdn.jsdelivr.net/gh/honjun/hojun@1.2","name":"Unbroken.mp4","live":"close"},"windowheight":"fixed","codelamp":"close","ajaxurl":"","order":"asc","formpostion":"bottom"};
+} else {
+  var Poi = {"pjax":"1","movies":{"url": "https://cdn.jsdelivr.net/gh/honjun/hojun@1.2","name":"Unbroken.mp4","live":"open"},"windowheight":"auto","codelamp":"close","ajaxurl":"","order":"asc","formpostion":"bottom"};
+}
+/* ]]> */
+
+</script>
+
+    <div class="openNav no-select" style="height: 50px;">
+      <div class="iconflat no-select" style="width: 50px; height: 50px;">
+        <div class="icon"></div>
+      </div>
+      <div class="site-branding search-form-submit">
+        <i class="iconfont js-toggle-search iconsearch icon-search"></i>
+      </div>
+    </div>
+  </section>
+  <div id="mo-nav" class>
+  <div class="m-avatar">
+    <img src="https://cdn.jsdelivr.net/gh/attack204/cdn@1.1/img/custom/avatar.png">
+  </div>
+  <p style="text-align: center; color: #333; font-weight: 900; font-family: 'Ubuntu', sans-serif; letter-spacing: 1.5px">Attack204</p>
+  <p style="text-align: center; word-spacing: 20px;">
+    
+      
+        <a href="http://github.com/attack204" class="fa fa-github" target="_blank" style="color: #333; margin-left:20px"></a>
+      
+        <a href="https://wpa.qq.com/msgrd?v=3&uin=757394026&site=qq&menu=yes" class="fa fa-qq" target="_blank" style="color: #25c6fe; margin-left:20px"></a>
+      
+    
+  </p>
+  <ul id="menu-new-1" class="menu">
+    
+      <li>
+        <a href="/">
+          <span class="faa-parent animated-hover">
+            <i class="fa  fa-fort-awesome faa-shake" aria-hidden="true"></i>
+            首页
+          </span>
+        </a>
+        
+      </li>
+    
+      <li>
+        <a href="/archives">
+          <span class="faa-parent animated-hover">
+            <i class="fa  fa-archive faa-shake" aria-hidden="true"></i>
+            归档
+          </span>
+        </a>
+        
+      </li>
+    
+      <li>
+        <a href="/comment/">
+          <span class="faa-parent animated-hover">
+            <i class="fa  fa-pencil-square-o faa-tada" aria-hidden="true"></i>
+            留言板
+          </span>
+        </a>
+        
+      </li>
+    
+      <li>
+        <a href="/links/">
+          <span class="faa-parent animated-hover">
+            <i class="fa  fa-link faa-shake" aria-hidden="true"></i>
+            友人帐
+          </span>
+        </a>
+        
+      </li>
+    
+      <li>
+        <a href="/donate/">
+          <span class="faa-parent animated-hover">
+            <i class="fa  fa-heart faa-pulse" aria-hidden="true"></i>
+            赞赏
+          </span>
+        </a>
+        
+      </li>
+    
+      <li>
+        <a href="/about/">
+          <span class="faa-parent animated-hover">
+            <i class="fa  fa-leaf faa-wrench" aria-hidden="true"></i>
+            关于我
+          </span>
+        </a>
+        
+      </li>
+    
+      <li>
+        <a href="/atom.xml">
+          <span class="faa-parent animated-hover">
+            <i class="fa  fa-rss faa-pulse" aria-hidden="true"></i>
+            RSS
+          </span>
+        </a>
+        
+      </li>
+    
+  </ul>
+  <p style="text-align: center; font-size: 13px; color: #b9b9b9;">&copy 2019 hexo-sakura</p>
+</div>
+<button onclick="topFunction()" class="mobile-cd-top" id="moblieGoTop" title="Go to top" style="display: none;"><i class="fa fa-chevron-up" aria-hidden="true"></i></button>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10/dist/APlayer.min.css">
+<script src="https://cdn.jsdelivr.net/npm/aplayer@1.10/dist/APlayer.min.js"></script>
+<style>
+  .aplayer .aplayer-lrc {
+    height: 35px;
+  }
+  .aplayer .aplayer-lrc p{
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 18px !important;
+  }
+  .aplayer .aplayer-lrc p.aplayer-lrc-current{
+    color: #FF1493;
+  }
+  .aplayer.aplayer-narrow .aplayer-body{
+    left: -66px !important;
+  }
+  .aplayer.aplayer-fixed .aplayer-lrc {
+    display: none;
+  }
+  .lrc-show {
+    display: block !important;
+    background: rgba(255, 255, 255, 0.8);
+  }
+</style>
+<div class="aplayer" data-id="652849532" data-server="netease" data-type="playlist" data-fixed="true" data-order="random">
+</div>
+<script src="https://cdn.jsdelivr.net/npm/meting@1.2/dist/Meting.min.js"></script>
+<script>
+  $(function(){
+    $('body').on('click', '.aplayer', function(){
+      if($('.aplayer-button').hasClass('aplayer-play')) {
+        $('.aplayer-lrc').removeClass('lrc-show');
+      } else {
+        $('.aplayer-lrc').addClass('lrc-show');
+      }
+    })
+  });
+</script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</body>
+</html>

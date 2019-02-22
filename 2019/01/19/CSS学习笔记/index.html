@@ -1,0 +1,836 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+  
+  <title itemprop="name">css学习笔记 | Attck204</title>
+  
+    <link rel="shortcut icon" href="/images/favicon.ico">
+  
+  <meta http-equiv="x-dns-prefetch-control" content="on">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+SerifMerriweather|Merriweather+Sans|Source+Code+Pro|Ubuntu:400,700|Noto+Serif+SC" media="all">
+  <link rel="dns-prefetch" href="//cdn.jsdelivr.net">
+  <link rel="stylesheet" id="saukra_css-css" href="/css/style.css" type="text/css" media="all">
+  <link rel="stylesheet" href="/css/lib.min.css" media="all">
+  <link rel="stylesheet" href="/css/font.css" media="all">
+  <link rel="stylesheet" href="/css/insight.css" media="all">
+  <link rel="stylesheet" href="/css/jquery.fancybox.min.css" media="all">
+  <link rel="stylesheet" href="/css/zoom.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/css/sharejs.css">
+<!--   <link rel="stylesheet" id="saukra_css-css" href="https://2heng.xin/wp-content/cache/autoptimize/css/autoptimize_ad42a61f4c7d4bdd9f91afcff6b5dda5.css
+" type="text/css" media="all"> -->
+  <script>
+  /*Initial Variables*/
+  var mashiro_option = new Object();
+  var mashiro_global = new Object();
+  mashiro_option.NProgressON = true;
+  /* 
+   * 邮箱信息之类的东西可以填在这里，这些js变量基本都作用于sakura-app.js
+   * 这样的设置仅是为了方便在基于PHP开发的主题中设置js变量，既然移植到了Node上，我想或许可以精简这一逻辑吧
+   */
+  mashiro_option.email_domain = "";
+  mashiro_option.email_name = "";
+  mashiro_option.cookie_version_control = "";
+  mashiro_option.qzone_autocomplete = false;
+  mashiro_option.site_name = "Attack204";
+  mashiro_option.author_name = "";
+  mashiro_option.site_url = "http://blog.attack204.com";
+  mashiro_option.v_appId = "koz7QJsC5UmO6cQSQJbbynX1-gzGzoHsz";
+  mashiro_option.v_appKey = "pwpT2rxLPwDQYCxi9rjeovTS";
+  mashiro_option.mathjax = "0";
+  mashiro_option.qq_api_url = "https://api.mashiro.top/qqinfo/"; 
+  mashiro_option.qq_avatar_api_url = "https://api.mashiro.top/qqinfo/";
+  // mashiro_option.jsdelivr_css_src = "https://cdn.jsdelivr.net/gh/moezx/cdn@3.4.5/css/lib.min.css";
+  // mashiro_option.float_player_on = true;
+  /*End of Initial Variables*/
+  </script>
+  <script type="text/javascript">
+  var bgn = Math.floor(Math.random()*8);
+  if (!!window.ActiveXObject || "ActiveXObject" in window) { //is IE?
+    alert('朋友，IE浏览器未适配哦~');
+  }
+  </script>
+  <style type="text/css">
+  .hljs-ln{border-collapse:collapse}.hljs-ln td{padding:0}.hljs-ln-n:before{content:attr(data-line-number)}
+  </style>
+  <style type="text/css">.site-top .lower nav{display:block !important;}.author-profile i,.post-like a,.post-share .show-share,.sub-text,.we-info a,span.sitename,.post-more i:hover,#pagination a:hover,.post-content a:hover,.float-content i:hover{color:#FE9600}.feature i,.download,.navigator i:hover,.links ul li:before,.ar-time i,span.ar-circle,.object,.comment .comment-reply-link,.siren-checkbox-radio:checked + .siren-checkbox-radioInput:after{background:#FE9600}::-webkit-scrollbar-thumb{background:#FE9600}.download,.navigator i:hover,.link-title,.links ul li:hover,#pagination a:hover,.comment-respond input[type='submit']:hover{border-color:#FE9600}.entry-content a:hover,.site-info a:hover,.comment h4 a,#comments-navi a.prev,#comments-navi a.next,.comment h4 a:hover,.site-top ul li a:hover,.entry-title a:hover,#archives-temp h3,span.page-numbers.current,.sorry li a:hover,.site-title a:hover,i.iconfont.js-toggle-search.iconsearch:hover,.comment-respond input[type='submit']:hover{color:#FE9600}.comments .comments-main{display:block !important;}.comments .comments-hidden{display:none !important;}background-position:center center;background-attachment:inherit;}
+  </style>
+</head></html>
+<body class="page-template page-template-user page-template-page-analytics page-template-userpage-analytics-php page page-id-1297 chinese-font serif isWebKit">
+  <div class="scrollbar" id="bar">
+  </div>
+  <a href="#" class="cd-top faa-float animated"></a>
+  <section id="main-container">
+    <div class="headertop filter-dot">
+  <div id="banner_wave_1"></div>
+  <div id="banner_wave_2"></div>
+  <figure id="centerbg" class="centerbg">
+    <div class="focusinfo no-select">
+      <div class="header-tou">
+        <a href="http://blog.attack204.com">
+          <img src="https://cdn.jsdelivr.net/gh/attack204/cdn@1.1/img/custom/avatar.png">
+        </a>
+      </div>
+      <div class="header-info">
+        <p>Live your life with passion! With some drive!</p>
+        <div class="top-social_v2">
+          <li id="bg-pre">
+            <img class="flipx" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/other/next-b.svg">
+          </li>
+          
+            
+              
+                <li>
+                  <a href="http://github.com/attack204" target="_blank" class="social-github" title="github">
+                    <img src="https://cdn.jsdelivr.net/gh/attack204/cdn@1.1/img/social/github.png">
+                  </a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="https://music.163.com/#/user/home?id=364977201" target="_blank" class="social-github" title="wangyiyun">
+                    <img src="https://cdn.jsdelivr.net/gh/attack204/cdn@1.1/img/social/wangyiyun.png">
+                  </a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="https://www.zhihu.com/people/attack-61/activities" target="_blank" class="social-github" title="zhihu">
+                    <img src="https://cdn.jsdelivr.net/gh/attack204/cdn@1.1/img/social/zhihu.png">
+                  </a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="mailto:757394026@qq.com" target="_blank" class="social-github" title="email">
+                    <img src="https://cdn.jsdelivr.net/gh/attack204/cdn@1.1/img/social/email.svg">
+                  </a>
+                </li>
+              
+            
+          
+          <li id="bg-next">
+            <img src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/other/next-b.svg">
+          </li>
+        </div>
+      </div>
+    </div>
+  </figure>
+  <div id="video-container" style>
+    <video style="object-fit: fill" id="bgvideo" class="video" video-name src width="auto" preload="auto">
+    </video>
+    <div id="video-btn" class="loadvideo videolive">
+    </div>
+    <div id="video-add">
+    </div>
+    <div class="video-stu">
+    </div>
+  </div>
+  <div class="headertop-down faa-float animated" onclick="headertop_down()">
+    <span>
+      <i class="fa fa-chevron-down" aria-hidden="true">
+      </i>
+    </span>
+  </div>
+</div>
+    <div id="page" class="site wrapper">
+      <header class="site-header no-select gizle sabit" role="banner">
+  <div class="site-top">
+    <div class="site-branding">
+      <span class="site-title">
+        <span class="logolink moe-mashiro">
+          <a href="/">
+            <span class="sakurasono">Attack204</span>
+            <span class="shironeko"></span>
+          </a>
+        </span>
+      </span>
+    </div>
+    <div class="searchbox search-form-submit">
+      <i class="iconfont js-toggle-search iconsearch icon-search">
+      </i>
+    </div>
+    <div id="show-nav" class="showNav mobile-fit">
+      <div class="line line1">
+      </div>
+      <div class="line line2">
+      </div>
+      <div class="line line3">
+      </div>
+    </div>
+    <div class="lower-cantiner">
+      <div class="lower">
+        <nav class="mobile-fit-control hide">
+          <ul id="menu-new" class="menu">
+            
+              <li>
+                <a href="/">
+                  <span class="faa-parent animated-hover">
+                    <i class="fa  fa-fort-awesome faa-shake" aria-hidden="true"></i>
+                    首页
+                  </span>
+                </a>
+                
+              </li>
+            
+              <li>
+                <a href="/archives">
+                  <span class="faa-parent animated-hover">
+                    <i class="fa  fa-archive faa-shake" aria-hidden="true"></i>
+                    归档
+                  </span>
+                </a>
+                
+              </li>
+            
+              <li>
+                <a href="/comment/">
+                  <span class="faa-parent animated-hover">
+                    <i class="fa  fa-pencil-square-o faa-tada" aria-hidden="true"></i>
+                    留言板
+                  </span>
+                </a>
+                
+              </li>
+            
+              <li>
+                <a href="/links/">
+                  <span class="faa-parent animated-hover">
+                    <i class="fa  fa-link faa-shake" aria-hidden="true"></i>
+                    友人帐
+                  </span>
+                </a>
+                
+              </li>
+            
+              <li>
+                <a href="/donate/">
+                  <span class="faa-parent animated-hover">
+                    <i class="fa  fa-heart faa-pulse" aria-hidden="true"></i>
+                    赞赏
+                  </span>
+                </a>
+                
+              </li>
+            
+              <li>
+                <a href="/about/">
+                  <span class="faa-parent animated-hover">
+                    <i class="fa  fa-leaf faa-wrench" aria-hidden="true"></i>
+                    关于我
+                  </span>
+                </a>
+                
+              </li>
+            
+              <li>
+                <a href="/atom.xml">
+                  <span class="faa-parent animated-hover">
+                    <i class="fa  fa-rss faa-pulse" aria-hidden="true"></i>
+                    RSS
+                  </span>
+                </a>
+                
+              </li>
+            
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </div>
+</header>
+
+        <link rel="stylesheet" type="text/css" href="/css/sharejs.css">
+  <div class="pattern-center-blank"></div>
+  
+    <div class="pattern-center single-center">
+      <!-- 有配图默认渲染第一张 -->
+      <div class="pattern-attachment-img lazyload" style="background-image: url(https://acg.toubiec.cn/random);" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://acg.toubiec.cn/random">
+      </div>
+      <header class="pattern-header single-header">
+        <h1 class="entry-title">
+        css学习笔记</h1>
+        <p class="entry-census">
+          <span>
+            <a href>
+              <img src>
+            </a>
+          </span>
+          <span>
+            <a href></a>
+          </span>
+          <span class="bull">
+          ·</span>
+          2019-1-19<span class="bull">
+          ·</span>
+        <span id="busuanzi_value_page_pv"></span>次阅读</p>
+      </header>
+    </div>
+  
+  <div id="content" class="site-content"> <div id="primary" class="content-area">
+    <main id="main" class="site-main" role="main">
+      
+      <article id="post-1" class="post-1 post type-post status-publish format-standard has-post-thumbnail hentry category-uncategorized">
+        <!--<div class="toc-entry-content"><!-- 套嵌目录使用（主要为了支援评论）-->
+        
+        <div class="entry-content">
+          <excerpt in index>
+
+<p>css好神奇啊qwq</p>
+<a id="more"></a>
+<the rest of contents>
+
+<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>CSS 指层叠样式表 (Cascading Style Sheets)</p>
+<ul>
+<li>样式定义如何显示 HTML 元素</li>
+<li>样式通常存储在样式表中</li>
+<li>把样式添加到 HTML 4.0 中，是为了解决内容与表现分离的问题</li>
+<li>外部样式表可以极大提高工作效率</li>
+<li>外部样式表通常存储在 CSS 文件中</li>
+<li>多个样式定义可层叠为一</li>
+</ul>
+<h2 id="基础知识"><a href="#基础知识" class="headerlink" title="基础知识"></a>基础知识</h2><h2 id="基础语法"><a href="#基础语法" class="headerlink" title="基础语法"></a>基础语法</h2><p>CSS 规则由两个主要的部分构成：选择器，以及一条或多条声明。</p>
+<pre><code class="lang-cpp">selector {declaration1; declaration2; ... declarationN }
+</code></pre>
+<h3 id="使用方法"><a href="#使用方法" class="headerlink" title="使用方法"></a>使用方法</h3><h4 id="外部样式表"><a href="#外部样式表" class="headerlink" title="外部样式表"></a>外部样式表</h4><pre><code class="lang-css">&lt;head&gt;
+    &lt;link rel = &quot;stylesheet&quot; type = &quot;text/css&quot; href = &quot;mystyle.css&quot; /&gt;
+&lt;/head&gt;
+</code></pre>
+<p>该文件中只能含有样式表</p>
+<pre><code class="lang-css">hr {color: sienna;}
+p {margin-left: 20px;}
+body {background-image: url(&quot;images/back40.gif&quot;);}
+</code></pre>
+<h4 id="内部样式表"><a href="#内部样式表" class="headerlink" title="内部样式表"></a>内部样式表</h4><p>直接在<code>&lt;head&gt;</code>标签内插入即可</p>
+<pre><code class="lang-css">&lt;head&gt;
+&lt;style type=&quot;text/css&quot;&gt;
+  hr {color: sienna;}
+  p {margin-left: 20px;}
+  body {background-image: url(&quot;images/back40.gif&quot;);}
+&lt;/style&gt;
+&lt;/head&gt;
+</code></pre>
+<h4 id="内联样式"><a href="#内联样式" class="headerlink" title="内联样式"></a>内联样式</h4><p>直接调用标签的<code>style</code>属性</p>
+<pre><code class="lang-css">&lt;p style=&quot;color: sienna; margin-left: 20px&quot;&gt;
+    This is a paragraph
+&lt;/p&gt;
+</code></pre>
+<h3 id="选择器分组"><a href="#选择器分组" class="headerlink" title="选择器分组"></a>选择器分组</h3><p>对选择器分组后，同一组内的选择器会分享相同的声明</p>
+<p>若一个选择器被凡在了多个组内，则会同时拥有每个组的样式，当样式冲突时，按规则选择样式</p>
+<h3 id="继承问题"><a href="#继承问题" class="headerlink" title="继承问题"></a>继承问题</h3><p>大部分情况下会直接继承父亲的样式，但是可能会有浏览器兼容问题</p>
+<h2 id="样式"><a href="#样式" class="headerlink" title="样式"></a>样式</h2><h3 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h3><h4 id="背景色"><a href="#背景色" class="headerlink" title="背景色"></a>背景色</h4><p>可以使用<code>background-color</code>来设置背景色</p>
+<pre><code class="lang-css">p {
+    background-color:blue;
+    padding:20px;
+    width: 400px;
+}
+</code></pre>
+<p>注意：</p>
+<p>background-color 不能继承</p>
+<h4 id="背景图像"><a href="#背景图像" class="headerlink" title="背景图像"></a>背景图像</h4><p>可以使用<code>background-image:</code>来设置背景图片</p>
+<pre><code class="lang-css">p {
+    background-image:url(&quot;https://pic.cnblogs.com/avatar/1101696/20180214111459.png&quot;);
+    background-repeat: none;
+    padding:20px;
+    width: 400px;
+    height:800px;
+}
+</code></pre>
+<p>注意：</p>
+<p>不能继承</p>
+<h4 id="背景重复"><a href="#背景重复" class="headerlink" title="背景重复"></a>背景重复</h4><p>使用<code>background-repeat: repeat-x</code>可以设置背景图片重复，</p>
+<p>repeat-x 和 repeat-y 分别导致图像只在水平或垂直方向上重复，no-repeat 则不允许图像在任何方向上平铺。</p>
+<pre><code class="lang-css">p {
+    background-image:url(&quot;https://pic.cnblogs.com/avatar/1101696/20180214111459.png&quot;);
+    background-repeat: repeat-x;
+    padding:20px;
+    width: 400px;
+    height:800px;
+}
+</code></pre>
+<h4 id="背景定位"><a href="#背景定位" class="headerlink" title="背景定位"></a>背景定位</h4><p><code>background-position</code>可以来设置图像位置</p>
+<p>可以选用<code>center, top, bottom, left, right</code></p>
+<pre><code class="lang-css">body {
+    background-image: url(&quot;http://wx4.sinaimg.cn/large/005S5cb6ly1fzaxhur5nwj3050050jrw.jpg&quot;);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+</code></pre>
+<p>也可以直接用百分数值来定位</p>
+<p>下面的方式可以使元素放在水平方向 2/3、垂直方向 1/3 处</p>
+<pre><code class="lang-css">body { 
+    background-image:url(&#39;http://wx4.sinaimg.cn/large/005S5cb6ly1fzaxhur5nwj3050050jrw.jpg&#39;);
+    background-repeat:no-repeat;
+    background-position:66% 33%;
+}
+</code></pre>
+<p>还可以设置长度</p>
+<pre><code class="lang-css">body { 
+    background-image:url(&#39;http://wx4.sinaimg.cn/large/005S5cb6ly1fzaxhur5nwj3050050jrw.jpg&#39;);
+    background-repeat:no-repeat;
+    background-position:50px 100px;
+}
+</code></pre>
+<h4 id="背景关联"><a href="#背景关联" class="headerlink" title="背景关联"></a>背景关联</h4><p>可以使用<code>background-attachment</code>来固定图片</p>
+<pre><code class="lang-css">body {
+  background-image:url(/i/eg_bg_02.gif);
+  background-repeat:no-repeat;
+  background-attachment:fixed
+}
+</code></pre>
+<h3 id="文本"><a href="#文本" class="headerlink" title="文本"></a>文本</h3><h4 id="缩进文本"><a href="#缩进文本" class="headerlink" title="缩进文本"></a>缩进文本</h4><p>可以使用<code>text-indent: 5em</code>来缩进文本</p>
+<p>可以使用负值来实现”悬挂缩进效果”，但是可能会超出浏览器边界，可以通过设置外边框和内边距来消除影响</p>
+<p>同样可以使用百分比值来缩进，百分数相对于缩进元素的父元素的宽度</p>
+<pre><code class="lang-css">p {
+    text-indent: 5em;
+}
+</code></pre>
+<h4 id="水平对齐"><a href="#水平对齐" class="headerlink" title="水平对齐"></a>水平对齐</h4><p>可以使用<code>text-align:</code>来实现文本对齐</p>
+<p>值 left、right 和 center 会导致元素中的文本分别左对齐、右对齐和居中。</p>
+<pre><code class="lang-css">p {
+    text-align : center;
+}
+</code></pre>
+<h4 id="字符隔"><a href="#字符隔" class="headerlink" title="字符隔"></a>字符隔</h4><p>可以使用<code>word-spacing : 2em</code>来设置<strong>单词</strong>之间的标准间隔</p>
+<h4 id="字母间隔"><a href="#字母间隔" class="headerlink" title="字母间隔"></a>字母间隔</h4><p>可以使用<code>letter-spacing: 2em</code>来设置字母之间的间隔</p>
+<h4 id="字符转换"><a href="#字符转换" class="headerlink" title="字符转换"></a>字符转换</h4><p>可以使用<code>text-transform</code>来设置大小写</p>
+<ul>
+<li>none</li>
+<li>uppercase</li>
+<li>lowercase</li>
+<li>capitalize</li>
+</ul>
+<p>默认值 none 对文本不做任何改动，将使用源文档中的原有大小写。顾名思义，uppercase 和 lowercase 将文本转换为全大写和全小写字符。最后，capitalize 只对每个单词的首字母大写。</p>
+<h4 id="文本装饰"><a href="#文本装饰" class="headerlink" title="文本装饰"></a>文本装饰</h4><p>文本的<code>text-decoration</code>属性可以实现对文本的装饰</p>
+<p>不过好像主流浏览器都不支持<code>blink</code>了。。</p>
+<ul>
+<li>none 去掉所有装饰</li>
+<li>underline 增加下划线</li>
+<li>overline 增加上划线？</li>
+<li>line-through 增加横穿线</li>
+<li>blink 使文本闪烁</li>
+</ul>
+<h4 id="处理空白符"><a href="#处理空白符" class="headerlink" title="处理空白符"></a>处理空白符</h4><p>可以使用<code>white-space</code></p>
+<p><img src="http://photo.weibo.com/5379824760/photos/large/photo_id/4330519033737102/album_id/4043604963235610" alt></p>
+<h3 id="字体"><a href="#字体" class="headerlink" title="字体"></a>字体</h3><h4 id="指定字体系列"><a href="#指定字体系列" class="headerlink" title="指定字体系列"></a>指定字体系列</h4><p><code>font-family</code>可以自定义字体</p>
+<pre><code class="lang-css">h1 {font-family: Georgia;}
+</code></pre>
+<h4 id="字体风格"><a href="#字体风格" class="headerlink" title="字体风格"></a>字体风格</h4><p><code>font-style</code></p>
+<h2 id="框模型"><a href="#框模型" class="headerlink" title="框模型"></a>框模型</h2><h2 id="定位"><a href="#定位" class="headerlink" title="定位"></a>定位</h2><h2 id="选择器"><a href="#选择器" class="headerlink" title="选择器"></a>选择器</h2><h3 id="派生选择器"><a href="#派生选择器" class="headerlink" title="派生选择器"></a>派生选择器</h3><p>派生选择器允许我们根据文档的上下文关系来确定某个标签的样式。</p>
+<p>例如</p>
+<pre><code class="lang-css">h2 strong {
+    color: blue;
+}
+&lt;strong&gt;233&lt;/strong&gt;
+&lt;h2&gt;123&lt;strong&gt;233&lt;/strong&gt;.&lt;/h2&gt;
+</code></pre>
+<p>这样设置的话只有h2标签内的strong标签才会变蓝色</p>
+<h3 id="id选择器"><a href="#id选择器" class="headerlink" title="id选择器"></a>id选择器</h3><p>id 选择器可以为标有特定id的HTML元素指定特定的样式。</p>
+<p>id 选择器以 “#” 来定义。</p>
+<p>id选择器常用来建立派生选择器,且可以定义多次</p>
+<p>效果：</p>
+<p><img src="http://wx1.sinaimg.cn/large/005S5cb6ly1fzbrt9ws7nj305q03jt8h.jpg" alt="test"></p>
+<pre><code class="lang-html">&lt;style&gt;
+    #attack p {
+        color:blue
+    }
+    #attack span {
+        font-size:23px;
+    }
+    #attack {
+        color:pink;
+    }
+&lt;/style&gt;
+
+&lt;body&gt;
+    &lt;div id = &quot;attack&quot;&gt;
+        123
+        &lt;p&gt;123&lt;/p&gt;
+        &lt;span&gt;456&lt;/span&gt;
+    &lt;/div&gt;
+&lt;/body&gt;
+</code></pre>
+<p>注意：</p>
+<p>老版本的ie浏览器可能会忽略该规则，只需加一条定义就可以了</p>
+<pre><code class="lang-css">div#sidebar {
+    border: 1px dotted #000;
+    padding: 10px;
+}
+</code></pre>
+<h3 id="类选择器"><a href="#类选择器" class="headerlink" title="类选择器"></a>类选择器</h3><p>类选择器通常用y一个点’.’来表示，它对整个class属性为ClassName的标签进行渲染</p>
+<p>class也可以构建派生选择器, 元素也可以基于它们的类而被选择(用于区分不同的标签)</p>
+<pre><code class="lang-css">.ClassName {text-align: center}
+</code></pre>
+<pre><code class="lang-css">&lt;style&gt;
+    .attack p {
+        color:blue
+    }
+    div.attack {
+        font-size:46px;
+    }
+&lt;/style&gt;
+
+&lt;body&gt;
+    &lt;div class = &quot;attack&quot;&gt;
+        &lt;p&gt;123&lt;/p&gt;
+        &lt;span&gt;456&lt;/span&gt;
+    &lt;/div&gt;
+    &lt;p class = &quot;attack&quot;&gt;123&lt;/p&gt;
+&lt;/body&gt;
+</code></pre>
+<p>注意：</p>
+<p>类名的第一个字符不能使用数字！</p>
+<h3 id="属性选择器"><a href="#属性选择器" class="headerlink" title="属性选择器"></a>属性选择器</h3><p>可以为拥有指定属性的 HTML 元素设置样式，而不仅限于 class 和 id 属性。</p>
+<p>下面的例子为带有 title 属性的所有元素设置样式：</p>
+<pre><code class="lang-css">[title] {
+    color:red;
+}
+</code></pre>
+<p>注意：</p>
+<p>只有在规定了 !DOCTYPE 时，IE7 和 IE8 才支持属性选择器。在 IE6 及更低的版本中，不支持属性选择。</p>
+<p>直接使用title选择器对p和a标签无效..(要你何用。)</p>
+<h2 id="细节问题"><a href="#细节问题" class="headerlink" title="细节问题"></a>细节问题</h2><ol>
+<li><p>当值为若干个单词时记得加引号</p>
+</li>
+<li><p>CSS本身对大小写并不敏感，但是当与HTML一起使用时对<code>class</code>和<code>id</code>的大小写敏感</p>
+</li>
+</ol>
+<h4 id="权重"><a href="#权重" class="headerlink" title="权重"></a>权重</h4><p>由大到小排列</p>
+<p>内联样式（在 HTML 元素内部）  </p>
+<p>内部样式表（位于 <code>&lt;head&gt;</code> 标签内部）</p>
+<p>外部样式表</p>
+<p>浏览器缺省设置</p>
+</the></excerpt>
+        </div>
+        <!-- .entry-content -->
+        <div class="single-reward">
+          <div class="reward-open">赏<div class="reward-main">
+              <ul class="reward-row">
+                <li class="alipay-code"><img src="https://cdn.jsdelivr.net/gh/attack204/cdn@1.1/img/custom/donate/AliPayQR.jpg"></li>
+                <li class="wechat-code"><img src="https://cdn.jsdelivr.net/gh/attack204/cdn@1.1/img/custom/donate/WeChanQR.jpg"></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div style="text-align:center; width: 100%" class="social-share share-mobile" data-disabled="diandian, tencent"></div>
+        <footer class="post-footer">
+          <div class="post-lincenses"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="nofollow"><i class="fa fa-creative-commons" aria-hidden="true"></i> 知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a></div>
+          <div class="post-tags">
+          </div>
+          <div class="post-share">
+            <div class="social-share sharehidden share-component"></div>
+            <i class="iconfont show-share icon-forward"></i>
+          </div>
+        </footer><!-- .entry-footer -->
+      </article>
+      <!-- #post-## -->
+      <div class="toc-container" style="height: 1053px;">
+      <div class="toc" style="background: none;"></div>
+      </div>
+      <section class="post-squares nextprev">
+        
+          
+            <div class="post-nepre half previous">
+          
+            <a href="/2019/01/19/浅谈贝叶斯公式/" rel="prev">
+              <div class="background">
+                <img class="lazyload" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://ws3.sinaimg.cn/large/0072Vf1pgy1foxlnzmfnjj31kw0w0az5.jpg" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)">
+              </div>
+              <span class="label">
+              Previous Post</span>
+              <div class="info">
+                <h3>
+                浅谈贝叶斯公式</h3>
+                <hr>
+              </div>
+            </a>
+          </div>
+        
+        
+          
+            <div class="post-nepre half next">
+          
+            <a href="/2019/01/18/git使用小结/" rel="next">
+              <div class="background">
+                <img class="lazyload" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://ws3.sinaimg.cn/large/0072Vf1pgy1foxlnmr18gj31hc0u01ar.jpg" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)">
+              </div>
+              <span class="label">
+              Next Post</span>
+              <div class="info">
+                <h3>
+                git使用小结</h3>
+                <hr>
+              </div>
+            </a>
+          </div>
+        
+      </section>
+      
+<div id="vcomments"></div>
+<script>
+  window.onload = function(){
+      var valine = new Valine();
+      valine.init({
+        el: '#vcomments',
+        appId: "koz7QJsC5UmO6cQSQJbbynX1-gzGzoHsz",
+        appKey: "pwpT2rxLPwDQYCxi9rjeovTS",
+        path: window.location.pathname,
+        placeholder: "你是我一生只会遇见一次的惊喜 ..."
+      })
+  }
+</script>
+
+      <section class="author-profile">
+        <div class="info" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <a href class="profile gravatar"><img src itemprop="image" alt height="70" width="70"></a>
+          <div class="meta">
+            <span class="title">Author</span>
+            <h3 itemprop="name">
+            <a href itemprop="url" rel="author"></a>
+            </h3>
+          </div>
+        </div>
+        <hr>
+        <p><i class="iconfont icon-write"></i></p>
+      </section>
+    </main><!-- #main -->
+  </div><!-- #primary -->
+</div>
+<!-- 不蒜子 网页计数器 -->
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+    </div>    
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="请输入关键词...">
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: '文章',
+            // PAGES: '页面',
+            CATEGORIES: '分类',
+            TAGS: '标签',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+    <!-- <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2019 attack204<br>
+      powered_by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer> -->
+<footer id="colophon" class="site-footer" role="contentinfo">
+  <div class="site-info">
+    <div class="footertext">
+      <div class="img-preload">
+        <img src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/other/wordpress-rotating-ball-o.svg">
+        <img src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/other/disqus-preloader.svg">
+      </div>
+      <p style="color: #666666;">&copy 2018</p>
+    </div>
+    <div class="footer-device">
+    <p style="font-family: 'Ubuntu', sans-serif;">
+        <span style="color: #b9b9b9;">Theme <a href="https://github.com/honjun/hexo-theme-sakura" target="_blank" style="color: #b9b9b9;;text-decoration: underline dotted rgba(0, 0, 0, .1);">Sakura</a> <i class="iconfont icon-sakura rotating" style="color: #ffc0cb;display:inline-block"></i> by <a href="https://2heng.xin/" target="_blank" style="color: #b9b9b9;;text-decoration: underline dotted rgba(0, 0, 0, .1);">Mashiro</a>&<a href="https://www.hojun.cn/" target="_blank" style="color: #b9b9b9;;text-decoration: underline dotted rgba(0, 0, 0, .1);">Hojun</a>, Powered by Hexo, Hosted by Coding Pages
+        </span>
+      </p>
+    </div>
+  </div><!-- .site-info -->
+</footer>
+
+
+
+<script type="text/javascript" src="/js/lib.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+<script type="text/javascript" src="/js/InsightSearch.js"></script>
+<script type="text/javascript" src="/js/jquery.fancybox.min.js"></script>
+<script type="text/javascript" src="/js/zoom.min.js"></script>
+<script type="text/javascript" src="/js/sakura-app.js"></script>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="//unpkg.com/valine@1.3.4/dist/Valine.min.js"></script>
+<script type="text/javascript">
+/* <![CDATA[ */
+if (/Android|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent)) {
+  var Poi = {"pjax":"1","movies":{"url": "https://cdn.jsdelivr.net/gh/honjun/hojun@1.2","name":"Unbroken.mp4","live":"close"},"windowheight":"fixed","codelamp":"close","ajaxurl":"","order":"asc","formpostion":"bottom"};
+} else {
+  var Poi = {"pjax":"1","movies":{"url": "https://cdn.jsdelivr.net/gh/honjun/hojun@1.2","name":"Unbroken.mp4","live":"open"},"windowheight":"auto","codelamp":"close","ajaxurl":"","order":"asc","formpostion":"bottom"};
+}
+/* ]]> */
+
+</script>
+
+    <div class="openNav no-select" style="height: 50px;">
+      <div class="iconflat no-select" style="width: 50px; height: 50px;">
+        <div class="icon"></div>
+      </div>
+      <div class="site-branding search-form-submit">
+        <i class="iconfont js-toggle-search iconsearch icon-search"></i>
+      </div>
+    </div>
+  </section>
+  <div id="mo-nav" class>
+  <div class="m-avatar">
+    <img src="https://cdn.jsdelivr.net/gh/attack204/cdn@1.1/img/custom/avatar.png">
+  </div>
+  <p style="text-align: center; color: #333; font-weight: 900; font-family: 'Ubuntu', sans-serif; letter-spacing: 1.5px">Attack204</p>
+  <p style="text-align: center; word-spacing: 20px;">
+    
+      
+        <a href="http://github.com/attack204" class="fa fa-github" target="_blank" style="color: #333; margin-left:20px"></a>
+      
+        <a href="https://wpa.qq.com/msgrd?v=3&uin=757394026&site=qq&menu=yes" class="fa fa-qq" target="_blank" style="color: #25c6fe; margin-left:20px"></a>
+      
+    
+  </p>
+  <ul id="menu-new-1" class="menu">
+    
+      <li>
+        <a href="/">
+          <span class="faa-parent animated-hover">
+            <i class="fa  fa-fort-awesome faa-shake" aria-hidden="true"></i>
+            首页
+          </span>
+        </a>
+        
+      </li>
+    
+      <li>
+        <a href="/archives">
+          <span class="faa-parent animated-hover">
+            <i class="fa  fa-archive faa-shake" aria-hidden="true"></i>
+            归档
+          </span>
+        </a>
+        
+      </li>
+    
+      <li>
+        <a href="/comment/">
+          <span class="faa-parent animated-hover">
+            <i class="fa  fa-pencil-square-o faa-tada" aria-hidden="true"></i>
+            留言板
+          </span>
+        </a>
+        
+      </li>
+    
+      <li>
+        <a href="/links/">
+          <span class="faa-parent animated-hover">
+            <i class="fa  fa-link faa-shake" aria-hidden="true"></i>
+            友人帐
+          </span>
+        </a>
+        
+      </li>
+    
+      <li>
+        <a href="/donate/">
+          <span class="faa-parent animated-hover">
+            <i class="fa  fa-heart faa-pulse" aria-hidden="true"></i>
+            赞赏
+          </span>
+        </a>
+        
+      </li>
+    
+      <li>
+        <a href="/about/">
+          <span class="faa-parent animated-hover">
+            <i class="fa  fa-leaf faa-wrench" aria-hidden="true"></i>
+            关于我
+          </span>
+        </a>
+        
+      </li>
+    
+      <li>
+        <a href="/atom.xml">
+          <span class="faa-parent animated-hover">
+            <i class="fa  fa-rss faa-pulse" aria-hidden="true"></i>
+            RSS
+          </span>
+        </a>
+        
+      </li>
+    
+  </ul>
+  <p style="text-align: center; font-size: 13px; color: #b9b9b9;">&copy 2019 hexo-sakura</p>
+</div>
+<button onclick="topFunction()" class="mobile-cd-top" id="moblieGoTop" title="Go to top" style="display: none;"><i class="fa fa-chevron-up" aria-hidden="true"></i></button>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10/dist/APlayer.min.css">
+<script src="https://cdn.jsdelivr.net/npm/aplayer@1.10/dist/APlayer.min.js"></script>
+<style>
+  .aplayer .aplayer-lrc {
+    height: 35px;
+  }
+  .aplayer .aplayer-lrc p{
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 18px !important;
+  }
+  .aplayer .aplayer-lrc p.aplayer-lrc-current{
+    color: #FF1493;
+  }
+  .aplayer.aplayer-narrow .aplayer-body{
+    left: -66px !important;
+  }
+  .aplayer.aplayer-fixed .aplayer-lrc {
+    display: none;
+  }
+  .lrc-show {
+    display: block !important;
+    background: rgba(255, 255, 255, 0.8);
+  }
+</style>
+<div class="aplayer" data-id="652849532" data-server="netease" data-type="playlist" data-fixed="true" data-order="random">
+</div>
+<script src="https://cdn.jsdelivr.net/npm/meting@1.2/dist/Meting.min.js"></script>
+<script>
+  $(function(){
+    $('body').on('click', '.aplayer', function(){
+      if($('.aplayer-button').hasClass('aplayer-play')) {
+        $('.aplayer-lrc').removeClass('lrc-show');
+      } else {
+        $('.aplayer-lrc').addClass('lrc-show');
+      }
+    })
+  });
+</script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</body>
+</html>
