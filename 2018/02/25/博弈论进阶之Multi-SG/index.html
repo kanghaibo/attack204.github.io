@@ -56,6 +56,7 @@
   </style>
   <style type="text/css">.site-top .lower nav{display:block !important;}.author-profile i,.post-like a,.post-share .show-share,.sub-text,.we-info a,span.sitename,.post-more i:hover,#pagination a:hover,.post-content a:hover,.float-content i:hover{color:#FE9600}.feature i,.download,.navigator i:hover,.links ul li:before,.ar-time i,span.ar-circle,.object,.comment .comment-reply-link,.siren-checkbox-radio:checked + .siren-checkbox-radioInput:after{background:#FE9600}::-webkit-scrollbar-thumb{background:#FE9600}.download,.navigator i:hover,.link-title,.links ul li:hover,#pagination a:hover,.comment-respond input[type='submit']:hover{border-color:#FE9600}.entry-content a:hover,.site-info a:hover,.comment h4 a,#comments-navi a.prev,#comments-navi a.next,.comment h4 a:hover,.site-top ul li a:hover,.entry-title a:hover,#archives-temp h3,span.page-numbers.current,.sorry li a:hover,.site-title a:hover,i.iconfont.js-toggle-search.iconsearch:hover,.comment-respond input[type='submit']:hover{color:#FE9600}.comments .comments-main{display:block !important;}.comments .comments-hidden{display:none !important;}background-position:center center;background-attachment:inherit;}
   </style>
+  <link rel="stylesheet" href="/live2d/css/live2d.css">
 </head></html>
 <body class="page-template page-template-user page-template-page-analytics page-template-userpage-analytics-php page page-id-1297 chinese-font serif isWebKit">
   <div class="scrollbar" id="bar">
@@ -272,9 +273,10 @@
 <p>通过观察不难不发现，操作一与普通的Nim游戏等价</p>
 <p>操作二实际上是将一个游戏分解为两个游戏，根据SG定理，我们可以通过异或运算把两个游戏连接到一起，作为一个后继状态</p>
 <p>煮个栗子</p>
-<p>SG(3)的后继状态有$\{ (0),(1),(2),(1,2) \}$他们的SG值分别为$\{ 0,1,2,3 \}$，因此$SG(3)=mex\{ 0,1,2,3 \}=4$</p>
+<p>SG(3)的后继状态有${ (0),(1),(2),(1,2) }$他们的SG值分别为${ 0,1,2,3 }$，因此$SG(3)=mex{ 0,1,2,3 }=4$</p>
 <p>另外这种游戏还有一个非常神奇的性质</p>
-<script type="math/tex; mode=display">SG\left( x\right) =\begin{cases}x-1\left( x\mod4=0\right) \\ x\left( x\mod4=1 \lor 2\right) \\ x+1\left( x\mod4=3\right) \end{cases}</script><p>然后把这个结论背过就好啦233</p>
+<p>$$SG\left( x\right) =\begin{cases}x-1\left( x\mod4=0\right) \ x\left( x\mod4=1 \lor 2\right) \ x+1\left( x\mod4=3\right) \end{cases}$$</p>
+<p>然后把这个结论背过就好啦233</p>
 <h2 id="Multi-SG"><a href="#Multi-SG" class="headerlink" title="Multi-SG"></a>Multi-SG</h2><p>根据上面的游戏，我们定义Multi-SG游戏</p>
 <ul>
 <li>Multi-SG 游戏规定，在符合拓扑原则的前提下，一个单一游戏的<code>后继</code>可以为<code>多个单一游戏</code>。</li>
@@ -428,6 +430,12 @@
   </div>
 </footer> -->
 <footer id="colophon" class="site-footer" role="contentinfo">
+  <!-- 血小板 -->
+  <div id="landlord">
+      <div class="message" style="opacity:0"></div>
+      <canvas id="live2d" width="560" height="500" class="live2d"></canvas>
+      <div class="hide-button">隐藏</div>
+  </div>
   <div class="site-info">
     <div class="footertext">
       <div class="img-preload">
@@ -445,7 +453,17 @@
   </div><!-- .site-info -->
 </footer>
 
-
+<!-- live2d 血小板 -->
+<script type="text/javascript" src="https://cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script type="text/javascript">
+    var message_Path = '/live2d/'
+    var home_Path = 'https://haremu.com/'
+</script>
+<script type="text/javascript" src="/live2d/js/live2d.js"></script>
+<script type="text/javascript" src="/live2d/js/message.js"></script>
+<script type="text/javascript">
+    loadlive2d("live2d", "/live2d/model/xiaoban/model.json");
+</script>
 
 <script type="text/javascript" src="/js/lib.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>

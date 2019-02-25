@@ -56,6 +56,7 @@
   </style>
   <style type="text/css">.site-top .lower nav{display:block !important;}.author-profile i,.post-like a,.post-share .show-share,.sub-text,.we-info a,span.sitename,.post-more i:hover,#pagination a:hover,.post-content a:hover,.float-content i:hover{color:#FE9600}.feature i,.download,.navigator i:hover,.links ul li:before,.ar-time i,span.ar-circle,.object,.comment .comment-reply-link,.siren-checkbox-radio:checked + .siren-checkbox-radioInput:after{background:#FE9600}::-webkit-scrollbar-thumb{background:#FE9600}.download,.navigator i:hover,.link-title,.links ul li:hover,#pagination a:hover,.comment-respond input[type='submit']:hover{border-color:#FE9600}.entry-content a:hover,.site-info a:hover,.comment h4 a,#comments-navi a.prev,#comments-navi a.next,.comment h4 a:hover,.site-top ul li a:hover,.entry-title a:hover,#archives-temp h3,span.page-numbers.current,.sorry li a:hover,.site-title a:hover,i.iconfont.js-toggle-search.iconsearch:hover,.comment-respond input[type='submit']:hover{color:#FE9600}.comments .comments-main{display:block !important;}.comments .comments-hidden{display:none !important;}background-position:center center;background-attachment:inherit;}
   </style>
+  <link rel="stylesheet" href="/live2d/css/live2d.css">
 </head></html>
 <body class="page-template page-template-user page-template-page-analytics page-template-userpage-analytics-php page page-id-1297 chinese-font serif isWebKit">
   <div class="scrollbar" id="bar">
@@ -266,12 +267,12 @@
 <p>+<a id="more"></a></p>
 <the rest of contents | 余下全文>
 
-<pre><code class="lang-c++"># 一级标题
+<pre><code class="c++"># 一级标题
 ## 二级标题
 ### 三级标题
 #### 四级标题
 </code></pre>
-<h1 id="一级标题"><a href="#一级标题" class="headerlink" title="一级标题"></a>一级标题</h1><h2 id="二级标题"><a href="#二级标题" class="headerlink" title="二级标题"></a>二级标题</h2><h3 id="三级标题"><a href="#三级标题" class="headerlink" title="三级标题"></a>三级标题</h3><h4 id="四级标题"><a href="#四级标题" class="headerlink" title="四级标题"></a>四级标题</h4><pre><code class="lang-c++">&gt; 每段开头加&gt;可以引用
+<h1 id="一级标题"><a href="#一级标题" class="headerlink" title="一级标题"></a>一级标题</h1><h2 id="二级标题"><a href="#二级标题" class="headerlink" title="二级标题"></a>二级标题</h2><h3 id="三级标题"><a href="#三级标题" class="headerlink" title="三级标题"></a>三级标题</h3><h4 id="四级标题"><a href="#四级标题" class="headerlink" title="四级标题"></a>四级标题</h4><pre><code class="c++">&gt; 每段开头加&gt;可以引用
 &gt;&gt; 加两个就是嵌套引用
 &gt;&gt;&gt; 我真的还想再套八百年
 </code></pre>
@@ -284,25 +285,25 @@
 </blockquote>
 </blockquote>
 </blockquote>
-<pre><code class="lang-c++">*我想变弯*
+<pre><code class="c++">*我想变弯*
 **我想变胖**
 集齐三颗星就能召唤分割线，三个-也可以
 ***
 </code></pre>
 <p><strong>我想变胖</strong><br>集齐三颗星就能召唤分割线，三个-也可以</p>
 <hr>
-<pre><code class="lang-c++">要输入特殊符号就在前面加\
+<pre><code class="c++">要输入特殊符号就在前面加\
 我不想\*变弯\*，只想露点\***
 </code></pre>
 <p>要输入特殊符号就在前面加\<br>我不想*变弯*，只想露点***</p>
-<pre><code class="lang-c++">每行开头空四格就能把文字变红并框起来，就像这样
+<pre><code class="c++">每行开头空四格就能把文字变红并框起来，就像这样
 或者用大键盘数字1左边的那个`符号引住也可以
 </code></pre>
 <p>每行开头空四格就能把文字变红并框起来，就像这样<br>或者用大键盘数字1左边的那个`符号引住也可以</p>
-<pre><code class="lang-c++">`妈妈`再也不用担心我输入不了`代码`啦
+<pre><code class="c++">`妈妈`再也不用担心我输入不了`代码`啦
 </code></pre>
 <p><code>妈妈</code>再也不用担心我输入不了<code>代码</code>啦</p>
-<pre><code class="lang-c++">无序列表功能：人生三大错觉
+<pre><code class="c++">无序列表功能：人生三大错觉
 - 手机响了
 - 有人敲门
 - Ta喜欢我
@@ -313,7 +314,7 @@
 <li>有人敲门</li>
 <li>Ta喜欢我</li>
 </ul>
-<pre><code class="lang-c++">有序列表功能：人生新三大错觉
+<pre><code class="c++">有序列表功能：人生新三大错觉
 1. 忙完这几天就能轻松了
 2. 假期可以干很多有意义的事
 3. 看完这个我就去睡觉
@@ -461,6 +462,12 @@
   </div>
 </footer> -->
 <footer id="colophon" class="site-footer" role="contentinfo">
+  <!-- 血小板 -->
+  <div id="landlord">
+      <div class="message" style="opacity:0"></div>
+      <canvas id="live2d" width="560" height="500" class="live2d"></canvas>
+      <div class="hide-button">隐藏</div>
+  </div>
   <div class="site-info">
     <div class="footertext">
       <div class="img-preload">
@@ -478,7 +485,17 @@
   </div><!-- .site-info -->
 </footer>
 
-
+<!-- live2d 血小板 -->
+<script type="text/javascript" src="https://cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script type="text/javascript">
+    var message_Path = '/live2d/'
+    var home_Path = 'https://haremu.com/'
+</script>
+<script type="text/javascript" src="/live2d/js/live2d.js"></script>
+<script type="text/javascript" src="/live2d/js/message.js"></script>
+<script type="text/javascript">
+    loadlive2d("live2d", "/live2d/model/xiaoban/model.json");
+</script>
 
 <script type="text/javascript" src="/js/lib.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>

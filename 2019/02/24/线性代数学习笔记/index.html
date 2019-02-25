@@ -56,6 +56,7 @@
   </style>
   <style type="text/css">.site-top .lower nav{display:block !important;}.author-profile i,.post-like a,.post-share .show-share,.sub-text,.we-info a,span.sitename,.post-more i:hover,#pagination a:hover,.post-content a:hover,.float-content i:hover{color:#FE9600}.feature i,.download,.navigator i:hover,.links ul li:before,.ar-time i,span.ar-circle,.object,.comment .comment-reply-link,.siren-checkbox-radio:checked + .siren-checkbox-radioInput:after{background:#FE9600}::-webkit-scrollbar-thumb{background:#FE9600}.download,.navigator i:hover,.link-title,.links ul li:hover,#pagination a:hover,.comment-respond input[type='submit']:hover{border-color:#FE9600}.entry-content a:hover,.site-info a:hover,.comment h4 a,#comments-navi a.prev,#comments-navi a.next,.comment h4 a:hover,.site-top ul li a:hover,.entry-title a:hover,#archives-temp h3,span.page-numbers.current,.sorry li a:hover,.site-title a:hover,i.iconfont.js-toggle-search.iconsearch:hover,.comment-respond input[type='submit']:hover{color:#FE9600}.comments .comments-main{display:block !important;}.comments .comments-hidden{display:none !important;}background-position:center center;background-attachment:inherit;}
   </style>
+  <link rel="stylesheet" href="/live2d/css/live2d.css">
 </head></html>
 <body class="page-template page-template-user page-template-page-analytics page-template-userpage-analytics-php page page-id-1297 chinese-font serif isWebKit">
   <div class="scrollbar" id="bar">
@@ -291,10 +292,12 @@
 <p>将原矩阵的右边放一个单位矩阵，并对整体进行消元，当左边被消成单位矩阵时，右侧就被消成了逆矩阵。如果中途失败则说明矩阵不可逆</p>
 <p>其实还好理解，消元过程中使用的矩阵初等行变换实际上是左乘一个矩阵，他们的乘积就是逆矩阵，因此我们需要在右侧来构造一个矩阵来收集乘积的结果。</p>
 <h2 id="行列式"><a href="#行列式" class="headerlink" title="行列式"></a>行列式</h2><h3 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h3><p>一个方阵的行列式表示为$|A|$</p>
-<script type="math/tex; mode=display">|A| = \sum_{p}(-1)^{\sigma(p)} \prod_{i = 1}^n a_{i, p_i}</script><p>其中$p$表示任意一个$1$到$n$的排列</p>
+<p>$$|A| = \sum_{p}(-1)^{\sigma(p)} \prod_{i = 1}^n a_{i, p_i}$$</p>
+<p>其中$p$表示任意一个$1$到$n$的排列</p>
 <p>$\sigma(p)$表示$p$的逆序对的数量</p>
 <p>比如当$n = 2$时，</p>
-<script type="math/tex; mode=display">\begin{vmatrix} a_{11} & a_{12} \\ a_{21} & a_{12} \end{vmatrix}=a_{11}a_{22}-a_{12}a_{21}</script><p>解释一下</p>
+<p>$$\begin{vmatrix} a_{11} &amp; a_{12} \ a_{21} &amp; a_{12} \end{vmatrix}=a_{11}a_{22}-a_{12}a_{21} $$</p>
+<p>解释一下</p>
 <p>当$p = 1,2$时，逆序对为$0$个，$p_1 = 1, p_2 = 2$，因此$(-1)^0 <em>(a_{1_{p_1}})</em>(a_{2_{p_2}}) = a_{11} * a_{22}$</p>
 <p>当$p = 2,1$时，逆序对为$1$个，$p_1 = 2, p_2 = 1$，因此$(-1)^1 <em> (a_{1_{p_1}})</em>(a_{2_{p_2}}) = -1 <em> a_{12} </em> a_{21}$</p>
 <p>因此$|A| = a_{11}{22} - a_{12}a_{21}$</p>
@@ -473,6 +476,12 @@
   </div>
 </footer> -->
 <footer id="colophon" class="site-footer" role="contentinfo">
+  <!-- 血小板 -->
+  <div id="landlord">
+      <div class="message" style="opacity:0"></div>
+      <canvas id="live2d" width="560" height="500" class="live2d"></canvas>
+      <div class="hide-button">隐藏</div>
+  </div>
   <div class="site-info">
     <div class="footertext">
       <div class="img-preload">
@@ -490,7 +499,17 @@
   </div><!-- .site-info -->
 </footer>
 
-
+<!-- live2d 血小板 -->
+<script type="text/javascript" src="https://cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script type="text/javascript">
+    var message_Path = '/live2d/'
+    var home_Path = 'https://haremu.com/'
+</script>
+<script type="text/javascript" src="/live2d/js/live2d.js"></script>
+<script type="text/javascript" src="/live2d/js/message.js"></script>
+<script type="text/javascript">
+    loadlive2d("live2d", "/live2d/model/xiaoban/model.json");
+</script>
 
 <script type="text/javascript" src="/js/lib.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>

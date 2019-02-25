@@ -56,6 +56,7 @@
   </style>
   <style type="text/css">.site-top .lower nav{display:block !important;}.author-profile i,.post-like a,.post-share .show-share,.sub-text,.we-info a,span.sitename,.post-more i:hover,#pagination a:hover,.post-content a:hover,.float-content i:hover{color:#FE9600}.feature i,.download,.navigator i:hover,.links ul li:before,.ar-time i,span.ar-circle,.object,.comment .comment-reply-link,.siren-checkbox-radio:checked + .siren-checkbox-radioInput:after{background:#FE9600}::-webkit-scrollbar-thumb{background:#FE9600}.download,.navigator i:hover,.link-title,.links ul li:hover,#pagination a:hover,.comment-respond input[type='submit']:hover{border-color:#FE9600}.entry-content a:hover,.site-info a:hover,.comment h4 a,#comments-navi a.prev,#comments-navi a.next,.comment h4 a:hover,.site-top ul li a:hover,.entry-title a:hover,#archives-temp h3,span.page-numbers.current,.sorry li a:hover,.site-title a:hover,i.iconfont.js-toggle-search.iconsearch:hover,.comment-respond input[type='submit']:hover{color:#FE9600}.comments .comments-main{display:block !important;}.comments .comments-hidden{display:none !important;}background-position:center center;background-attachment:inherit;}
   </style>
+  <link rel="stylesheet" href="/live2d/css/live2d.css">
 </head></html>
 <body class="page-template page-template-user page-template-page-analytics page-template-userpage-analytics-php page page-id-1297 chinese-font serif isWebKit">
   <div class="scrollbar" id="bar">
@@ -271,7 +272,7 @@
 <p>边权和严格大于最小生成树的边权和最小的生成树</p>
 </blockquote>
 <h2 id="求解方法"><a href="#求解方法" class="headerlink" title="求解方法"></a>求解方法</h2><p>次小生成树嘛，肯定和最小生成树脱不了关系<br>那么我们首先求出最小生成树</p>
-<p>接下来，一个比较显然的思路是<br>枚举每一条未加入最小生成树的边，加入最小生成树，同时在最小生成树中删除边权最大的边<br>如果你想到了这里并写出了代码，那么恭喜你<br>你在里成功还有一步之遥成功掉进坑里了<br>比如下面的例子<br><img src="http://ou46et6i2.bkt.clouddn.com/%E6%AC%A1%E5%B0%8F%E7%94%9F%E6%88%90%E6%A0%91.png" alt><br>蓝边表示最小生成树中的边，黄边表示新加入的边<br>在这种情况下，如果仅仅记录最大值的话，得到的答案一定是错的<br>所以我们还要记录严格小于最大值的最大值<br>当产生冲突的时候我们需要删除严格小于最大值的最大值</p>
+<p>接下来，一个比较显然的思路是<br>枚举每一条未加入最小生成树的边，加入最小生成树，同时在最小生成树中删除边权最大的边<br>如果你想到了这里并写出了代码，那么恭喜你<br>你在里成功还有一步之遥成功掉进坑里了<br>比如下面的例子<br><img data-action="zoom" src="http://ou46et6i2.bkt.clouddn.com/%E6%AC%A1%E5%B0%8F%E7%94%9F%E6%88%90%E6%A0%91.png" alt><br>蓝边表示最小生成树中的边，黄边表示新加入的边<br>在这种情况下，如果仅仅记录最大值的话，得到的答案一定是错的<br>所以我们还要记录严格小于最大值的最大值<br>当产生冲突的时候我们需要删除严格小于最大值的最大值</p>
 <h2 id="优化"><a href="#优化" class="headerlink" title="优化"></a>优化</h2><p>但是这样效率太低了，每一次查询都是$O(n)$的<br>有没有更好的方法呢？</p>
 <p>不要忘了，最小生成树它是一棵树呀<br>树的链上最大最小值操作，你想到了什么？</p>
 <p>没错！树上倍增</p>
@@ -285,7 +286,7 @@
 </ol>
 <h3 id="时间复杂度"><a href="#时间复杂度" class="headerlink" title="时间复杂度"></a>时间复杂度</h3><p>用kruskal是$O(m\log m+Q\log (n))$<br>用prim是$O(n\log n+Q\log (n))$<br>Q为询问次数</p>
 <h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><p>放一道<a href="https://www.luogu.org/problemnew/show/P4180" target="_blank" rel="noopener">裸题</a></p>
-<pre><code class="lang-c++">// luogu-judger-enable-o2
+<pre><code class="c++">// luogu-judger-enable-o2
 #include&lt;cstdio&gt;
 #include&lt;algorithm&gt;
 #include&lt;cstring&gt;
@@ -445,7 +446,7 @@ main()
     pre();
     work();
     return 0;  
-}
+}  
 </code></pre>
 
         </div>
@@ -584,6 +585,12 @@ main()
   </div>
 </footer> -->
 <footer id="colophon" class="site-footer" role="contentinfo">
+  <!-- 血小板 -->
+  <div id="landlord">
+      <div class="message" style="opacity:0"></div>
+      <canvas id="live2d" width="560" height="500" class="live2d"></canvas>
+      <div class="hide-button">隐藏</div>
+  </div>
   <div class="site-info">
     <div class="footertext">
       <div class="img-preload">
@@ -601,7 +608,17 @@ main()
   </div><!-- .site-info -->
 </footer>
 
-
+<!-- live2d 血小板 -->
+<script type="text/javascript" src="https://cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script type="text/javascript">
+    var message_Path = '/live2d/'
+    var home_Path = 'https://haremu.com/'
+</script>
+<script type="text/javascript" src="/live2d/js/live2d.js"></script>
+<script type="text/javascript" src="/live2d/js/message.js"></script>
+<script type="text/javascript">
+    loadlive2d("live2d", "/live2d/model/xiaoban/model.json");
+</script>
 
 <script type="text/javascript" src="/js/lib.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>

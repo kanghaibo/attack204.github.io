@@ -56,6 +56,7 @@
   </style>
   <style type="text/css">.site-top .lower nav{display:block !important;}.author-profile i,.post-like a,.post-share .show-share,.sub-text,.we-info a,span.sitename,.post-more i:hover,#pagination a:hover,.post-content a:hover,.float-content i:hover{color:#FE9600}.feature i,.download,.navigator i:hover,.links ul li:before,.ar-time i,span.ar-circle,.object,.comment .comment-reply-link,.siren-checkbox-radio:checked + .siren-checkbox-radioInput:after{background:#FE9600}::-webkit-scrollbar-thumb{background:#FE9600}.download,.navigator i:hover,.link-title,.links ul li:hover,#pagination a:hover,.comment-respond input[type='submit']:hover{border-color:#FE9600}.entry-content a:hover,.site-info a:hover,.comment h4 a,#comments-navi a.prev,#comments-navi a.next,.comment h4 a:hover,.site-top ul li a:hover,.entry-title a:hover,#archives-temp h3,span.page-numbers.current,.sorry li a:hover,.site-title a:hover,i.iconfont.js-toggle-search.iconsearch:hover,.comment-respond input[type='submit']:hover{color:#FE9600}.comments .comments-main{display:block !important;}.comments .comments-hidden{display:none !important;}background-position:center center;background-attachment:inherit;}
   </style>
+  <link rel="stylesheet" href="/live2d/css/live2d.css">
 </head></html>
 <body class="page-template page-template-user page-template-page-analytics page-template-userpage-analytics-php page page-id-1297 chinese-font serif isWebKit">
   <div class="scrollbar" id="bar">
@@ -285,17 +286,17 @@
 <p>拿最大值来说</p>
 <p>我们用$Max[i][j]$表示，从$i$位置开始的$2^j$个数中的最大值，例如$Max[i][1]$表示的是$i$位置和$i+1$位置中两个数的最大值</p>
 <p>那么转移的时候我们可以把当前区间拆成两个区间并分别取最大值（注意这里的编号是从$1$开始的）</p>
-<p><img src="https://ws1.sinaimg.cn/large/005S5cb6ly1fxsalbkxbrj30kd07p0so.jpg" alt></p>
+<p><img data-action="zoom" src="https://ws1.sinaimg.cn/large/005S5cb6ly1fxsalbkxbrj30kd07p0so.jpg" alt></p>
 <p>查询的时候也比较简单</p>
 <p>我们计算出$log_2{\text{区间长度}}$</p>
 <p>然后对于左端点和右端点分别进行查询，这样可以保证一定可以覆盖查询的区间</p>
-<p><img src="https://ws1.sinaimg.cn/large/005S5cb6ly1fxsalcxncdj30nd0620so.jpg" alt></p>
+<p><img data-action="zoom" src="https://ws1.sinaimg.cn/large/005S5cb6ly1fxsalcxncdj30nd0620so.jpg" alt></p>
 <p>刚开始学的时候我不太理解为什么从右端点开始查的时候左端点是$r-2^k+1$</p>
 <p>实际很简单，因为我们需要找到一个点$x$，使得$x+2^k-1=r$</p>
 <p>这样的话就可以得到$x=r-2^k+1$</p>
 <p>上面讲的可能比较抽象，建议大家画个图好好理解一下</p>
 <h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><p>有了上面的知识，代码就比较好理解了</p>
-<pre><code class="lang-cpp">#include&lt;cstdio&gt;
+<pre><code class="cpp">#include&lt;cstdio&gt;
 #include&lt;cmath&gt;
 #include&lt;algorithm&gt;
 using namespace std;
@@ -461,6 +462,12 @@ int main() {
   </div>
 </footer> -->
 <footer id="colophon" class="site-footer" role="contentinfo">
+  <!-- 血小板 -->
+  <div id="landlord">
+      <div class="message" style="opacity:0"></div>
+      <canvas id="live2d" width="560" height="500" class="live2d"></canvas>
+      <div class="hide-button">隐藏</div>
+  </div>
   <div class="site-info">
     <div class="footertext">
       <div class="img-preload">
@@ -478,7 +485,17 @@ int main() {
   </div><!-- .site-info -->
 </footer>
 
-
+<!-- live2d 血小板 -->
+<script type="text/javascript" src="https://cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script type="text/javascript">
+    var message_Path = '/live2d/'
+    var home_Path = 'https://haremu.com/'
+</script>
+<script type="text/javascript" src="/live2d/js/live2d.js"></script>
+<script type="text/javascript" src="/live2d/js/message.js"></script>
+<script type="text/javascript">
+    loadlive2d("live2d", "/live2d/model/xiaoban/model.json");
+</script>
 
 <script type="text/javascript" src="/js/lib.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>

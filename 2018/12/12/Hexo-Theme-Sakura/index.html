@@ -56,6 +56,7 @@
   </style>
   <style type="text/css">.site-top .lower nav{display:block !important;}.author-profile i,.post-like a,.post-share .show-share,.sub-text,.we-info a,span.sitename,.post-more i:hover,#pagination a:hover,.post-content a:hover,.float-content i:hover{color:#FE9600}.feature i,.download,.navigator i:hover,.links ul li:before,.ar-time i,span.ar-circle,.object,.comment .comment-reply-link,.siren-checkbox-radio:checked + .siren-checkbox-radioInput:after{background:#FE9600}::-webkit-scrollbar-thumb{background:#FE9600}.download,.navigator i:hover,.link-title,.links ul li:hover,#pagination a:hover,.comment-respond input[type='submit']:hover{border-color:#FE9600}.entry-content a:hover,.site-info a:hover,.comment h4 a,#comments-navi a.prev,#comments-navi a.next,.comment h4 a:hover,.site-top ul li a:hover,.entry-title a:hover,#archives-temp h3,span.page-numbers.current,.sorry li a:hover,.site-title a:hover,i.iconfont.js-toggle-search.iconsearch:hover,.comment-respond input[type='submit']:hover{color:#FE9600}.comments .comments-main{display:block !important;}.comments .comments-hidden{display:none !important;}background-position:center center;background-attachment:inherit;}
   </style>
+  <link rel="stylesheet" href="/live2d/css/live2d.css">
 </head></html>
 <body class="page-template page-template-user page-template-page-analytics page-template-userpage-analytics-php page page-id-1297 chinese-font serif isWebKit">
   <div class="scrollbar" id="bar">
@@ -281,10 +282,10 @@
           <a href="https://ws3.sinaimg.cn/large/006bYVyvly1fxxewq3plij30yn0jjkjl.jpg" data-fancybox="images" data-caption="主人没有描述我哦~" target="_blank" rel="noopener"><img src="https://ws3.sinaimg.cn/large/006bYVyvly1fxxewq3plij30yn0jjkjl.jpg"></a>
 <a href="https://ws3.sinaimg.cn/large/006bYVyvly1fxxewq3plij30yn0jjkjl.jpg" data-fancybox="images" data-caption="123456" target="_blank" rel="noopener"><img src="https://ws3.sinaimg.cn/large/006bYVyvly1fxxewq3plij30yn0jjkjl.jpg"></a>
 <a href="https://ws3.sinaimg.cn/large/006bYVyvly1fxxewq3plij30yn0jjkjl.jpg" data-fancybox="images" data-caption="123456" target="_blank" rel="noopener"><img src="https://ws3.sinaimg.cn/large/006bYVyvly1fxxewq3plij30yn0jjkjl.jpg"></a>
-<p><img src="https://ws3.sinaimg.cn/large/006bYVyvly1fxxewq3plij30yn0jjkjl.jpg" alt><br>最近又一次接触到了web端全景，是在720yun上，发现有好多用户上传的全景照片。再也按捺不住那颗好奇的心，去探究了下720云是怎么实现web端全景展示的。</p>
-<h2 id="分析加载的资源"><a href="#分析加载的资源" class="headerlink" title="分析加载的资源"></a>分析加载的资源</h2><p><img src="https://ws3.sinaimg.cn/large/006bYVyvly1fxxfmcxo7qj30y50idquk.jpg" alt><br>我们使用f12开发者工具，查看分析找到了krp-player这个关键的js文件，并在js文件首部找到了它的原名”krpano”（稍微提一下：可能你还听说有其他插件或方式实现web全景:比如three.js，但那些都不是很成熟，存在大大小小的bug，而krpano比较成熟也是大部分全景网站所使用的，所以是收费的。）。于是搜索到了它的官网，并进行下载它的安装包（下载速度太慢可以搜索其百度网盘资源去下载）<br><img src="https://ws4.sinaimg.cn/large/006bYVyvly1fxxfs6y2p3j30ya0jkdvo.jpg" alt></p>
-<h2 id="安装krpano"><a href="#安装krpano" class="headerlink" title="安装krpano"></a>安装krpano</h2><p>下载好后，双击安装到目录（自定义）。<br><img src="https://ws3.sinaimg.cn/large/006bYVyvly1fxxfxam5wnj30je0ai415.jpg" alt><br>安装好后如下图<br><img src="https://ws2.sinaimg.cn/large/006bYVyvly1fxxg9jj5qhj30jh0cejzv.jpg" alt></p>
-<h2 id="使用krpano"><a href="#使用krpano" class="headerlink" title="使用krpano"></a>使用krpano</h2><p>使用教程可以参考krpano360的。<br><img src="https://wx2.sinaimg.cn/large/006bYVyvly1fxxgaq43fxj30yg0jle2c.jpg" alt><br>准备一张或多张全景图：<br><img src="https://ws4.sinaimg.cn/large/006bYVyvly1fxxgchpzo7j30ku0g8wqa.jpg" alt><br>注意：要求的全景图长宽比为2:1<br>直接将全景拖到需要生成类型的bat上（我这里是MAKE VTOUR (VR-OPT) droplet，也是教程所推荐的）<br><img src="https://wx2.sinaimg.cn/large/006bYVyvly1fxxgh02tsuj30ow0czape.jpg" alt><br>然后krpano就好自动处理图片，并生成html网页文件。生成的文件和图片在同一目录，如我的图片在桌面，生成的文件也在桌面。<br><img src="https://wx3.sinaimg.cn/large/006bYVyvly1fxxgho6jw9j30pr0dgq6r.jpg" alt><br>这样子直接打开html文件还不能浏览全景图片，需要在服务器环境下访问才行（其他服务器环境也行）<br><img src="https://ws2.sinaimg.cn/large/006bYVyvly1fxxglnscr9j30jx0arwgk.jpg" alt><br>这里我们用krpano自带的server工具。双击它：<br><img src="https://ws1.sinaimg.cn/large/006bYVyvly1fxxgmkzy46j30jx0dvn5o.jpg" alt><br>可以看到服务开启的目录在krpano的安装目录下，我们可以把生成的文件复制过来访问：（这里我在安装目录下新建了一个文件夹）<br><img src="https://ws3.sinaimg.cn/large/006bYVyvly1fxxgp6lkh2j30iu08at9k.jpg" alt><br>再打开之前server工具给的那个地址，进入到目录下，点击tour.html即可预览全景<br><img src="https://wx4.sinaimg.cn/large/006bYVyvly1fxxgqim1lvj30na0h042s.jpg" alt><br>预览如下：发现它的水印是不是多的恐怖2333333，需要购买才能去除。或者……<br><img src="https://ws2.sinaimg.cn/large/006bYVyvly1fxxgstd1gyj30ye0jhb29.jpg" alt></p>
+<p><img data-action="zoom" src="https://ws3.sinaimg.cn/large/006bYVyvly1fxxewq3plij30yn0jjkjl.jpg" alt><br>最近又一次接触到了web端全景，是在720yun上，发现有好多用户上传的全景照片。再也按捺不住那颗好奇的心，去探究了下720云是怎么实现web端全景展示的。</p>
+<h2 id="分析加载的资源"><a href="#分析加载的资源" class="headerlink" title="分析加载的资源"></a>分析加载的资源</h2><p><img data-action="zoom" src="https://ws3.sinaimg.cn/large/006bYVyvly1fxxfmcxo7qj30y50idquk.jpg" alt><br>我们使用f12开发者工具，查看分析找到了krp-player这个关键的js文件，并在js文件首部找到了它的原名”krpano”（稍微提一下：可能你还听说有其他插件或方式实现web全景:比如three.js，但那些都不是很成熟，存在大大小小的bug，而krpano比较成熟也是大部分全景网站所使用的，所以是收费的。）。于是搜索到了它的官网，并进行下载它的安装包（下载速度太慢可以搜索其百度网盘资源去下载）<br><img data-action="zoom" src="https://ws4.sinaimg.cn/large/006bYVyvly1fxxfs6y2p3j30ya0jkdvo.jpg" alt></p>
+<h2 id="安装krpano"><a href="#安装krpano" class="headerlink" title="安装krpano"></a>安装krpano</h2><p>下载好后，双击安装到目录（自定义）。<br><img data-action="zoom" src="https://ws3.sinaimg.cn/large/006bYVyvly1fxxfxam5wnj30je0ai415.jpg" alt><br>安装好后如下图<br><img data-action="zoom" src="https://ws2.sinaimg.cn/large/006bYVyvly1fxxg9jj5qhj30jh0cejzv.jpg" alt></p>
+<h2 id="使用krpano"><a href="#使用krpano" class="headerlink" title="使用krpano"></a>使用krpano</h2><p>使用教程可以参考krpano360的。<br><img data-action="zoom" src="https://wx2.sinaimg.cn/large/006bYVyvly1fxxgaq43fxj30yg0jle2c.jpg" alt><br>准备一张或多张全景图：<br><img data-action="zoom" src="https://ws4.sinaimg.cn/large/006bYVyvly1fxxgchpzo7j30ku0g8wqa.jpg" alt><br>注意：要求的全景图长宽比为2:1<br>直接将全景拖到需要生成类型的bat上（我这里是MAKE VTOUR (VR-OPT) droplet，也是教程所推荐的）<br><img data-action="zoom" src="https://wx2.sinaimg.cn/large/006bYVyvly1fxxgh02tsuj30ow0czape.jpg" alt><br>然后krpano就好自动处理图片，并生成html网页文件。生成的文件和图片在同一目录，如我的图片在桌面，生成的文件也在桌面。<br><img data-action="zoom" src="https://wx3.sinaimg.cn/large/006bYVyvly1fxxgho6jw9j30pr0dgq6r.jpg" alt><br>这样子直接打开html文件还不能浏览全景图片，需要在服务器环境下访问才行（其他服务器环境也行）<br><img data-action="zoom" src="https://ws2.sinaimg.cn/large/006bYVyvly1fxxglnscr9j30jx0arwgk.jpg" alt><br>这里我们用krpano自带的server工具。双击它：<br><img data-action="zoom" src="https://ws1.sinaimg.cn/large/006bYVyvly1fxxgmkzy46j30jx0dvn5o.jpg" alt><br>可以看到服务开启的目录在krpano的安装目录下，我们可以把生成的文件复制过来访问：（这里我在安装目录下新建了一个文件夹）<br><img data-action="zoom" src="https://ws3.sinaimg.cn/large/006bYVyvly1fxxgp6lkh2j30iu08at9k.jpg" alt><br>再打开之前server工具给的那个地址，进入到目录下，点击tour.html即可预览全景<br><img data-action="zoom" src="https://wx4.sinaimg.cn/large/006bYVyvly1fxxgqim1lvj30na0h042s.jpg" alt><br>预览如下：发现它的水印是不是多的恐怖2333333，需要购买才能去除。或者……<br><img data-action="zoom" src="https://ws2.sinaimg.cn/large/006bYVyvly1fxxgstd1gyj30ye0jhb29.jpg" alt></p>
 <h2 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h2><p>其实可以退一步，就用一些全景平台就行了，比如720yun。这篇文章仅是为了探究下全景实现，到此为止了大致了解了，完。</p>
 
         </div>
@@ -423,6 +424,12 @@
   </div>
 </footer> -->
 <footer id="colophon" class="site-footer" role="contentinfo">
+  <!-- 血小板 -->
+  <div id="landlord">
+      <div class="message" style="opacity:0"></div>
+      <canvas id="live2d" width="560" height="500" class="live2d"></canvas>
+      <div class="hide-button">隐藏</div>
+  </div>
   <div class="site-info">
     <div class="footertext">
       <div class="img-preload">
@@ -440,7 +447,17 @@
   </div><!-- .site-info -->
 </footer>
 
-
+<!-- live2d 血小板 -->
+<script type="text/javascript" src="https://cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script type="text/javascript">
+    var message_Path = '/live2d/'
+    var home_Path = 'https://haremu.com/'
+</script>
+<script type="text/javascript" src="/live2d/js/live2d.js"></script>
+<script type="text/javascript" src="/live2d/js/message.js"></script>
+<script type="text/javascript">
+    loadlive2d("live2d", "/live2d/model/xiaoban/model.json");
+</script>
 
 <script type="text/javascript" src="/js/lib.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>

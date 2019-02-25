@@ -56,6 +56,7 @@
   </style>
   <style type="text/css">.site-top .lower nav{display:block !important;}.author-profile i,.post-like a,.post-share .show-share,.sub-text,.we-info a,span.sitename,.post-more i:hover,#pagination a:hover,.post-content a:hover,.float-content i:hover{color:#FE9600}.feature i,.download,.navigator i:hover,.links ul li:before,.ar-time i,span.ar-circle,.object,.comment .comment-reply-link,.siren-checkbox-radio:checked + .siren-checkbox-radioInput:after{background:#FE9600}::-webkit-scrollbar-thumb{background:#FE9600}.download,.navigator i:hover,.link-title,.links ul li:hover,#pagination a:hover,.comment-respond input[type='submit']:hover{border-color:#FE9600}.entry-content a:hover,.site-info a:hover,.comment h4 a,#comments-navi a.prev,#comments-navi a.next,.comment h4 a:hover,.site-top ul li a:hover,.entry-title a:hover,#archives-temp h3,span.page-numbers.current,.sorry li a:hover,.site-title a:hover,i.iconfont.js-toggle-search.iconsearch:hover,.comment-respond input[type='submit']:hover{color:#FE9600}.comments .comments-main{display:block !important;}.comments .comments-hidden{display:none !important;}background-position:center center;background-attachment:inherit;}
   </style>
+  <link rel="stylesheet" href="/live2d/css/live2d.css">
 </head></html>
 <body class="page-template page-template-user page-template-page-analytics page-template-userpage-analytics-php page page-id-1297 chinese-font serif isWebKit">
   <div class="scrollbar" id="bar">
@@ -289,27 +290,29 @@
 
 <h2 id="独立"><a href="#独立" class="headerlink" title="独立"></a>独立</h2><p>独立：对于事件$A$和$B$，如果$P(AB)$=$P(A)P(B)$，那么称$A$和$B$是独立的。</p>
 <p>所谓独立，最直观的理解即两事件的结果不会相互影响。</p>
-<h2 id="条件概率"><a href="#条件概率" class="headerlink" title="条件概率"></a>条件概率</h2><p>如果$P(B)&gt;0$，那么$A$在$B$下的条件概率为</p>
-<script type="math/tex; mode=display">P(A|B)=\frac{P(AB)}{P(B)}</script><p>特别的，如果$A$与$B$独立，那么$P(A | B) = P(A)$</p>
+<h2 id="条件概率"><a href="#条件概率" class="headerlink" title="条件概率"></a>条件概率</h2><p>如果$P(B)&gt;0$，那么$A$在$B$下的条件概率为<br>$$P(A|B)=\frac{P(AB)}{P(B)}$$</p>
+<p>特别的，如果$A$与$B$独立，那么$P(A | B) = P(A)$</p>
 <p>同时移项之后我们也会得到一个显然的公式：$P(AB) = P(A |B) P(B)$，那么同时$P(AB) = P(B | A) P(A)$</p>
 <p>关于条件概率一种不错的理解方式(<a href="https://www.zhihu.com/question/29155526/answer/88287808" target="_blank" rel="noopener">引自这里</a>)</p>
-<p><img src="https://ws1.sinaimg.cn/large/005S5cb6ly1fz42u23ftaj308j059q3q.jpg" alt></p>
+<p><img data-action="zoom" src="https://ws1.sinaimg.cn/large/005S5cb6ly1fz42u23ftaj308j059q3q.jpg" alt></p>
 <blockquote>
 <p>条件概率$P(A | B) = \frac{P(AB)}{P(B)}$就是紫色部分的面积占右边整个圆圈的比例</p>
 </blockquote>
 <h2 id="贝叶斯公式"><a href="#贝叶斯公式" class="headerlink" title="贝叶斯公式"></a>贝叶斯公式</h2><p>对于事件$A$和$B$，如果$P(A)&gt;0$且$P(B)&gt;0$，那么</p>
-<script type="math/tex; mode=display">P(A|B)=\frac{P(B\mid A)P(A)}{P(B)}</script><p>这个公式的证明是显然的，我们直接把推导的第二个公式带入条件概率公式即可</p>
+<p>$$P(A|B)=\frac{P(B\mid A)P(A)}{P(B)}$$</p>
+<p>这个公式的证明是显然的，我们直接把推导的第二个公式带入条件概率公式即可</p>
 <p>观察一下这个公式，我们实际上有四个未知量(左$1$右$3$)，而在题目中往往会告诉我们$P(AB)$或$P(B | A)P(A)$，此时我们还需要求解$P(B)$</p>
 <p>但是$P(B)$的决定因素可能不止与一个事件有关(这里可能有些抽象，等下会有例子。)</p>
 <p>这里我们会用到<code>全概率公式</code></p>
-<h3 id="全概率公式"><a href="#全概率公式" class="headerlink" title="全概率公式"></a>全概率公式</h3><p>如果样本空间可以被划分为两两互斥的若干部分$A_1,\ldots,A_k$，那么</p>
-<script type="math/tex; mode=display">P(B)=\sum_{i=1}^{k}P(B\mid A_i)P(A_i)</script><p>举个例子，样本空间被划分成了$A$和$A’$，此时我们可以用全概率公式来计算$B$事件发生的概率</p>
-<p><img src="https://ws1.sinaimg.cn/large/005S5cb6ly1fz43d7gmvwj30bn07pa9y.jpg" alt></p>
+<h3 id="全概率公式"><a href="#全概率公式" class="headerlink" title="全概率公式"></a>全概率公式</h3><p>如果样本空间可以被划分为两两互斥的若干部分$A_1,\ldots,A_k$，那么<br>$$P(B)=\sum_{i=1}^{k}P(B\mid A_i)P(A_i)$$</p>
+<p>举个例子，样本空间被划分成了$A$和$A’$，此时我们可以用全概率公式来计算$B$事件发生的概率</p>
+<p><img data-action="zoom" src="https://ws1.sinaimg.cn/large/005S5cb6ly1fz43d7gmvwj30bn07pa9y.jpg" alt></p>
 <p>$P(B) = P(B | A) P(A) + P(B | A’) P(A’)$</p>
 <p>这个公式可以用来处理$P(B)$不好直接计算的情况</p>
 <p>现在回过头来，我们把全概率公式回带到贝叶斯公式中，我们就得到了一种船新的表示形式</p>
 <p>如果我们得到了样本空间的一个划分$A_1,\ldots,A_k$，结合全概率公式，对于任意$1\leq i\leq k$有</p>
-<script type="math/tex; mode=display">P(A_i\mid B) = \frac{P(B\mid A_i)P(A_i)}{\sum_j P(B\mid A_j)P(A_j)}</script><p>下面来看两道水题    </p>
+<p>$$P(A_i\mid B) = \frac{P(B\mid A_i)P(A_i)}{\sum_j P(B\mid A_j)P(A_j)} $$</p>
+<p>下面来看两道水题    </p>
 <h2 id="例题"><a href="#例题" class="headerlink" title="例题"></a>例题</h2><h3 id="垃圾邮件识别"><a href="#垃圾邮件识别" class="headerlink" title="垃圾邮件识别"></a>垃圾邮件识别</h3><p>(题目是我自己xjb起的)</p>
 <h4 id="Descripiton"><a href="#Descripiton" class="headerlink" title="Descripiton"></a>Descripiton</h4><p>一个用户所有邮件分为两类：$A_1$代表垃圾邮件， $A_2$代表非垃圾邮件</p>
 <p>根据经验，$P(A_1) = 0.7$， $P(A_2) = 0.3$。</p>
@@ -318,10 +321,15 @@
 <p>问若收到一封新邮件，包含了“免费”这一关键字，那么它是垃圾邮件的概率是多少</p>
 <h4 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h4><p>题目要求的实际是$P(A_1|B)$</p>
 <p>根据条件概率公式</p>
-<script type="math/tex; mode=display">P(A_1|B)=\frac{P(A_1|B)}{P(B)}</script><p>转换为贝叶斯公式</p>
-<script type="math/tex; mode=display">P(A_1|B)=\frac{P(B|A_1)P(A_1)}{P(B)}</script><p>将分式底下$P(B)$这一项用全概率公式展开</p>
-<script type="math/tex; mode=display">P(A_1|B)=\frac{P(B|A_1)P(A_1)}{P(B|A_1)P(A_1)+P(B|A_2)P(A_2)}</script><p>然后就可以算了</p>
-<script type="math/tex; mode=display">P(A_1|B)=\frac{0.9*0.7}{0.9*0.7+0.01*0.3}</script><script type="math/tex; mode=display">\approx 0.995260663507109004739336492891 \%</script><p>好恐怖。。</p>
+<p>$$P(A_1|B)=\frac{P(A_1|B)}{P(B)}$$</p>
+<p>转换为贝叶斯公式</p>
+<p>$$P(A_1|B)=\frac{P(B|A_1)P(A_1)}{P(B)}$$</p>
+<p>将分式底下$P(B)$这一项用全概率公式展开</p>
+<p>$$P(A_1|B)=\frac{P(B|A_1)P(A_1)}{P(B|A_1)P(A_1)+P(B|A_2)P(A_2)}$$</p>
+<p>然后就可以算了</p>
+<p>$$P(A_1|B)=\frac{0.9<em>0.7}{0.9</em>0.7+0.01*0.3}$$</p>
+<p>$$\approx 0.995260663507109004739336492891 \% $$</p>
+<p>好恐怖。。</p>
 <h3 id="次品识别问题"><a href="#次品识别问题" class="headerlink" title="次品识别问题"></a>次品识别问题</h3><p>(也是我自己xjb起的)</p>
 <h4 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h4><p>例1设某工厂有甲、乙、丙三个车间，生产同一种产品,已知各车间的产量分别占全厂产量的$25 \%, 35 \%, 40 \%$,而且各车间的次品率依次为$5 \%,4 \%,<br>2 \%$.现从待出厂的产品中检查出一个次品,试判断它是由甲车间生产的概率</p>
 <h4 id="Solution-1"><a href="#Solution-1" class="headerlink" title="Solution"></a>Solution</h4><p>设$P(A_i)$表示是由第$i$个车间生产的概率，$P(B)$表示生产出次品的概率，直接带入公式算即可</p>
@@ -469,6 +477,12 @@
   </div>
 </footer> -->
 <footer id="colophon" class="site-footer" role="contentinfo">
+  <!-- 血小板 -->
+  <div id="landlord">
+      <div class="message" style="opacity:0"></div>
+      <canvas id="live2d" width="560" height="500" class="live2d"></canvas>
+      <div class="hide-button">隐藏</div>
+  </div>
   <div class="site-info">
     <div class="footertext">
       <div class="img-preload">
@@ -486,7 +500,17 @@
   </div><!-- .site-info -->
 </footer>
 
-
+<!-- live2d 血小板 -->
+<script type="text/javascript" src="https://cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script type="text/javascript">
+    var message_Path = '/live2d/'
+    var home_Path = 'https://haremu.com/'
+</script>
+<script type="text/javascript" src="/live2d/js/live2d.js"></script>
+<script type="text/javascript" src="/live2d/js/message.js"></script>
+<script type="text/javascript">
+    loadlive2d("live2d", "/live2d/model/xiaoban/model.json");
+</script>
 
 <script type="text/javascript" src="/js/lib.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>

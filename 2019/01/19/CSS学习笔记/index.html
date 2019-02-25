@@ -56,6 +56,7 @@
   </style>
   <style type="text/css">.site-top .lower nav{display:block !important;}.author-profile i,.post-like a,.post-share .show-share,.sub-text,.we-info a,span.sitename,.post-more i:hover,#pagination a:hover,.post-content a:hover,.float-content i:hover{color:#FE9600}.feature i,.download,.navigator i:hover,.links ul li:before,.ar-time i,span.ar-circle,.object,.comment .comment-reply-link,.siren-checkbox-radio:checked + .siren-checkbox-radioInput:after{background:#FE9600}::-webkit-scrollbar-thumb{background:#FE9600}.download,.navigator i:hover,.link-title,.links ul li:hover,#pagination a:hover,.comment-respond input[type='submit']:hover{border-color:#FE9600}.entry-content a:hover,.site-info a:hover,.comment h4 a,#comments-navi a.prev,#comments-navi a.next,.comment h4 a:hover,.site-top ul li a:hover,.entry-title a:hover,#archives-temp h3,span.page-numbers.current,.sorry li a:hover,.site-title a:hover,i.iconfont.js-toggle-search.iconsearch:hover,.comment-respond input[type='submit']:hover{color:#FE9600}.comments .comments-main{display:block !important;}.comments .comments-hidden{display:none !important;}background-position:center center;background-attachment:inherit;}
   </style>
+  <link rel="stylesheet" href="/live2d/css/live2d.css">
 </head></html>
 <body class="page-template page-template-user page-template-page-analytics page-template-userpage-analytics-php page page-id-1297 chinese-font serif isWebKit">
   <div class="scrollbar" id="bar">
@@ -294,19 +295,19 @@
 <li>多个样式定义可层叠为一</li>
 </ul>
 <h2 id="基础知识"><a href="#基础知识" class="headerlink" title="基础知识"></a>基础知识</h2><h2 id="基础语法"><a href="#基础语法" class="headerlink" title="基础语法"></a>基础语法</h2><p>CSS 规则由两个主要的部分构成：选择器，以及一条或多条声明。</p>
-<pre><code class="lang-cpp">selector {declaration1; declaration2; ... declarationN }
+<pre><code class="cpp">selector {declaration1; declaration2; ... declarationN }
 </code></pre>
-<h3 id="使用方法"><a href="#使用方法" class="headerlink" title="使用方法"></a>使用方法</h3><h4 id="外部样式表"><a href="#外部样式表" class="headerlink" title="外部样式表"></a>外部样式表</h4><pre><code class="lang-css">&lt;head&gt;
+<h3 id="使用方法"><a href="#使用方法" class="headerlink" title="使用方法"></a>使用方法</h3><h4 id="外部样式表"><a href="#外部样式表" class="headerlink" title="外部样式表"></a>外部样式表</h4><pre><code class="css">&lt;head&gt;
     &lt;link rel = &quot;stylesheet&quot; type = &quot;text/css&quot; href = &quot;mystyle.css&quot; /&gt;
 &lt;/head&gt;
 </code></pre>
 <p>该文件中只能含有样式表</p>
-<pre><code class="lang-css">hr {color: sienna;}
+<pre><code class="css">hr {color: sienna;}
 p {margin-left: 20px;}
 body {background-image: url(&quot;images/back40.gif&quot;);}
 </code></pre>
 <h4 id="内部样式表"><a href="#内部样式表" class="headerlink" title="内部样式表"></a>内部样式表</h4><p>直接在<code>&lt;head&gt;</code>标签内插入即可</p>
-<pre><code class="lang-css">&lt;head&gt;
+<pre><code class="css">&lt;head&gt;
 &lt;style type=&quot;text/css&quot;&gt;
   hr {color: sienna;}
   p {margin-left: 20px;}
@@ -315,7 +316,7 @@ body {background-image: url(&quot;images/back40.gif&quot;);}
 &lt;/head&gt;
 </code></pre>
 <h4 id="内联样式"><a href="#内联样式" class="headerlink" title="内联样式"></a>内联样式</h4><p>直接调用标签的<code>style</code>属性</p>
-<pre><code class="lang-css">&lt;p style=&quot;color: sienna; margin-left: 20px&quot;&gt;
+<pre><code class="css">&lt;p style=&quot;color: sienna; margin-left: 20px&quot;&gt;
     This is a paragraph
 &lt;/p&gt;
 </code></pre>
@@ -323,7 +324,7 @@ body {background-image: url(&quot;images/back40.gif&quot;);}
 <p>若一个选择器被凡在了多个组内，则会同时拥有每个组的样式，当样式冲突时，按规则选择样式</p>
 <h3 id="继承问题"><a href="#继承问题" class="headerlink" title="继承问题"></a>继承问题</h3><p>大部分情况下会直接继承父亲的样式，但是可能会有浏览器兼容问题</p>
 <h2 id="样式"><a href="#样式" class="headerlink" title="样式"></a>样式</h2><h3 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h3><h4 id="背景色"><a href="#背景色" class="headerlink" title="背景色"></a>背景色</h4><p>可以使用<code>background-color</code>来设置背景色</p>
-<pre><code class="lang-css">p {
+<pre><code class="css">p {
     background-color:blue;
     padding:20px;
     width: 400px;
@@ -332,7 +333,7 @@ body {background-image: url(&quot;images/back40.gif&quot;);}
 <p>注意：</p>
 <p>background-color 不能继承</p>
 <h4 id="背景图像"><a href="#背景图像" class="headerlink" title="背景图像"></a>背景图像</h4><p>可以使用<code>background-image:</code>来设置背景图片</p>
-<pre><code class="lang-css">p {
+<pre><code class="css">p {
     background-image:url(&quot;https://pic.cnblogs.com/avatar/1101696/20180214111459.png&quot;);
     background-repeat: none;
     padding:20px;
@@ -344,7 +345,7 @@ body {background-image: url(&quot;images/back40.gif&quot;);}
 <p>不能继承</p>
 <h4 id="背景重复"><a href="#背景重复" class="headerlink" title="背景重复"></a>背景重复</h4><p>使用<code>background-repeat: repeat-x</code>可以设置背景图片重复，</p>
 <p>repeat-x 和 repeat-y 分别导致图像只在水平或垂直方向上重复，no-repeat 则不允许图像在任何方向上平铺。</p>
-<pre><code class="lang-css">p {
+<pre><code class="css">p {
     background-image:url(&quot;https://pic.cnblogs.com/avatar/1101696/20180214111459.png&quot;);
     background-repeat: repeat-x;
     padding:20px;
@@ -354,7 +355,7 @@ body {background-image: url(&quot;images/back40.gif&quot;);}
 </code></pre>
 <h4 id="背景定位"><a href="#背景定位" class="headerlink" title="背景定位"></a>背景定位</h4><p><code>background-position</code>可以来设置图像位置</p>
 <p>可以选用<code>center, top, bottom, left, right</code></p>
-<pre><code class="lang-css">body {
+<pre><code class="css">body {
     background-image: url(&quot;http://wx4.sinaimg.cn/large/005S5cb6ly1fzaxhur5nwj3050050jrw.jpg&quot;);
     background-repeat: no-repeat;
     background-position: center;
@@ -362,21 +363,21 @@ body {background-image: url(&quot;images/back40.gif&quot;);}
 </code></pre>
 <p>也可以直接用百分数值来定位</p>
 <p>下面的方式可以使元素放在水平方向 2/3、垂直方向 1/3 处</p>
-<pre><code class="lang-css">body { 
+<pre><code class="css">body { 
     background-image:url(&#39;http://wx4.sinaimg.cn/large/005S5cb6ly1fzaxhur5nwj3050050jrw.jpg&#39;);
     background-repeat:no-repeat;
     background-position:66% 33%;
 }
 </code></pre>
 <p>还可以设置长度</p>
-<pre><code class="lang-css">body { 
+<pre><code class="css">body { 
     background-image:url(&#39;http://wx4.sinaimg.cn/large/005S5cb6ly1fzaxhur5nwj3050050jrw.jpg&#39;);
     background-repeat:no-repeat;
     background-position:50px 100px;
 }
 </code></pre>
 <h4 id="背景关联"><a href="#背景关联" class="headerlink" title="背景关联"></a>背景关联</h4><p>可以使用<code>background-attachment</code>来固定图片</p>
-<pre><code class="lang-css">body {
+<pre><code class="css">body {
   background-image:url(/i/eg_bg_02.gif);
   background-repeat:no-repeat;
   background-attachment:fixed
@@ -385,13 +386,13 @@ body {background-image: url(&quot;images/back40.gif&quot;);}
 <h3 id="文本"><a href="#文本" class="headerlink" title="文本"></a>文本</h3><h4 id="缩进文本"><a href="#缩进文本" class="headerlink" title="缩进文本"></a>缩进文本</h4><p>可以使用<code>text-indent: 5em</code>来缩进文本</p>
 <p>可以使用负值来实现”悬挂缩进效果”，但是可能会超出浏览器边界，可以通过设置外边框和内边距来消除影响</p>
 <p>同样可以使用百分比值来缩进，百分数相对于缩进元素的父元素的宽度</p>
-<pre><code class="lang-css">p {
+<pre><code class="css">p {
     text-indent: 5em;
 }
 </code></pre>
 <h4 id="水平对齐"><a href="#水平对齐" class="headerlink" title="水平对齐"></a>水平对齐</h4><p>可以使用<code>text-align:</code>来实现文本对齐</p>
 <p>值 left、right 和 center 会导致元素中的文本分别左对齐、右对齐和居中。</p>
-<pre><code class="lang-css">p {
+<pre><code class="css">p {
     text-align : center;
 }
 </code></pre>
@@ -415,14 +416,14 @@ body {background-image: url(&quot;images/back40.gif&quot;);}
 <li>blink 使文本闪烁</li>
 </ul>
 <h4 id="处理空白符"><a href="#处理空白符" class="headerlink" title="处理空白符"></a>处理空白符</h4><p>可以使用<code>white-space</code></p>
-<p><img src="http://photo.weibo.com/5379824760/photos/large/photo_id/4330519033737102/album_id/4043604963235610" alt></p>
+<p><img data-action="zoom" src="http://photo.weibo.com/5379824760/photos/large/photo_id/4330519033737102/album_id/4043604963235610" alt></p>
 <h3 id="字体"><a href="#字体" class="headerlink" title="字体"></a>字体</h3><h4 id="指定字体系列"><a href="#指定字体系列" class="headerlink" title="指定字体系列"></a>指定字体系列</h4><p><code>font-family</code>可以自定义字体</p>
-<pre><code class="lang-css">h1 {font-family: Georgia;}
+<pre><code class="css">h1 {font-family: Georgia;}
 </code></pre>
 <h4 id="字体风格"><a href="#字体风格" class="headerlink" title="字体风格"></a>字体风格</h4><p><code>font-style</code></p>
 <h2 id="框模型"><a href="#框模型" class="headerlink" title="框模型"></a>框模型</h2><h2 id="定位"><a href="#定位" class="headerlink" title="定位"></a>定位</h2><h2 id="选择器"><a href="#选择器" class="headerlink" title="选择器"></a>选择器</h2><h3 id="派生选择器"><a href="#派生选择器" class="headerlink" title="派生选择器"></a>派生选择器</h3><p>派生选择器允许我们根据文档的上下文关系来确定某个标签的样式。</p>
 <p>例如</p>
-<pre><code class="lang-css">h2 strong {
+<pre><code class="css">h2 strong {
     color: blue;
 }
 &lt;strong&gt;233&lt;/strong&gt;
@@ -433,8 +434,8 @@ body {background-image: url(&quot;images/back40.gif&quot;);}
 <p>id 选择器以 “#” 来定义。</p>
 <p>id选择器常用来建立派生选择器,且可以定义多次</p>
 <p>效果：</p>
-<p><img src="http://wx1.sinaimg.cn/large/005S5cb6ly1fzbrt9ws7nj305q03jt8h.jpg" alt="test"></p>
-<pre><code class="lang-html">&lt;style&gt;
+<p><img data-action="zoom" src="http://wx1.sinaimg.cn/large/005S5cb6ly1fzbrt9ws7nj305q03jt8h.jpg" alt="test"></p>
+<pre><code class="html">&lt;style&gt;
     #attack p {
         color:blue
     }
@@ -456,16 +457,16 @@ body {background-image: url(&quot;images/back40.gif&quot;);}
 </code></pre>
 <p>注意：</p>
 <p>老版本的ie浏览器可能会忽略该规则，只需加一条定义就可以了</p>
-<pre><code class="lang-css">div#sidebar {
+<pre><code class="css">div#sidebar {
     border: 1px dotted #000;
     padding: 10px;
 }
 </code></pre>
 <h3 id="类选择器"><a href="#类选择器" class="headerlink" title="类选择器"></a>类选择器</h3><p>类选择器通常用y一个点’.’来表示，它对整个class属性为ClassName的标签进行渲染</p>
 <p>class也可以构建派生选择器, 元素也可以基于它们的类而被选择(用于区分不同的标签)</p>
-<pre><code class="lang-css">.ClassName {text-align: center}
+<pre><code class="css">.ClassName {text-align: center}
 </code></pre>
-<pre><code class="lang-css">&lt;style&gt;
+<pre><code class="css">&lt;style&gt;
     .attack p {
         color:blue
     }
@@ -486,7 +487,7 @@ body {background-image: url(&quot;images/back40.gif&quot;);}
 <p>类名的第一个字符不能使用数字！</p>
 <h3 id="属性选择器"><a href="#属性选择器" class="headerlink" title="属性选择器"></a>属性选择器</h3><p>可以为拥有指定属性的 HTML 元素设置样式，而不仅限于 class 和 id 属性。</p>
 <p>下面的例子为带有 title 属性的所有元素设置样式：</p>
-<pre><code class="lang-css">[title] {
+<pre><code class="css">[title] {
     color:red;
 }
 </code></pre>
@@ -641,6 +642,12 @@ body {background-image: url(&quot;images/back40.gif&quot;);}
   </div>
 </footer> -->
 <footer id="colophon" class="site-footer" role="contentinfo">
+  <!-- 血小板 -->
+  <div id="landlord">
+      <div class="message" style="opacity:0"></div>
+      <canvas id="live2d" width="560" height="500" class="live2d"></canvas>
+      <div class="hide-button">隐藏</div>
+  </div>
   <div class="site-info">
     <div class="footertext">
       <div class="img-preload">
@@ -658,7 +665,17 @@ body {background-image: url(&quot;images/back40.gif&quot;);}
   </div><!-- .site-info -->
 </footer>
 
-
+<!-- live2d 血小板 -->
+<script type="text/javascript" src="https://cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script type="text/javascript">
+    var message_Path = '/live2d/'
+    var home_Path = 'https://haremu.com/'
+</script>
+<script type="text/javascript" src="/live2d/js/live2d.js"></script>
+<script type="text/javascript" src="/live2d/js/message.js"></script>
+<script type="text/javascript">
+    loadlive2d("live2d", "/live2d/model/xiaoban/model.json");
+</script>
 
 <script type="text/javascript" src="/js/lib.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
