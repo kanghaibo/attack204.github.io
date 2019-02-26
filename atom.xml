@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://blog.attack204.com/"/>
-  <updated>2019-02-24T04:42:40.736Z</updated>
+  <updated>2019-02-26T03:41:56.313Z</updated>
   <id>https://blog.attack204.com/</id>
   
   <author>
@@ -17,11 +17,33 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>类欧几里得算法学习笔记</title>
+    <link href="https://blog.attack204.com/2019/02/26/%E7%B1%BB%E6%AC%A7%E5%87%A0%E9%87%8C%E5%BE%97%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    <id>https://blog.attack204.com/2019/02/26/类欧几里得算法学习笔记/</id>
+    <published>2019-02-26T03:39:59.000Z</published>
+    <updated>2019-02-26T03:41:56.313Z</updated>
+    
+    <summary type="html">
+    
+      这种东西。。。了解了解愉悦一下身心吧。只学了最简单的一种，其他的一坨扩展等哪天心情好了再看。
+    
+    </summary>
+    
+      <category term="学习笔记" scheme="https://blog.attack204.com/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+      <category term="oi" scheme="https://blog.attack204.com/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/oi/"/>
+    
+    
+      <category term="类欧几里得算法" scheme="https://blog.attack204.com/tags/%E7%B1%BB%E6%AC%A7%E5%87%A0%E9%87%8C%E5%BE%97%E7%AE%97%E6%B3%95/"/>
+    
+  </entry>
+  
+  <entry>
     <title>线性代数学习笔记</title>
     <link href="https://blog.attack204.com/2019/02/24/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
     <id>https://blog.attack204.com/2019/02/24/线性代数学习笔记/</id>
     <published>2019-02-24T04:37:01.000Z</published>
-    <updated>2019-02-24T04:42:40.736Z</updated>
+    <updated>2019-02-26T01:30:22.003Z</updated>
     
     <summary type="html">
     
@@ -45,7 +67,7 @@
     <link href="https://blog.attack204.com/2019/02/24/%E6%8B%89%E6%A0%BC%E6%9C%97%E6%97%A5%E6%8F%92%E5%80%BC%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
     <id>https://blog.attack204.com/2019/02/24/拉格朗日插值学习笔记/</id>
     <published>2019-02-24T04:32:18.000Z</published>
-    <updated>2019-02-24T04:33:20.550Z</updated>
+    <updated>2019-02-26T01:30:21.990Z</updated>
     
     <summary type="html">
     
@@ -69,7 +91,7 @@
     <link href="https://blog.attack204.com/2019/02/24/Lyndon-Word%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
     <id>https://blog.attack204.com/2019/02/24/Lyndon-Word学习笔记/</id>
     <published>2019-02-24T04:28:06.000Z</published>
-    <updated>2019-02-24T04:31:16.301Z</updated>
+    <updated>2019-02-26T01:30:21.960Z</updated>
     
     <summary type="html">
     
@@ -93,7 +115,7 @@
     <link href="https://blog.attack204.com/2019/02/24/%E6%B5%85%E8%B0%88-%E5%B0%8F%E7%90%83-%E4%B8%8E-%E7%9B%92%E5%AD%90-%E4%B9%8B%E9%97%B4%E7%9A%84%E5%A5%87%E8%91%A9%E5%85%B3%E7%B3%BB/"/>
     <id>https://blog.attack204.com/2019/02/24/浅谈-小球-与-盒子-之间的奇葩关系/</id>
     <published>2019-02-24T04:24:17.000Z</published>
-    <updated>2019-02-24T04:25:50.067Z</updated>
+    <updated>2019-02-26T01:30:21.995Z</updated>
     
     <summary type="html">
     
@@ -115,7 +137,7 @@
     <link href="https://blog.attack204.com/2019/02/23/%E6%B5%85%E8%B0%88st%E8%A1%A8/"/>
     <id>https://blog.attack204.com/2019/02/23/浅谈st表/</id>
     <published>2019-02-23T03:46:40.000Z</published>
-    <updated>2019-02-23T04:29:23.391Z</updated>
+    <updated>2019-02-26T01:30:21.997Z</updated>
     
     <summary type="html">
     
@@ -143,7 +165,7 @@
     <link href="https://blog.attack204.com/2019/02/22/%E6%B5%85%E8%B0%88%E8%8E%AB%E6%AF%94%E4%B9%8C%E6%96%AF%E5%8F%8D%E6%BC%94%E5%B8%B8%E8%A7%81%E5%A5%97%E8%B7%AF/"/>
     <id>https://blog.attack204.com/2019/02/22/浅谈莫比乌斯反演常见套路/</id>
     <published>2019-02-22T11:15:21.000Z</published>
-    <updated>2019-02-23T03:44:31.661Z</updated>
+    <updated>2019-02-26T01:30:21.999Z</updated>
     
     <summary type="html">
     
@@ -167,7 +189,7 @@
     <link href="https://blog.attack204.com/2019/01/19/%E6%B5%85%E8%B0%88%E8%B4%9D%E5%8F%B6%E6%96%AF%E5%85%AC%E5%BC%8F/"/>
     <id>https://blog.attack204.com/2019/01/19/浅谈贝叶斯公式/</id>
     <published>2019-01-19T07:21:07.000Z</published>
-    <updated>2019-02-21T05:46:57.076Z</updated>
+    <updated>2019-02-26T01:30:22.001Z</updated>
     
     <summary type="html">
     
@@ -193,7 +215,7 @@
     <link href="https://blog.attack204.com/2019/01/19/CSS%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
     <id>https://blog.attack204.com/2019/01/19/CSS学习笔记/</id>
     <published>2019-01-19T04:34:07.000Z</published>
-    <updated>2019-02-19T13:25:48.059Z</updated>
+    <updated>2019-02-26T01:30:21.956Z</updated>
     
     <summary type="html">
     
@@ -215,7 +237,7 @@
     <link href="https://blog.attack204.com/2019/01/18/git%E4%BD%BF%E7%94%A8%E5%B0%8F%E7%BB%93/"/>
     <id>https://blog.attack204.com/2019/01/18/git使用小结/</id>
     <published>2019-01-18T13:29:07.000Z</published>
-    <updated>2019-02-19T13:31:14.699Z</updated>
+    <updated>2019-02-26T01:30:21.965Z</updated>
     
     <summary type="html">
     
@@ -237,7 +259,7 @@
     <link href="https://blog.attack204.com/2019/01/18/html%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
     <id>https://blog.attack204.com/2019/01/18/html学习笔记/</id>
     <published>2019-01-18T10:42:07.000Z</published>
-    <updated>2019-02-19T13:26:29.225Z</updated>
+    <updated>2019-02-26T01:30:21.969Z</updated>
     
     <summary type="html">
     
@@ -260,7 +282,7 @@
     <link href="https://blog.attack204.com/2018/12/12/Hexo-Theme-Sakura/"/>
     <id>https://blog.attack204.com/2018/12/12/Hexo-Theme-Sakura/</id>
     <published>2018-12-12T14:16:01.000Z</published>
-    <updated>2019-02-19T03:43:27.191Z</updated>
+    <updated>2019-02-26T01:30:21.957Z</updated>
     
     <summary type="html">
     
@@ -282,7 +304,7 @@
     <link href="https://blog.attack204.com/2018/12/11/Berlekamp-Massey%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
     <id>https://blog.attack204.com/2018/12/11/Berlekamp-Massey算法学习笔记/</id>
     <published>2018-12-11T13:40:07.000Z</published>
-    <updated>2019-02-19T13:26:20.834Z</updated>
+    <updated>2019-02-26T01:30:21.955Z</updated>
     
     <summary type="html">
     
@@ -306,7 +328,7 @@
     <link href="https://blog.attack204.com/2018/12/11/Yelee%E6%8D%A2%E7%94%A8Gitalk%E8%AF%84%E8%AE%BA%E7%B3%BB%E7%BB%9F/"/>
     <id>https://blog.attack204.com/2018/12/11/Yelee换用Gitalk评论系统/</id>
     <published>2018-12-11T04:25:01.000Z</published>
-    <updated>2019-02-19T13:33:10.542Z</updated>
+    <updated>2019-02-26T01:30:21.964Z</updated>
     
     <summary type="html">
     
@@ -328,7 +350,7 @@
     <link href="https://blog.attack204.com/2018/10/03/sublime%E5%AE%9E%E7%8E%B0markdown%E6%B5%8F%E8%A7%88%E5%99%A8%E9%A2%84%E8%A7%88/"/>
     <id>https://blog.attack204.com/2018/10/03/sublime实现markdown浏览器预览/</id>
     <published>2018-10-03T00:31:18.000Z</published>
-    <updated>2019-02-19T13:32:31.768Z</updated>
+    <updated>2019-02-26T01:30:21.970Z</updated>
     
     <summary type="html">
     
@@ -348,7 +370,7 @@
     <link href="https://blog.attack204.com/2018/10/03/sublime%E5%AE%9E%E7%8E%B0%E8%83%8C%E6%99%AF%E9%80%8F%E6%98%8E%E5%8C%96/"/>
     <id>https://blog.attack204.com/2018/10/03/sublime实现背景透明化/</id>
     <published>2018-10-03T00:01:18.000Z</published>
-    <updated>2019-02-19T13:32:58.357Z</updated>
+    <updated>2019-02-26T01:30:21.972Z</updated>
     
     <summary type="html">
     
@@ -368,7 +390,7 @@
     <link href="https://blog.attack204.com/2018/10/02/sublime%E5%AE%9E%E7%8E%B0%E4%B8%80%E9%94%AE%E4%BB%A3%E7%A0%81%E6%A0%BC%E5%BC%8F%E5%8C%96/"/>
     <id>https://blog.attack204.com/2018/10/02/sublime实现一键代码格式化/</id>
     <published>2018-10-02T13:35:18.000Z</published>
-    <updated>2019-02-19T13:32:46.954Z</updated>
+    <updated>2019-02-26T01:30:21.971Z</updated>
     
     <summary type="html">
     
@@ -388,7 +410,7 @@
     <link href="https://blog.attack204.com/2018/04/30/%E5%85%B3%E4%BA%8E%E6%9C%AC%E5%8D%9A%E5%AE%A2%E7%9A%84%E8%AF%B4%E6%98%8E/"/>
     <id>https://blog.attack204.com/2018/04/30/关于本博客的说明/</id>
     <published>2018-04-30T12:30:03.000Z</published>
-    <updated>2018-10-02T13:40:29.316Z</updated>
+    <updated>2019-02-26T01:30:21.976Z</updated>
     
     <summary type="html">
     
@@ -414,7 +436,7 @@
     <link href="https://blog.attack204.com/2018/02/25/%E5%8D%9A%E5%BC%88%E8%AE%BA%E8%BF%9B%E9%98%B6%E4%B9%8BMulti-SG/"/>
     <id>https://blog.attack204.com/2018/02/25/博弈论进阶之Multi-SG/</id>
     <published>2018-02-25T08:53:07.000Z</published>
-    <updated>2018-02-25T08:55:56.516Z</updated>
+    <updated>2019-02-26T01:30:21.986Z</updated>
     
     <summary type="html">
     
@@ -442,7 +464,7 @@
     <link href="https://blog.attack204.com/2018/02/25/%E5%8D%9A%E5%BC%88%E8%AE%BA%E5%85%A5%E9%97%A8%E4%B9%8B%E6%96%90%E6%B3%A2%E9%82%A3%E5%A5%91%E5%8D%9A%E5%BC%88/"/>
     <id>https://blog.attack204.com/2018/02/25/博弈论入门之斐波那契博弈/</id>
     <published>2018-02-25T02:03:11.000Z</published>
-    <updated>2018-02-25T02:10:23.844Z</updated>
+    <updated>2019-02-26T01:30:21.983Z</updated>
     
     <summary type="html">
     
@@ -462,33 +484,6 @@
       <category term="博弈论" scheme="https://blog.attack204.com/tags/%E5%8D%9A%E5%BC%88%E8%AE%BA/"/>
     
       <category term="斐波那契博弈" scheme="https://blog.attack204.com/tags/%E6%96%90%E6%B3%A2%E9%82%A3%E5%A5%91%E5%8D%9A%E5%BC%88/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>博弈论入门之威佐夫博弈</title>
-    <link href="https://blog.attack204.com/2018/02/25/%E5%8D%9A%E5%BC%88%E8%AE%BA%E5%85%A5%E9%97%A8%E4%B9%8B%E5%A8%81%E4%BD%90%E5%A4%AB%E5%8D%9A%E5%BC%88/"/>
-    <id>https://blog.attack204.com/2018/02/25/博弈论入门之威佐夫博弈/</id>
-    <published>2018-02-25T01:12:34.000Z</published>
-    <updated>2018-02-25T01:14:22.828Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;excerpt in index&gt;&lt;/excerpt&gt;&lt;/p&gt;
-&lt;h2 id=&quot;威佐夫博弈&quot;&gt;&lt;a href=&quot;#威佐夫博弈&quot; class=&quot;headerlink&quot; title=&quot;威佐夫博弈&quot;&gt;&lt;/a&gt;威佐夫博弈&lt;/h2&gt;&lt;p&gt;威佐夫博弈是一类经典的博弈问题&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;有两堆石子，两个顶尖聪明的人在玩游戏，每次每个人可以从任意一堆石子中取任意多的石子或者从两堆石子中取同样多的石子，不能取得人输，分析谁会获得胜利&lt;br&gt;
-    
-    </summary>
-    
-      <category term="oi" scheme="https://blog.attack204.com/categories/oi/"/>
-    
-    
-      <category term="oi" scheme="https://blog.attack204.com/tags/oi/"/>
-    
-      <category term="博弈论" scheme="https://blog.attack204.com/tags/%E5%8D%9A%E5%BC%88%E8%AE%BA/"/>
-    
-      <category term="威佐夫博弈" scheme="https://blog.attack204.com/tags/%E5%A8%81%E4%BD%90%E5%A4%AB%E5%8D%9A%E5%BC%88/"/>
     
   </entry>
   
