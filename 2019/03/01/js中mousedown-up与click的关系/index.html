@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
   
-  <title itemprop="name">Tag: JavaScript点击事件 | Attck204</title>
+  <title itemprop="name">js中mousedown/up与click的关系 | Attck204</title>
   
     <link rel="shortcut icon" href="/images/favicon.ico">
   
@@ -245,63 +245,129 @@
   </div>
 </header>
 
-      
-<div class="pattern-center-blank"></div>
-<div class="pattern-center ">
-  <div class="pattern-attachment-img">
-    <img src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="JavaScript点击事件.img" class="lazyload" onerror="imgError(this,3)" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;">
-  </div>
-  <header class="pattern-header ">
-    <h1 class="cat-title">JavaScript点击事件</h1>
-  </header>
-</div>
-<div id="content" class="site-content">
-  <div id="primary" class="content-area">
+        <link rel="stylesheet" type="text/css" href="/css/sharejs.css">
+  <div class="pattern-center-blank"></div>
+  
+    <div class="pattern-center single-center">
+      <!-- 有配图默认渲染第一张 -->
+      <div class="pattern-attachment-img lazyload" style="background-image: url(https://ws1.sinaimg.cn/large/0072Vf1pgy1foxkga5nmaj31kw0w0nmj.jpg);" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://ws1.sinaimg.cn/large/0072Vf1pgy1foxkga5nmaj31kw0w0nmj.jpg">
+      </div>
+      <header class="pattern-header single-header">
+        <h1 class="entry-title">
+        js中mousedown/up与click的关系</h1>
+        <p class="entry-census">
+          <span>
+            <a href="blog.attack204.com">
+              <img src="https://cdn.jsdelivr.net/gh/attack204/cdn@1.1/img/custom/avatar.png">
+            </a>
+          </span>
+          <span>
+            <a href="blog.attack204.com">attack204</a>
+          </span>
+          <span class="bull">
+          ·</span>
+          2019-3-1<span class="bull">
+          ·</span>
+        <span id="busuanzi_value_page_pv"></span>次阅读</p>
+      </header>
+    </div>
+  
+  <div id="content" class="site-content"> <div id="primary" class="content-area">
     <main id="main" class="site-main" role="main">
       
-  <!-- 首页默认取最最新文章集 -->
-  
-    <article class="post post-list" itemscope itemtype="http://schema.org/BlogPosting">
-  <div class="post-entry">
-    <div class="feature">
-      <a href="/2019/03/01/js中mousedown-upy与click的关系/">
-        <div class="overlay">
-          <i class="iconfont icon-text">
-          </i>
+      <article id="post-1" class="post-1 post type-post status-publish format-standard has-post-thumbnail hentry category-uncategorized">
+        <!--<div class="toc-entry-content"><!-- 套嵌目录使用（主要为了支援评论）-->
+        
+        <div class="entry-content">
+          <h2 id="mousedown-mouseup与click的关系"><a href="#mousedown-mouseup与click的关系" class="headerlink" title="mousedown/mouseup与click的关系"></a>mousedown/mouseup与click的关系</h2><p>三者都是在鼠标点击时触发的时间，但是触发时间和触发方式有所不同</p>
+<h3 id="mousedown"><a href="#mousedown" class="headerlink" title="mousedown"></a>mousedown</h3><p>当鼠标指针移动到元素上方，并<strong>按下</strong>鼠标按键(<strong>左右按键</strong>)时即可触发。</p>
+<h3 id="mousedown-1"><a href="#mousedown-1" class="headerlink" title="mousedown"></a>mousedown</h3><p>当鼠标指针<strong>松开(左右键均可)</strong>时触发</p>
+<h3 id="click"><a href="#click" class="headerlink" title="click"></a>click</h3><p>当鼠标指针停留在元素上方，然后<strong>按下并松开鼠标左键</strong>时触发</p>
+<p>需要注意的是，不论mousedown还是click，若鼠标移开了当前元素，则均不会触发</p>
+<h3 id="三个事件的触发顺序"><a href="#三个事件的触发顺序" class="headerlink" title="三个事件的触发顺序"></a>三个事件的触发顺序</h3><p>若在同一个元素上按下并松开鼠标左键，会依次触发mousedown、mouseup、click，前一个事件执行完毕才会执行下一个事件</p>
+<p>若在同一个元素上按下并松开鼠标右键，会依次触发mousedown、mouseup，前一个事件执行完毕才会执行下一个事件，不会触发click事件</p>
+
         </div>
-        <img width="150" height="150" src="https://ws1.sinaimg.cn/large/0072Vf1pgy1foxkga5nmaj31kw0w0nmj.jpg" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt>
-      </a>
-    </div>
-    <h1 class="entry-title">
-    <a href="/2019/03/01/js中mousedown-upy与click的关系/">
-    js中mousedown/upy与click的关系</a>
-    </h1>
-    <div class="p-time">
-      <i class="iconfont icon-time">
-      </i>
-    2019-3-1</div>
-    <p>
-    JavaScript中mousedown/mouseup与click的关系</p>
-    <footer class="entry-footer">
-      <div class="post-more">
-        <a href="/2019/03/01/js中mousedown-upy与click的关系/">
-          <i class="iconfont icon-caidan">
-          </i>
-        </a>
+        <!-- .entry-content -->
+        <div class="single-reward">
+          <div class="reward-open">赏<div class="reward-main">
+              <ul class="reward-row">
+                <li class="alipay-code"><img src="https://cdn.jsdelivr.net/gh/attack204/cdn@1.1/img/custom/donate/AliPayQR.jpg"></li>
+                <li class="wechat-code"><img src="https://cdn.jsdelivr.net/gh/attack204/cdn@1.1/img/custom/donate/WeChanQR.jpg"></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div style="text-align:center; width: 100%" class="social-share share-mobile" data-disabled="diandian, tencent"></div>
+        <footer class="post-footer">
+          <div class="post-lincenses"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="nofollow"><i class="fa fa-creative-commons" aria-hidden="true"></i> 知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a></div>
+          <div class="post-tags">
+          </div>
+          <div class="post-share">
+            <div class="social-share sharehidden share-component"></div>
+            <i class="iconfont show-share icon-forward"></i>
+          </div>
+        </footer><!-- .entry-footer -->
+      </article>
+      <!-- #post-## -->
+      <div class="toc-container" style="height: 1053px;">
+      <div class="toc" style="background: none;"></div>
       </div>
-    </footer>
-  </div>
-  <hr>
-</article>
-  
+      <section class="post-squares nextprev">
+        
+        
+          
+            <div class="post-nepre full next">
+          
+            <a href="/2019/02/26/类欧几里得算法学习笔记/" rel="next">
+              <div class="background">
+                <img class="lazyload" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://ws3.sinaimg.cn/large/0072Vf1pgy1foxlnzmfnjj31kw0w0az5.jpg" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)">
+              </div>
+              <span class="label">
+              Next Post</span>
+              <div class="info">
+                <h3>
+                类欧几里得算法学习笔记</h3>
+                <hr>
+              </div>
+            </a>
+          </div>
+        
+      </section>
+      
+<div id="vcomments"></div>
+<script>
+  window.onload = function(){
+      var valine = new Valine();
+      valine.init({
+        el: '#vcomments',
+        appId: "koz7QJsC5UmO6cQSQJbbynX1-gzGzoHsz",
+        appKey: "pwpT2rxLPwDQYCxi9rjeovTS",
+        path: window.location.pathname,
+        placeholder: "你是我一生只会遇见一次的惊喜 ..."
+      })
+  }
+</script>
 
-
-      <div class="clearer">
-      </div>
-    </main>
-    
-  </div>
+      <section class="author-profile">
+        <div class="info" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <a href="blog.attack204.com" class="profile gravatar"><img src="https://cdn.jsdelivr.net/gh/attack204/cdn@1.1/img/custom/avatar.png" itemprop="image" alt="attack204" height="70" width="70"></a>
+          <div class="meta">
+            <span class="title">Author</span>
+            <h3 itemprop="name">
+            <a href="blog.attack204.com" itemprop="url" rel="author">attack204</a>
+            </h3>
+          </div>
+        </div>
+        <hr>
+        <p><i class="iconfont icon-write"></i>一只菜鸡</p>
+      </section>
+    </main><!-- #main -->
+  </div><!-- #primary -->
 </div>
+<!-- 不蒜子 网页计数器 -->
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
     </div>    
     <div class="ins-search">
     <div class="ins-search-mask"></div>

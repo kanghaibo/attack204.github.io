@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://blog.attack204.com/"/>
-  <updated>2019-03-01T09:47:32.267Z</updated>
+  <updated>2019-03-01T09:49:50.796Z</updated>
   <id>https://blog.attack204.com/</id>
   
   <author>
@@ -17,11 +17,11 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>js中mousedown/upy与click的关系</title>
-    <link href="https://blog.attack204.com/2019/03/01/js%E4%B8%ADmousedown-upy%E4%B8%8Eclick%E7%9A%84%E5%85%B3%E7%B3%BB/"/>
-    <id>https://blog.attack204.com/2019/03/01/js中mousedown-upy与click的关系/</id>
+    <title>js中mousedown/up与click的关系</title>
+    <link href="https://blog.attack204.com/2019/03/01/js%E4%B8%ADmousedown-up%E4%B8%8Eclick%E7%9A%84%E5%85%B3%E7%B3%BB/"/>
+    <id>https://blog.attack204.com/2019/03/01/js中mousedown-up与click的关系/</id>
     <published>2019-03-01T09:39:44.000Z</published>
-    <updated>2019-03-01T09:47:32.267Z</updated>
+    <updated>2019-03-01T09:49:50.796Z</updated>
     
     <summary type="html">
     
@@ -34,11 +34,7 @@
       <category term="JavaScript" scheme="https://blog.attack204.com/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/JavaScript/"/>
     
     
-      <category term="JavaScript" scheme="https://blog.attack204.com/tags/JavaScript/"/>
-    
       <category term="JQuery" scheme="https://blog.attack204.com/tags/JQuery/"/>
-    
-      <category term="JavaScript点击事件" scheme="https://blog.attack204.com/tags/JavaScript%E7%82%B9%E5%87%BB%E4%BA%8B%E4%BB%B6/"/>
     
   </entry>
   
