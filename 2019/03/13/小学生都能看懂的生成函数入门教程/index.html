@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
   
-  <title itemprop="name">利用生成函数求斐波那契数列通项公式 | Attck204</title>
+  <title itemprop="name">小学生都能看懂的生成函数入门教程 | Attck204</title>
   
     <link rel="shortcut icon" href="/images/favicon.ico">
   
@@ -250,11 +250,11 @@
   
     <div class="pattern-center single-center">
       <!-- 有配图默认渲染第一张 -->
-      <div class="pattern-attachment-img lazyload" style="background-image: url(https://ws4.sinaimg.cn/large/a15b4afegy1fmviz7fkqdj21hc0u0qcq.jpg);" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://ws4.sinaimg.cn/large/a15b4afegy1fmviz7fkqdj21hc0u0qcq.jpg">
+      <div class="pattern-attachment-img lazyload" style="background-image: url(https://ws3.sinaimg.cn/large/0072Vf1pgy1foxkiyghdvj31hc0u0wv0.jpg);" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://ws3.sinaimg.cn/large/0072Vf1pgy1foxkiyghdvj31hc0u0wv0.jpg">
       </div>
       <header class="pattern-header single-header">
         <h1 class="entry-title">
-        利用生成函数求斐波那契数列通项公式</h1>
+        小学生都能看懂的生成函数入门教程</h1>
         <p class="entry-census">
           <span>
             <a href="blog.attack204.com">
@@ -266,7 +266,7 @@
           </span>
           <span class="bull">
           ·</span>
-          2019-3-11<span class="bull">
+          2019-3-13<span class="bull">
           ·</span>
         <span id="busuanzi_value_page_pv"></span>次阅读</p>
       </header>
@@ -279,18 +279,107 @@
         <!--<div class="toc-entry-content"><!-- 套嵌目录使用（主要为了支援评论）-->
         
         <div class="entry-content">
-          <h1 id="利用生成函数求斐波那契数列通项公式"><a href="#利用生成函数求斐波那契数列通项公式" class="headerlink" title="利用生成函数求斐波那契数列通项公式"></a>利用生成函数求斐波那契数列通项公式</h1><p>先吐槽一下，学习这玩意儿的时候真的是深深的明白了自己的弱小，人家的一个”解得”我居然解了两个小时。。qwq</p>
-<h2 id="前置知识"><a href="#前置知识" class="headerlink" title="前置知识"></a>前置知识</h2><h4 id="斐波那契数列："><a href="#斐波那契数列：" class="headerlink" title="斐波那契数列："></a>斐波那契数列：</h4><p>$$f_i = f_{i-1} + f_{i - 2}$$</p>
-<p>$$f_0 = f_1 = 1$$</p>
-<h4 id="普通生成函数"><a href="#普通生成函数" class="headerlink" title="普通生成函数:"></a>普通生成函数:</h4><p>简单来说用多项式$\sum_{i=0}^{\infty} a_ix^i$的系数表示序列的元素</p>
-<p>同时因为我们不关心$x$的取值，因此$\sum_{i=0}^{\infty}a_ix^i$又称作以$x$为自由元的形式幂级数</p>
-<h4 id="常见的有"><a href="#常见的有" class="headerlink" title="常见的有:"></a>常见的有:</h4><p>$\frac{1}{1-x} = 1 + x + x^2 + x^3 + \dots + x^{\infty}$</p>
+          <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p><del>第一次当标题党真是有点不适应</del></p>
+<p>现在网上讲生成函数的教程大多都是从$\frac{1}{1-x} = \sum_{i=0}^{\infty}x^i, e^x = \sum_{i=0}^{\infty} \frac{x^i}{i!}$开始，但是我不认为这样有助于大家理解生成函数的本质。我最开始学的时候也是在这里蒙了好久，直到看到了朱全明老师的课件，才真正的理解了生成函数的本质——处理排列组合问题的有利工具，而不是简单的$\frac{1}{1-x}$的指标代换。所以这篇文章，我打算从最基本的排列组合问题写起，最后慢慢扩展到$\frac{1}{1-x} = \sum_{i=0}^{\infty}x^i, e^x = \sum_{i=0}^{\infty} \frac{x^i}{i!}$。内容会比较基础，高端玩家可以直接看鏼爷的集训队论文</p>
+<h2 id="生成函数"><a href="#生成函数" class="headerlink" title="生成函数"></a>生成函数</h2><h3 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h3><p>维基百科上是这么定义的：</p>
 <blockquote>
-<p>证明:<br>后半部分可以直接由通项公式得到$S_n = \frac{1-x^{n+1}}{1-x}$，当$x \in (-1, 1)$，那么$\lim_{n\to +\infty} x^{n+1} = 0$</p>
+<p>在数学中，某个序列$(a_n)_{n \in \mathbb{N}}$ 的母函数（又称生成函数，英语：Generating function）是一种形式幂级数，其每一项的系数可以提供关于这个序列的信息。</p>
 </blockquote>
-<p>将$x$替换为$xk$得</p>
-<p>$\frac{1}{1-kx} = 1 + kx + k^2x^2 + k^3x^3 \dots + k^{\infty}x^{\infty}$</p>
-<h2 id="解法"><a href="#解法" class="headerlink" title="解法"></a>解法</h2><p>设$A = 1 + 1x + 2x^2 + 3x^3 + 5x^4 + 8x^5 \dots$</p>
+<p>讲的通俗一点，对于某个序列${a_0, a_1, \dots, a_n}$，我想找一个函数来表示它，假设是$G(x) = a_0 + a_1x + a_2x^2 \dots a_n x^n$。这时候函数第$i$项的<strong>系数</strong>就表示了序列中的第$i$个元素。同时我们也可以看到，函数中的自变量$x$好像并没有什么意义，他的取值并不影响序列的表示，因此我们称这种函数为<strong>形式幂级数</strong></p>
+<h3 id="用处"><a href="#用处" class="headerlink" title="用处"></a>用处</h3><p>那么这样定义由什么好处呢？</p>
+<p>我们仔细观察一下$G(x)$，不难发现这是一个多项式函数，对于多项式我们知道他有加、减、乘、<del>除、求逆、取ln、exp</del>等运算。那么我们对$G(x)$进行乘法运算，也就是相当于对序列进行乘法运算，那么这样干有什么意义呢？我们不妨从一个题目入手。</p>
+<h3 id="普通生成函数"><a href="#普通生成函数" class="headerlink" title="普通生成函数"></a>普通生成函数</h3><blockquote>
+<p>有三种物品，分别有$3, 2, 3$个，问拿出$4$个进行<strong>组合</strong>$({1123}, {3211}$算一种)的方案数是多少</p>
+</blockquote>
+<p>学过dp的人可能会一眼看出是背包板子题。直接设$f[i][j]$表示当前到第$i$个位置，已经选了$j$个物品的方案数。转移的时候枚举一下当前选了几个</p>
+<pre><code class="cpp">f[0][0] = 1;
+for(int i = 1; i &lt;= 3; i++) 
+    for(int j = 0; j &lt;= 8; j++) //当前总共要选出j个 
+        for(int k = 0; k &lt;= j; k++) //已经选了k个
+            if(j - k &lt;= v[i]) //此时要选j-k个
+                f[i][j] += f[i - 1][k];
+</code></pre>
+<p>可以得到$f[3]$的系数为${1\ 3\ 6\ 9\ 10\ 9\ 6\ 3\ 1 }$(从0开始编号)，$4$最对应的一项是$10$。</p>
+<p>那用生成函数怎么做呢？</p>
+<p>我们可以对每个物品构造一个多项式函数，其中第$i$项的系数$a_i$表示选了$i$个当前物品的方案数。</p>
+<p>那么第一个物品的生成函数为$G_1(x) = 1 + x^1 + x^2 + x^3$ (相同的物品选$i$个的方案数当然是1)</p>
+<p>第二个物品的生成函数为$G_2(x) = 1 + x^1 + x^2$</p>
+<p>第三个为$G_3(x) = 1 + x^1 + x^2 + x^3$</p>
+<p>先说结论：最终答案是$G_1(x) <em> G_2(x) </em> G_3(x)$的第$4$项的系数</p>
+<p>这是为什么呢？考虑两个多项式相乘的结果$f* g$，它的第$k$项的系数为$\sum_{i=0}^k f_i g_{k-i}$。这个过程是相当于是在枚举第一个物品选了几个，比如$4$这一项，他等于$f_0g_4 + f_1g_3 + f_2 g_2 + f_3g_1 + f_4g_0$。</p>
+<p>再具体一点，抛开刚刚那个题目中系数等于$1$的限制，我们假设$f_1 = 2, g_3 = 3$，也就是说从第一个物品中选出$1$个有两种方案，第二个物品中选出$3$个有三种方案，那么$f_1 <em> g_3=2 </em> 3$就相当于第一个物品的两种方案可以与第二个物品的三种方案任意组合来得到$4$种物品。(再看不懂的话建议去补一下高中组合计数qwq，这里讲的这么详细是为了给指数生成函数做铺垫)</p>
+<p>这里建议大家去手玩一下多项式乘法，玩一下(玩的时候枚举$x^i$算他的系数)就会发现这个过程与背包的过程惊人的相似，因为事实上背包的过程就是在模拟多项式乘法。</p>
+<p>这里为了下文(指数型生成函数)好讲解，本菜鸡直接把多项式相乘的结果(<del>抄一下</del>)写出来</p>
+<p>$$<br>\begin{aligned}<br>G(x) &amp;= (1+x+x^2+x^3)(1+x+x^2)(1+x+x^2+x^3) \<br>     &amp;= (1+2x+3x^2+3x^3+2x^4+x^5)(1+x+x^2+x^3)\<br>     &amp;=1+3x+6x^2+9x^3+10x^4+9x^5+6x^6+3x^7+x^8<br>\end{aligned}<br>$$</p>
+<p>其中$x^4$项可以由下面这些得到，这种形式与我们的手玩结果就非常相似了</p>
+<p>$$x_1x_3^3+x_2x_3^3+x_1^2x_3^2+x_1x_2x_3^2+x_2^2x_3^2+x_1^3x_3+x_1^2x_2x_3+x_1x_2^2x_3+x_1^3x_3+x_1^2x_2^2$$</p>
+<p>形如$G(x) = \sum_{i=0}^n a_ix_i$的表示一个序列的多项式函数，我们称之为<strong>普通生成函数</strong></p>
+<p>讲到这里你需要大概明白：生成函数的基本概念，生成函数相乘的组合意义。</p>
+<p>接下来按道理应该讲$\frac{1}{1-x}$及其运算，但是我想先介绍一下指数生成函数的基本概念。</p>
+<h2 id="指数生成函数"><a href="#指数生成函数" class="headerlink" title="指数生成函数"></a>指数生成函数</h2><p>通过刚刚的讲解我们不难看出，普通生成函数的意义在于解决<strong>组合</strong>类计数问题。但是别忘了组合的兄弟<strong>排列</strong>呀。指数生成函数就是用来解决排列类问题。</p>
+<p>还是刚刚的题目，我们改一下限制</p>
+<blockquote>
+<p>有三种物品，分别有$3, 2, 3$个，问拿出$4$个进行<strong>组合</strong>$({1123}, {3211}$算不同方案)的方案数是多少(<a href="http://acm.hdu.edu.cn/showproblem.php?pid=1521" target="_blank" rel="noopener">HDU1521</a>)</p>
+</blockquote>
+<p>这一类问题仅仅是比刚刚多了一个顺序的原因，但是难度却比刚刚大了不少(背包也可以做，只要在转移的时候乘一个组合数即可，留给大家思考)</p>
+<p>这里先介绍一下<strong>多重集排列数</strong></p>
+<blockquote>
+<p>设$S = {a_1, a_2 \dots a_n}, N = \sum_{i=1}^n a_i$，其中第$a_i$表示第$i$个物品有$a_i$个。<br>从中选出$N$个进行排列的方案数为$\frac{N!}{a_1!a_2! \dots a_n!}$<br>解释的话就是相当于任意排列之后减去同种物品之间多出来的方案</p>
+</blockquote>
+<p>这样我们就得到了一个思路：先把所有<strong>组合</strong>得到的方案算出来，然后再对每一种方案分别计算排列数，最后加起来。</p>
+<p>比如我们刚刚已经得到了组合的方案：</p>
+<p>$$x_1x_3^3+x_2x_3^3+x_1^2x_3^2+x_1x_2x_3^2+x_2^2x_3^2+x_1^3x_3+x_1^2x_2x_3+x_1x_2^2x_3+x_1^3x_3+x_1^2x_2^2$$</p>
+<p>其中$x_1 x_3^3$这一项的排列方案就是$\frac{4!}{1!3!}$，$x_1x_2x_3^2$这一项的排列方案就是$\frac{4!}{1!1!2!}$。观察一下，所有方案的分子都是$4!$，分母都是选出来的对应数量的阶乘。</p>
+<p>于是我们引进指数型生成函数</p>
+<p>形如$G(x) = \sum_{i=0}^n a_i \frac{x_i}{i!}$的表示序列的多项式函数，我们称之为指数生成函数。</p>
+<p>同时我们分别构造出$G_1(x) = 1+\frac{x^1}{1} + \frac{x^2}{2!} + \frac{x^3}{3!}$</p>
+<p>$G_2(x) = 1 + \frac{x^1}{1} + \frac{x^2}{2}$</p>
+<p>$G_3(x) = 1 + \frac{x^1}{1} + \frac{x^2}{2!} + \frac{x^3}{3!}$</p>
+<p>这时候再计算一下$G_1(x) <em> G_2(x) </em> G_3(x)$</p>
+<p>$$<br>\begin{aligned}<br>G_e(x) &amp;= (1 + \frac{x}{1!} + \frac{x^2}{2!} + \frac{x^3}{3})(1+\frac{x}{1!} + \frac{x^2}{2!}) (1 + \frac{x}{1!} + \frac{x^2}{2!} + \frac{x^3}{3!})\<br>       &amp;= (1+2x+2x^2+\frac{7}{6}x^3 + \frac{5}{12}x^4 + \frac{1}{12}x^5) (1+x+\frac{1}{2}x^2 + \frac{1}{6}x^3)\<br>       &amp;=(1+3x + \frac{9}{2}x^2 + \frac{14}{3}x^3 + \frac{35}{12}x^4 + \frac{17}{12}x^5 + \frac{35}{72} x^6 + \frac{8}{72}x^7 + \frac{1}{71}x^8)<br>\end{aligned}<br>$$</p>
+<p>这时候如何计算选出$4$个物品的答案呢？简单$\frac{35}{12} * 4! = 70$ </p>
+<p>可能大家不禁思考，为什么这么定义函数乘起来就是排列数呢？想一想，因为我们对每个系数构造的$\frac{1}{i!}$就相当于是多重集排列数中的分母呀</p>
+<p>好了，如果你到这里都看懂了的话，说明你已经对生成函数有个大概的了解了。但是不知道大家是不是和我有着同样的感觉：生成函数好麻烦啊qwq。</p>
+<p>那么有没有一套可以简化些运算的理论呢？</p>
+<p>答案是：当然有了！(<del>不然我问个毛线</del>)。下面讲的内容可以会有些刺激，需要大家有一定的数学基础(<del>其实只要高中知识就行了</del>)</p>
+<h2 id="普通生成函数的推广"><a href="#普通生成函数的推广" class="headerlink" title="普通生成函数的推广"></a>普通生成函数的推广</h2><h3 id="简单介绍"><a href="#简单介绍" class="headerlink" title="简单介绍"></a>简单介绍</h3><p>这个也不能叫推广吧，是我自己瞎起的名字。。。</p>
+<p>在我们刚刚的运算中出现了一个常用的函数$G(x) = \sum_{i=0}^n x_i$，这个东西怎么化简呢？</p>
+<p>结论：$\sum_{i=0}^{\infty} x_i = \frac{1}{1-x}$</p>
+<p>可能你和当初一次见到这个式子的我一样，大概是这个表情</p>
+<p><img data-action="zoom" src="https://wx2.sinaimg.cn/mw690/005S5cb6ly1g10xn4zzftj305v05r0u8.jpg" alt="image"></p>
+<p>我们来证明一下。</p>
+<p>$S = 1 + x + x^2 + \dots x^{\infty}$</p>
+<p>$xS = x + x^2 + x^3 + \dots x^{\infty}$</p>
+<p>$S - xS = 1$</p>
+<p>$S = \frac{1}{1-x}$</p>
+<p>是不是证的天衣无缝但是又十分扯淡？因为这玩意儿显然只有$x^{\infty}$收敛也就是$x\in(-1, 1)$时成立。其实在这里只要在$x\in(-1, 1)$成立就可以了，因为生成函数是形式幂级数，我们并不关心$x$的具体取值</p>
+<p>有了这个我们能干什么呢？我们可以对$\frac{1}{1-x}$变形来表示更多的序列，同时我们知道了$\frac{1}{1-x}$对应序列的第$i$项的系数为$1$，那么当我们知道了某一个序列的生成函数之后我们也可以把它变成类似于$\frac{1}{1-x}$的形式从而得到通项公式。</p>
+<p>首先介绍一些简单的变换，建议大家手玩一下下面的生成函数的推广形式，比如把”乘$2$”换成”乘$k$”</p>
+<ul>
+<li><p>将$x$替换为$-x$，$\frac{1}{1+x} = {1, -1, 1, -1, \dots}$</p>
+</li>
+<li><p>将$x$替换为$2x$，$\ \frac{1}{1-2x} = {1, 2, 4, 8, 16, \dots}$</p>
+</li>
+<li><p>将$x$替换为$x^2$, $\ \ \ \frac{1}{1-x^2} = {1, 0, 1, 0, 1 \dots}$</p>
+</li>
+<li><p>将分母乘$2$, $\ \ \ \ \quad\frac{2}{1-x} = {2, 2, 2, 2, 2, \dots}$</p>
+</li>
+<li><p>将分子乘$x^3$,  $\ \ \quad \frac{x^3}{1-x} \ = {0, 0, 0, 1, 1, 1, 1 \dots}$</p>
+</li>
+<li><p>求个导,     $\qquad \ \ \ \ \  \frac{1}{(1-x)^2} = {1, 2, 3, 4, 5}$</p>
+</li>
+<li><p>再求一次，   $\quad \ \ \ \frac{2}{(1-x)^3} ={2 + 6 + 12 + 20 \dots}$</p>
+</li>
+</ul>
+<p>问题来了，我如果知道了某一个数列的生成函数，怎么求它的通项公式呢？一般的思路就通过各种奇技淫巧往上面的几个生成函数转化。这里要提一下比较常用的<strong>广义二项式定理</strong></p>
+<p>$$\frac{1}{(1-x)^n} = \sum_{k=0}^{\infty} C_{n+k-1}^{k-1} x^k$$</p>
+<p>我们来通过两个例子来具体讲一下它的用处</p>
+<h3 id="求斐波那契数列通项公式"><a href="#求斐波那契数列通项公式" class="headerlink" title="求斐波那契数列通项公式"></a>求斐波那契数列通项公式</h3><p><del>非常不不要脸的</del>抄一下自己以前的博客</p>
+<p>首先要知道斐波那契数列的递推式</p>
+<p>$$f_i = f_{i-1} + f_{i - 2}$$</p>
+<p>$$f_0 = f_1 = 1$$</p>
+<p>那么推导一下</p>
+<p>设$A = 1 + 1x + 2x^2 + 3x^3 + 5x^4 + 8x^5 \dots$</p>
 <p>根据递推式，我们可以这样变化，显然有</p>
 <p>$$<br>\begin{aligned}<br>A = \  1 + 1x + &amp;2x^2 + 3x^3 + 5x^4 + 8x^5 \dots  \<br>xA = \ \ \qquad  x + &amp;1x^2 + 2x^3 + 3x^4 + 5x^5\dots \<br>x^2A =\qquad \qquad   &amp;1x^2 + 1x^3 + 2x^4 + 3x^5 \dots<br>\end{aligned}<br>$$</p>
 <p>那么可以得到一个方程$A - xA - x^2A = 1$</p>
@@ -312,8 +401,37 @@
 <p>$$A = \frac{\phi_1}{\sqrt{5}} \frac{1}{1-\phi_1x} - \frac{\phi_2}{\sqrt{5}} \frac{1}{1-\phi_2x}$$</p>
 <p>那么第$n$项的公式为</p>
 <p>$$A_n = \frac{1}{\sqrt{5}} ((\frac{1+\sqrt{5}}{2})^{n+1} -  (\frac{1-\sqrt{5}}{2})^{n+1})$$</p>
-<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><p><a href="https://www.baidu.com" target="_blank" rel="noopener">生成函数-罗煜楚(版权原因暂不公开)</a></p>
-<p>特别感谢张一钊老师qwq</p>
+<h3 id="解决组合类问题"><a href="#解决组合类问题" class="headerlink" title="解决组合类问题"></a>解决组合类问题</h3><p>比如<a href="https://www.luogu.org/problemnew/show/P2000" target="_blank" rel="noopener">这种休闲板子题</a></p>
+<p>至多为$k$就是$\frac{1-x^{k+1}}{1-x}$</p>
+<p>$k$的倍数就是$\frac{1}{1-x^k}$</p>
+<p>化简完了就只剩下一个$\frac{1}{(1-x)^5}$</p>
+<p>这个东西可以直接广义二项式定理展开，然后交一发pypy2就过了。。</p>
+<h2 id="指数生成函数的推广"><a href="#指数生成函数的推广" class="headerlink" title="指数生成函数的推广"></a>指数生成函数的推广</h2><p>和上面的很类似，这里直接说结论</p>
+<p>$$e^x = \sum_{i=0}^{\infty} \frac{x^i}{i!}$$</p>
+<blockquote>
+<p>证明<br>考虑直接将$e^x$在$x = 0$处泰勒展开<br>由泰勒展开的公式$f(x) = f(x_0) + \frac{f^1(x_0)}{1} (x-x_0) + \frac{f^2(x_0)}{2!} (x-x_0)^2 + \dots + \frac{f^n(x0)}{n} (x-x_0)^n \xi$ ($f^n$的意思是求$n$次导数)<br>可以直接得到。</p>
+</blockquote>
+<p>一些常用变换</p>
+<ul>
+<li><p>$e^{-x} = 1 - \frac{x}{1} + \frac{x}{2!} -\frac{x}{3!} + \frac{x}{4!}\dots$</p>
+</li>
+<li><p>$\frac{e^x + e^{-x}}{2} = 1 + \frac{x^2}{2!} + \frac{x^4}{4!} + \frac{x^6}{6!}\dots$</p>
+</li>
+<li><p>$\frac{e^x - e^{-x}}{2} = \frac{x}{1} + \frac{x^3}{3!} + \frac{x^5}{5!} + \frac{x^7}{7!}$</p>
+</li>
+<li><p>$e^{kx} = 1 + \frac{x}{1} + \frac{k^2x^2}{2!} + \frac{k^3x^3}{3!} + \frac{k^4x^4}{4!} \dots$</p>
+</li>
+</ul>
+<h3 id="一道简单的题目"><a href="#一道简单的题目" class="headerlink" title="一道简单的题目"></a>一道简单的题目</h3><p>长度为$n$的序列，用红黄蓝绿四种颜色染色，其中红黄只能是偶数，问方案数</p>
+<p>$n \leqslant 10^9$</p>
+<p>这道题就比较休闲了</p>
+<p>任意的是$e^x$，偶数的是$\frac{e^x + e^{-x}}{2}$</p>
+<p>最后化完是$\frac{e^{4x} + 2e^{2x}+1}{4} = \frac{4^n+2 * 2^{n+1}}{4}$($\frac{1}{4}$)相当于常数项</p>
+<p>直接快速幂就可以求</p>
+<h2 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h2><p>本篇讲的是关于生成函数最基础的内容，千万不要认为自己看懂了上面的内容就<strong>会</strong>生成函数了，充其量也就是了解而已。生成函数理论十分博大精深，我也只是略知皮毛。过几天可能会根据学习情况更一些生成函数与多项式运算的东西，敬请期待吧qwq</p>
+<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><p><a href="https://www.baidu.com" target="_blank" rel="noopener">生成函数-罗煜楚(版权原因暂不<strong>公</strong>开)</a></p>
+<p><a href="https://wenku.baidu.com/view/c0f7ee05cc1755270722080d.html" target="_blank" rel="noopener">组合数学—母函数与递推——朱全民</a></p>
+<p><a href="https://zh.wikipedia.org/wiki/%E6%AF%8D%E5%87%BD%E6%95%B0" target="_blank" rel="noopener">母函数——维基百科</a></p>
 
         </div>
         <!-- .entry-content -->
@@ -343,36 +461,19 @@
       </div>
       <section class="post-squares nextprev">
         
-          
-            <div class="post-nepre half previous">
-          
-            <a href="/2019/03/13/小学生都能看懂的生成函数入门教程/" rel="prev">
-              <div class="background">
-                <img class="lazyload" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://ws3.sinaimg.cn/large/0072Vf1pgy1foxkiyghdvj31hc0u0wv0.jpg" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)">
-              </div>
-              <span class="label">
-              Previous Post</span>
-              <div class="info">
-                <h3>
-                小学生都能看懂的生成函数入门教程</h3>
-                <hr>
-              </div>
-            </a>
-          </div>
-        
         
           
-            <div class="post-nepre half next">
+            <div class="post-nepre full next">
           
-            <a href="/2019/03/01/js中mousedown-up与click的关系/" rel="next">
+            <a href="/2019/03/11/利用生成函数求斐波那契数列通项公式/" rel="next">
               <div class="background">
-                <img class="lazyload" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://ws1.sinaimg.cn/large/0072Vf1pgy1foxkga5nmaj31kw0w0nmj.jpg" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)">
+                <img class="lazyload" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://ws4.sinaimg.cn/large/a15b4afegy1fmviz7fkqdj21hc0u0qcq.jpg" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)">
               </div>
               <span class="label">
               Next Post</span>
               <div class="info">
                 <h3>
-                js中mousedown/up与click的关系</h3>
+                利用生成函数求斐波那契数列通项公式</h3>
                 <hr>
               </div>
             </a>

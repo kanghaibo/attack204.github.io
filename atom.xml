@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://blog.attack204.com/"/>
-  <updated>2019-03-11T12:30:40.273Z</updated>
+  <updated>2019-03-13T03:01:53.550Z</updated>
   <id>https://blog.attack204.com/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>小学生都能看懂的生成函数入门教程</title>
+    <link href="https://blog.attack204.com/2019/03/13/%E5%B0%8F%E5%AD%A6%E7%94%9F%E9%83%BD%E8%83%BD%E7%9C%8B%E6%87%82%E7%9A%84%E7%94%9F%E6%88%90%E5%87%BD%E6%95%B0%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B/"/>
+    <id>https://blog.attack204.com/2019/03/13/小学生都能看懂的生成函数入门教程/</id>
+    <published>2019-03-13T03:00:23.000Z</published>
+    <updated>2019-03-13T03:01:53.550Z</updated>
+    
+    <summary type="html">
+    
+      生成函数入门教程，看不懂不要钱~
+    
+    </summary>
+    
+      <category term="学习笔记" scheme="https://blog.attack204.com/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+      <category term="算法" scheme="https://blog.attack204.com/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E7%AE%97%E6%B3%95/"/>
+    
+    
+      <category term="生成函数" scheme="https://blog.attack204.com/tags/%E7%94%9F%E6%88%90%E5%87%BD%E6%95%B0/"/>
+    
+  </entry>
   
   <entry>
     <title>利用生成函数求斐波那契数列通项公式</title>
@@ -454,32 +476,6 @@
     
     
       <category term="sublime" scheme="https://blog.attack204.com/tags/sublime/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>关于本博客的说明</title>
-    <link href="https://blog.attack204.com/2018/04/30/%E5%85%B3%E4%BA%8E%E6%9C%AC%E5%8D%9A%E5%AE%A2%E7%9A%84%E8%AF%B4%E6%98%8E/"/>
-    <id>https://blog.attack204.com/2018/04/30/关于本博客的说明/</id>
-    <published>2018-04-30T12:30:03.000Z</published>
-    <updated>2019-02-26T01:30:21.976Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;excerpt in index&gt;
-
-
-
-&lt;the rest of
-        
-      
-    
-    </summary>
-    
     
   </entry>
   
