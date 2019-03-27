@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
   
-  <title itemprop="name">小学生都能看懂的生成函数入门教程 | Attck204</title>
+  <title itemprop="name">二次剩余Cipolla算法学习笔记 | Attck204</title>
   
     <link rel="shortcut icon" href="/images/favicon.ico">
   
@@ -250,11 +250,11 @@
   
     <div class="pattern-center single-center">
       <!-- 有配图默认渲染第一张 -->
-      <div class="pattern-attachment-img lazyload" style="background-image: url(https://ws3.sinaimg.cn/large/0072Vf1pgy1foxkiyghdvj31hc0u0wv0.jpg);" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://ws3.sinaimg.cn/large/0072Vf1pgy1foxkiyghdvj31hc0u0wv0.jpg">
+      <div class="pattern-attachment-img lazyload" style="background-image: url(https://ws1.sinaimg.cn/large/a15b4afegy1fmvj2zjj87j21hc0u0drp.jpg);" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://ws1.sinaimg.cn/large/a15b4afegy1fmvj2zjj87j21hc0u0drp.jpg">
       </div>
       <header class="pattern-header single-header">
         <h1 class="entry-title">
-        小学生都能看懂的生成函数入门教程</h1>
+        二次剩余Cipolla算法学习笔记</h1>
         <p class="entry-census">
           <span>
             <a href="blog.attack204.com">
@@ -266,7 +266,7 @@
           </span>
           <span class="bull">
           ·</span>
-          2019-3-13<span class="bull">
+          2019-3-27<span class="bull">
           ·</span>
         <span id="busuanzi_value_page_pv"></span>次阅读</p>
       </header>
@@ -279,159 +279,164 @@
         <!--<div class="toc-entry-content"><!-- 套嵌目录使用（主要为了支援评论）-->
         
         <div class="entry-content">
-          <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p><del>第一次当标题党真是有点不适应</del></p>
-<p>现在网上讲生成函数的教程大多都是从$\frac{1}{1-x} = \sum_{i=0}^{\infty}x^i, e^x = \sum_{i=0}^{\infty} \frac{x^i}{i!}$开始，但是我不认为这样有助于大家理解生成函数的本质。我最开始学的时候也是在这里蒙了好久，直到看到了朱全明老师的课件，才真正的理解了生成函数的本质——处理排列组合问题的有利工具，而不是简单的$\frac{1}{1-x}$的指标代换。所以这篇文章，我打算从最基本的排列组合问题写起，最后慢慢扩展到$\frac{1}{1-x} = \sum_{i=0}^{\infty}x^i, e^x = \sum_{i=0}^{\infty} \frac{x^i}{i!}$。内容会比较基础，高端玩家可以直接看鏼爷的集训队论文</p>
-<h2 id="生成函数"><a href="#生成函数" class="headerlink" title="生成函数"></a>生成函数</h2><h3 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h3><p>维基百科上是这么定义的：</p>
-<blockquote>
-<p>在数学中，某个序列$(a_n)_{n \in \mathbb{N}}$ 的母函数（又称生成函数，英语：Generating function）是一种形式幂级数，其每一项的系数可以提供关于这个序列的信息。</p>
-</blockquote>
-<p>讲的通俗一点，对于某个序列${a_0, a_1, \dots, a_n}$，我想找一个函数来表示它，假设是$G(x) = a_0 + a_1x + a_2x^2 \dots a_n x^n$。这时候函数第$i$项的<strong>系数</strong>就表示了序列中的第$i$个元素。同时我们也可以看到，函数中的自变量$x$好像并没有什么意义，他的取值并不影响序列的表示，因此我们称这种函数为<strong>形式幂级数</strong></p>
-<h3 id="用处"><a href="#用处" class="headerlink" title="用处"></a>用处</h3><p>那么这样定义由什么好处呢？</p>
-<p>我们仔细观察一下$G(x)$，不难发现这是一个多项式函数，对于多项式我们知道他有加、减、乘、<del>除、求逆、取ln、exp</del>等运算。那么我们对$G(x)$进行乘法运算，也就是相当于对序列进行乘法运算，那么这样干有什么意义呢？我们不妨从一个题目入手。</p>
-<h3 id="普通生成函数"><a href="#普通生成函数" class="headerlink" title="普通生成函数"></a>普通生成函数</h3><blockquote>
-<p>有三种物品，分别有$3, 2, 3$个，问拿出$4$个进行<strong>组合</strong>$({1123}, {3211}$算一种)的方案数是多少</p>
-</blockquote>
-<p>学过dp的人可能会一眼看出是背包板子题。直接设$f[i][j]$表示当前到第$i$个位置，已经选了$j$个物品的方案数。转移的时候枚举一下当前选了几个</p>
-<pre><code class="cpp">f[0][0] = 1;
-for(int i = 1; i &lt;= 3; i++) 
-    for(int j = 0; j &lt;= 8; j++) //当前总共要选出j个 
-        for(int k = 0; k &lt;= j; k++) //已经选了k个
-            if(j - k &lt;= v[i]) //此时要选j-k个
-                f[i][j] += f[i - 1][k];
+          <p>对于同余式</p>
+<p>$$x^2 \equiv n \pmod p$$</p>
+<p>若对于给定的$n, P$，存在$x$满足上面的式子，则乘$n$在模$p$意义下是二次剩余，否则为非二次剩余</p>
+<p>我们需要计算的是在给定范围内所有满足条件的$x$，同时为了方便，我们只讨论$p$是奇质数的情况</p>
+<h2 id="前置定理"><a href="#前置定理" class="headerlink" title="前置定理"></a>前置定理</h2><ul>
+<li><strong>$x^2 \equiv (x+p)^2 \pmod p$</strong></li>
+</ul>
+<p>证明：$x^2 \equiv x^2 + 2xp + p^2 \pmod p$显然成立</p>
+<ul>
+<li><strong>对于$x^2 \equiv n \pmod p$，除$n=0$外，总共有$\frac{p-1}{2}$个$n$使得该方程有解</strong></li>
+</ul>
+<p><strong>我局的参考资料里对于这条性质的证明漏洞很大，所以下面的是自己yy的</strong></p>
+<p>根据第一个前置定理的式子，我们只需讨论$x \in [1, p - 1]$即可(当$x=0$时对应了$n=0$的特殊情况)</p>
+<p>一个显然的性质是</p>
+<p>$$x^2 \equiv (p - x)^2 \pmod p$$</p>
+<p>那么当$x \in [1, \frac{p - 1}{2}]$我们可以取到所有解。</p>
+<p>接下来我们只需要证明当$x\in[1, \frac{p-1}{2}]$时$x^2 \bmod p$均两两不同</p>
+<p>可以用反证法，若存在不同的$u, v$满足$u^2 \equiv v^2 \pmod p$</p>
+<p>那么有$(u + v)(u - v) \equiv 0 \pmod p$</p>
+<p>显然$-p &lt; u + v &lt; p$且$-p &lt; u - v &lt; p$且$u + v \not = 0, u - v \not = 0$，故该假设不成立，故原命题成立。</p>
+<p>Q.E.D</p>
+<ul>
+<li><strong>勒让德符号(Legender symbol)</strong></li>
+</ul>
+<p>记</p>
+<p>$$<br>(\frac{a}{p}) =<br>\begin{cases}<br>1 , &amp;\text{a在模$p$意义下是二次剩余}\<br>-1, &amp;\text{a在模$p$意义下是非二次剩余}\<br>0,  &amp;\text{a mod p = 0}<br>\end{cases}<br>$$</p>
+<p>这个东西的分布大概是这个样子</p>
+<p><img data-action="zoom" src="https://ws2.sinaimg.cn/large/005S5cb6ly1g1g0manyqej30rg07owek.jpg" alt="image"></p>
+<p>计算公式</p>
+<p><del>我局的这个公式就是构造出来的</del></p>
+<p>$$<br>(\frac{a}{p}) = a^{\frac{p - 1}{2}} \pmod p<br>$$</p>
+<p>证明：</p>
+<p>费马小定理：对于任意互质的$x, p$，有$x^{p - 1} = 1 \pmod p$</p>
+<p>一条同余式的性质：若$a^k \equiv b^k \pmod p$，那么$a^{kx} \equiv b^{xk} \pmod p$</p>
+<p>然后直接把这玩意儿带到$x^2 \equiv a \pmod p$里就行了</p>
+<p>这里简单的写一下:</p>
+<p>首先要明确我们的目的，我们现在要验证这个公式的正确性，也就是说我们要证明当$a^{\frac{p-1}{2}}=1  \pmod p$时满足条件的$x$存在，当$a^{\frac{p-1}{2}}= -1  \pmod p$时$x$不存在，当$a^{\frac{p-1}{2}}= 0  \pmod p$时$a\mod p = 0$</p>
+<ol>
+<li>当$a^{\frac{p-1}{2}}=1 \pmod p$时</li>
+</ol>
+<p>我们假设有$x^2 \equiv a \pmod p$</p>
+<p>$$x^{2\frac{p-1}{2}} \equiv a^{\frac{p-1}{2}} \pmod p$$</p>
+<p>$$x^{p-1} \equiv 1 \pmod p$$</p>
+<p>根据费马小定理$x$显然存在，因此$a$是模$p$意义下的二次剩余</p>
+<ol start="2">
+<li>当$a^{\frac{p-1}{2}}= -1  \pmod p$时</li>
+</ol>
+<p>假设有$x^2 \equiv a \pmod p$</p>
+<p>同理可知</p>
+<p>$$x^{p-1} \equiv -1 \pmod p$$</p>
+<p>显然$x$不存在，因此$a$不是模$p$意义下的二次剩余</p>
+<ol start="3">
+<li>当$a^{\frac{p-1}{2}}= 0  \pmod p$时</li>
+</ol>
+<p>显然有$a \bmod p = 0$</p>
+<h2 id="Cipolla算法"><a href="#Cipolla算法" class="headerlink" title="Cipolla算法"></a>Cipolla算法</h2><h3 id="算法流程"><a href="#算法流程" class="headerlink" title="算法流程"></a>算法流程</h3><p>这个算法其实用两句话就能说完，但是背后的理论却非常高深(对于我这种菜鸡而言)。</p>
+<ol>
+<li><p>首先使用<strong>随机</strong>的方法找到一个$(\frac{a^2 - n}{p}) = -1$，记$\omega = \sqrt{a^2-n}$</p>
+</li>
+<li><p>那么$x \equiv (a + w)^{\frac{p+1}{2}} \pmod p$</p>
+</li>
+</ol>
+<p>做完了。。。期望复杂度$O(\log^2 n)$</p>
+<p>但是实际上实现起来并没有这么简单，因为要自定义类似于虚数的乘法/幂运算</p>
+<h3 id="算法理论"><a href="#算法理论" class="headerlink" title="算法理论"></a>算法理论</h3><p>首先要有一点抽代基础(群/环/域什么的要知道定义)</p>
+<p>我们来逐步分析这个算法(按照我的叙述风格应该是从发明者的角度出发一步一步推出这玩意儿来，但是十分抱歉我实在是搞不明白他当时的脑回路qwq)</p>
+<p>对于第一步，根据前面的定理，如果在$[1, p]$内随机，每次有$\frac{1}{p}*\frac{p-1}{2}$的概率找到一个解，那么期望步数大约为两次，因此复杂度是可以保证的。</p>
+<p>但是找到这个东西有什么用呢？。如果我们把之前的数域记做$\mathbf F_p$，$\omega$在这个数域下是不能开根的，但是我们可以构造一个新的数域$\mathbf F_p$，使得$\omega$在$\mathbf F_{p2}$下能够开根。类比于$-1$在复数域下能够表示为$\sqrt{-1}$一样。</p>
+<p>这样的话$\mathbf F_{p2}$内的数都可以写作$a + k\omega$的形式。可以证明这玩意儿确实是个合法的域，<a href="https://en.wikipedia.org/wiki/Cipolla%27s_algorithm#Proof" target="_blank" rel="noopener">证明过程</a>，同时也可以证明在$\mathbf F_{p2}$下得到的解在$\mathbf F_{p1}$下也成立，同时最后的答案中$\omega$的系数一定为$0$</p>
+<p>现在来简单说明一下为什么$x \equiv (a+\omega)^{\frac{p+1}{2}}$</p>
+<p>先来了解两个性质</p>
+<ul>
+<li>$\omega^p \equiv -\omega \pmod p$</li>
+</ul>
+<p>证明：<br>$$<br>\begin{aligned}<br>\omega^p &amp;= (a^2-n)^{\frac{p}{2}}\<br>         &amp;= (a^2 - n)^{\frac{p - 1}{2}} (a^2 - n)^{\frac{1}{2}}\<br>         &amp;= -\omega<br>\end{aligned}<br>$$</p>
+<ul>
+<li>$(a + b)^p \equiv a^p + b^p \pmod p$</li>
+</ul>
+<p>证明就直接考虑二项式定理中的组合数展开，发现除了第一项和最后一项之外都无法把$n!$消掉。</p>
+<p>那么要证明$x \equiv (a+\omega)^{\frac{p+1}{2}}$，实际上我们只需要证明$(a+\omega)^{p+1}\equiv n \pmod p$就行了</p>
+<p>$$<br>\begin{aligned}<br> &amp;(a + \omega)^{p + 1}\<br>=&amp;(a + \omega)^p(a + \omega)\<br>=&amp;(a - \omega)(a + \omega)(\text{根据费马小定理$a^p \equiv p \pmod p$})\<br>=&amp;(a^2 - \omega^2)\<br>=&amp;(a^2 - (a^2 - n))\<br>=&amp;n<br>\end{aligned}<br>$$</p>
+<p>算法的大概思想就讲完了，下面煮个栗子~。</p>
+<p>对于$x^2 \equiv n \pmod p$</p>
+<p>假设此时$p=13, n = 10$。</p>
+<p>首先要找到一个$a$满足$(\frac{a^ - 10}{13}) = -1$，然后脸黑的attack在经过1e9 +7次尝试后终于找到了一个$a =2$它满足条件，因为$(\frac{7}{13}) = -1$此时$\omega = \sqrt{a^2 - n} = \sqrt{-6}$</p>
+<p>按照老祖宗讲给我们的</p>
+<p>$x \equiv (2 + \sqrt{-6})^{7} \pmod {13}$</p>
+<p>$$<br>\begin{aligned}<br>&amp;\left(2+{\sqrt {-6}}\right)^{2}=4+4{\sqrt {-6}}-6=-2+4{\sqrt {-6}}\<br>&amp;\left(2+{\sqrt {-6}}\right)^{4}=\left(-2+4{\sqrt {-6}}\right)^{2}=-1-3{\sqrt {-6}}\<br>&amp;\left(2+{\sqrt {-6}}\right)^{6}=\left(-2+4{\sqrt {-6}}\right)\left(-1-3{\sqrt {-6}}\right)=9+2{\sqrt {-6}}\<br>&amp;\left(2+{\sqrt {-6}}\right)^{7}=\left(9+2{\sqrt {-6}}\right)\left(2+{\sqrt {-6}}\right)=6.<br>\end{aligned}<br>$$</p>
+<p>然后不难发现$36 \equiv 10 \pmod {13}$</p>
+<p>同时因为平方的性质，$-x$也是一个合法解，因此$-6 + 13 = 7$也是合法的</p>
+<p>最后有一个小问题就是为什么最后$\omega$的系数一定是$0$，参考资料中给出的解释我实在是不能理解，如果有看得懂的大佬欢迎给本菜鸡讲一下qwq</p>
+<p><img data-action="zoom" src="https://ws1.sinaimg.cn/large/005S5cb6ly1g1h2jmltztj30rv04kt9m.jpg" alt="image"></p>
+<h3 id="代码模板"><a href="#代码模板" class="headerlink" title="代码模板"></a>代码模板</h3><pre><code class="cpp">#include&lt;bits/stdc++.h&gt;  
+using namespace std;
+const int mod = 13;
+namespace TwoRemain {
+template &lt;typename A, typename B&gt; inline int add(A x, B y) {if(x + y &lt; 0) return x + y + mod; return x + y &gt;= mod ? x + y - mod : x + y;}
+template &lt;typename A, typename B&gt; inline void add2(A &amp;x, B y) {if(x + y &lt; 0) x = x + y + mod; else x = (x + y &gt;= mod ? x + y - mod : x + y);}
+template &lt;typename A, typename B&gt; inline int mul(A x, B y) {return 1ll * x * y % mod;}
+template &lt;typename A, typename B&gt; inline void mul2(A &amp;x, B y) {x = (1ll * x * y % mod + mod) % mod;}
+int fmul(int a, int p, int Mod = mod) {
+    int base = 0;
+    while(p) {
+        if(p &amp; 1) base = (base + a) % Mod;
+        a = (a + a) % Mod; p &gt;&gt;= 1;
+    }
+    return base;
+}
+int fp(int a, int p, int Mod = mod) {
+    int base = 1;
+    while(p) {
+        if(p &amp; 1) base = fmul(base, a, Mod);
+        p &gt;&gt;= 1; a = fmul(a, a, Mod);
+    }
+    return base;
+}
+int f(int x) {
+    return fp(x, (mod - 1) &gt;&gt; 1);
+}
+struct MyComplex {
+    int a, b;
+     int cn;
+    MyComplex operator * (const MyComplex &amp;rhs)  {
+        return {
+            add(fmul(a, rhs.a), fmul(cn, fmul(b, rhs.b, mod))),
+            add(fmul(a, rhs.b), fmul(b, rhs.a)),
+            cn
+        };
+    }
+};
+MyComplex fp(MyComplex a, int p) {
+    MyComplex base = {1, 0, a.cn};
+    while(p) {
+        if(p &amp; 1) base = base * a;
+        a = a * a; p &gt;&gt;= 1;
+    }
+    return base;
+}
+int TwoSqrt(int n) {
+    if(f(n) == mod - 1) return -1;
+    if(f(n) ==  0) return  0;
+    int a = -1, val = -1;
+    while(val == -1) {
+        a = rand() &lt;&lt; 15 | rand();
+        val = add(mul(a, a), -n);
+        if(f(val) != mod - 1) val = -1;
+    }
+    return fp({a, 1, val}, (mod + 1) / 2).a;
+}
+}
+using namespace TwoRemain;
+signed main() {
+    cout &lt;&lt; TwoSqrt(10);
+    return 0;
+}
 </code></pre>
-<p>可以得到$f[3]$的系数为${1\ 3\ 6\ 9\ 10\ 9\ 6\ 3\ 1 }$(从0开始编号)，$4$最对应的一项是$10$。</p>
-<p>那用生成函数怎么做呢？</p>
-<p>我们可以对每个物品构造一个多项式函数，其中第$i$项的系数$a_i$表示选了$i$个当前物品的方案数。</p>
-<p>那么第一个物品的生成函数为$G_1(x) = 1 + x^1 + x^2 + x^3$ (相同的物品选$i$个的方案数当然是1)</p>
-<p>第二个物品的生成函数为$G_2(x) = 1 + x^1 + x^2$</p>
-<p>第三个为$G_3(x) = 1 + x^1 + x^2 + x^3$</p>
-<p>先说结论：最终答案是$G_1(x) <em> G_2(x) </em> G_3(x)$的第$4$项的系数</p>
-<p>这是为什么呢？考虑两个多项式相乘的结果$f* g$，它的第$k$项的系数为$\sum_{i=0}^k f_i g_{k-i}$。这个过程是相当于是在枚举第一个物品选了几个，比如$4$这一项，他等于$f_0g_4 + f_1g_3 + f_2 g_2 + f_3g_1 + f_4g_0$。</p>
-<p>再具体一点，抛开刚刚那个题目中系数等于$1$的限制，我们假设$f_1 = 2, g_3 = 3$，也就是说从第一个物品中选出$1$个有两种方案，第二个物品中选出$3$个有三种方案，那么$f_1 <em> g_3=2 </em> 3$就相当于第一个物品的两种方案可以与第二个物品的三种方案任意组合来得到$4$种物品。(再看不懂的话建议去补一下高中组合计数qwq，这里讲的这么详细是为了给指数生成函数做铺垫)</p>
-<p>这里建议大家去手玩一下多项式乘法，玩一下(玩的时候枚举$x^i$算他的系数)就会发现这个过程与背包的过程惊人的相似，因为事实上背包的过程就是在模拟多项式乘法。</p>
-<p>这里为了下文(指数型生成函数)好讲解，本菜鸡直接把多项式相乘的结果(<del>抄一下</del>)写出来</p>
-<p>$$<br>\begin{aligned}<br>G(x) &amp;= (1+x+x^2+x^3)(1+x+x^2)(1+x+x^2+x^3) \<br>     &amp;= (1+2x+3x^2+3x^3+2x^4+x^5)(1+x+x^2+x^3)\<br>     &amp;=1+3x+6x^2+9x^3+10x^4+9x^5+6x^6+3x^7+x^8<br>\end{aligned}<br>$$</p>
-<p>其中$x^4$项可以由下面这些得到，这种形式与我们的手玩结果就非常相似了</p>
-<p>$$x_1x_3^3+x_2x_3^3+x_1^2x_3^2+x_1x_2x_3^2+x_2^2x_3^2+x_1^3x_3+x_1^2x_2x_3+x_1x_2^2x_3+x_1^3x_3+x_1^2x_2^2$$</p>
-<p>形如$G(x) = \sum_{i=0}^n a_ix_i$的表示一个序列的多项式函数，我们称之为<strong>普通生成函数</strong></p>
-<p>讲到这里你需要大概明白：生成函数的基本概念，生成函数相乘的组合意义。</p>
-<p>接下来按道理应该讲$\frac{1}{1-x}$及其运算，但是我想先介绍一下指数生成函数的基本概念。</p>
-<h2 id="指数生成函数"><a href="#指数生成函数" class="headerlink" title="指数生成函数"></a>指数生成函数</h2><p>通过刚刚的讲解我们不难看出，普通生成函数的意义在于解决<strong>组合</strong>类计数问题。但是别忘了组合的兄弟<strong>排列</strong>呀。指数生成函数就是用来解决排列类问题。</p>
-<p>还是刚刚的题目，我们改一下限制</p>
-<blockquote>
-<p>有三种物品，分别有$3, 2, 3$个，问拿出$4$个进行<strong>组合</strong>$({1123}, {3211}$算不同方案)的方案数是多少(<a href="http://acm.hdu.edu.cn/showproblem.php?pid=1521" target="_blank" rel="noopener">HDU1521</a>)</p>
-</blockquote>
-<p>这一类问题仅仅是比刚刚多了一个顺序的原因，但是难度却比刚刚大了不少(背包也可以做，只要在转移的时候乘一个组合数即可，留给大家思考)</p>
-<p>这里先介绍一下<strong>多重集排列数</strong></p>
-<blockquote>
-<p>设$S = {a_1, a_2 \dots a_n}, N = \sum_{i=1}^n a_i$，其中第$a_i$表示第$i$个物品有$a_i$个。<br>从中选出$N$个进行排列的方案数为$\frac{N!}{a_1!a_2! \dots a_n!}$<br>解释的话就是相当于任意排列之后减去同种物品之间多出来的方案</p>
-</blockquote>
-<p>这样我们就得到了一个思路：先把所有<strong>组合</strong>得到的方案算出来，然后再对每一种方案分别计算排列数，最后加起来。</p>
-<p>比如我们刚刚已经得到了组合的方案：</p>
-<p>$$x_1x_3^3+x_2x_3^3+x_1^2x_3^2+x_1x_2x_3^2+x_2^2x_3^2+x_1^3x_3+x_1^2x_2x_3+x_1x_2^2x_3+x_1^3x_3+x_1^2x_2^2$$</p>
-<p>其中$x_1 x_3^3$这一项的排列方案就是$\frac{4!}{1!3!}$，$x_1x_2x_3^2$这一项的排列方案就是$\frac{4!}{1!1!2!}$。观察一下，所有方案的分子都是$4!$，分母都是选出来的对应数量的阶乘。</p>
-<p>于是我们引进指数型生成函数</p>
-<p>形如$G(x) = \sum_{i=0}^n a_i \frac{x_i}{i!}$的表示序列的多项式函数，我们称之为指数生成函数。</p>
-<p>同时我们分别构造出$G_1(x) = 1+\frac{x^1}{1} + \frac{x^2}{2!} + \frac{x^3}{3!}$</p>
-<p>$G_2(x) = 1 + \frac{x^1}{1} + \frac{x^2}{2}$</p>
-<p>$G_3(x) = 1 + \frac{x^1}{1} + \frac{x^2}{2!} + \frac{x^3}{3!}$</p>
-<p>这时候再计算一下$G_1(x) <em> G_2(x) </em> G_3(x)$</p>
-<p>$$<br>\begin{aligned}<br>G_e(x) &amp;= (1 + \frac{x}{1!} + \frac{x^2}{2!} + \frac{x^3}{3})(1+\frac{x}{1!} + \frac{x^2}{2!}) (1 + \frac{x}{1!} + \frac{x^2}{2!} + \frac{x^3}{3!})\<br>       &amp;= (1+2x+2x^2+\frac{7}{6}x^3 + \frac{5}{12}x^4 + \frac{1}{12}x^5) (1+x+\frac{1}{2}x^2 + \frac{1}{6}x^3)\<br>       &amp;=(1+3x + \frac{9}{2}x^2 + \frac{14}{3}x^3 + \frac{35}{12}x^4 + \frac{17}{12}x^5 + \frac{35}{72} x^6 + \frac{8}{72}x^7 + \frac{1}{71}x^8)<br>\end{aligned}<br>$$</p>
-<p>这时候如何计算选出$4$个物品的答案呢？简单$\frac{35}{12} * 4! = 70$ </p>
-<p>可能大家不禁思考，为什么这么定义函数乘起来就是排列数呢？想一想，因为我们对每个系数构造的$\frac{1}{i!}$就相当于是多重集排列数中的分母呀</p>
-<p>好了，如果你到这里都看懂了的话，说明你已经对生成函数有个大概的了解了。但是不知道大家是不是和我有着同样的感觉：生成函数好麻烦啊qwq。</p>
-<p>那么有没有一套可以简化些运算的理论呢？</p>
-<p>答案是：当然有了！(<del>不然我问个毛线</del>)。下面讲的内容可以会有些刺激，需要大家有一定的数学基础(<del>其实只要高中知识就行了</del>)</p>
-<h2 id="普通生成函数的推广"><a href="#普通生成函数的推广" class="headerlink" title="普通生成函数的推广"></a>普通生成函数的推广</h2><h3 id="简单介绍"><a href="#简单介绍" class="headerlink" title="简单介绍"></a>简单介绍</h3><p>这个也不能叫推广吧，是我自己瞎起的名字。。。</p>
-<p>在我们刚刚的运算中出现了一个常用的函数$G(x) = \sum_{i=0}^n x_i$，这个东西怎么化简呢？</p>
-<p>结论：$\sum_{i=0}^{\infty} x_i = \frac{1}{1-x}$</p>
-<p>可能你和当初一次见到这个式子的我一样，大概是这个表情</p>
-<p><img data-action="zoom" src="https://wx2.sinaimg.cn/mw690/005S5cb6ly1g10xn4zzftj305v05r0u8.jpg" alt="image"></p>
-<p>我们来证明一下。</p>
-<p>$S = 1 + x + x^2 + \dots x^{\infty}$</p>
-<p>$xS = x + x^2 + x^3 + \dots x^{\infty}$</p>
-<p>$S - xS = 1$</p>
-<p>$S = \frac{1}{1-x}$</p>
-<p>是不是证的天衣无缝但是又十分扯淡？因为这玩意儿显然只有$x^{\infty}$收敛也就是$x\in(-1, 1)$时成立。其实在这里只要在$x\in(-1, 1)$成立就可以了，因为生成函数是形式幂级数，我们并不关心$x$的具体取值</p>
-<p>有了这个我们能干什么呢？我们可以对$\frac{1}{1-x}$变形来表示更多的序列，同时我们知道了$\frac{1}{1-x}$对应序列的第$i$项的系数为$1$，那么当我们知道了某一个序列的生成函数之后我们也可以把它变成类似于$\frac{1}{1-x}$的形式从而得到通项公式。</p>
-<p>首先介绍一些简单的变换，建议大家手玩一下下面的生成函数的推广形式，比如把”乘$2$”换成”乘$k$”</p>
-<ul>
-<li><p>将$x$替换为$-x$，$\frac{1}{1+x} = {1, -1, 1, -1, \dots}$</p>
-</li>
-<li><p>将$x$替换为$2x$，$\ \frac{1}{1-2x} = {1, 2, 4, 8, 16, \dots}$</p>
-</li>
-<li><p>将$x$替换为$x^2$, $\ \ \ \frac{1}{1-x^2} = {1, 0, 1, 0, 1 \dots}$</p>
-</li>
-<li><p>将分母乘$2$, $\ \ \ \ \quad\frac{2}{1-x} = {2, 2, 2, 2, 2, \dots}$</p>
-</li>
-<li><p>将分子乘$x^3$,  $\ \ \quad \frac{x^3}{1-x} \ = {0, 0, 0, 1, 1, 1, 1 \dots}$</p>
-</li>
-<li><p>求个导,     $\qquad \ \ \ \ \  \frac{1}{(1-x)^2} = {1, 2, 3, 4, 5}$</p>
-</li>
-<li><p>再求一次，   $\quad \ \ \ \frac{2}{(1-x)^3} ={2 + 6 + 12 + 20 \dots}$</p>
-</li>
-</ul>
-<p>问题来了，我如果知道了某一个数列的生成函数，怎么求它的通项公式呢？一般的思路就通过各种奇技淫巧往上面的几个生成函数转化。这里要提一下比较常用的<strong>广义二项式定理</strong></p>
-<p>$$\frac{1}{(1-x)^n} = \sum_{k=0}^{\infty} C_{n+k-1}^{k-1} x^k$$</p>
-<p>我们来通过两个例子来具体讲一下它的用处</p>
-<h3 id="求斐波那契数列通项公式"><a href="#求斐波那契数列通项公式" class="headerlink" title="求斐波那契数列通项公式"></a>求斐波那契数列通项公式</h3><p><del>非常不不要脸的</del>抄一下自己以前的博客</p>
-<p>首先要知道斐波那契数列的递推式</p>
-<p>$$f_i = f_{i-1} + f_{i - 2}$$</p>
-<p>$$f_0 = f_1 = 1$$</p>
-<p>那么推导一下</p>
-<p>设$A = 1 + 1x + 2x^2 + 3x^3 + 5x^4 + 8x^5 \dots$</p>
-<p>根据递推式，我们可以这样变化，显然有</p>
-<p>$$<br>\begin{aligned}<br>A = \  1 + 1x + &amp;2x^2 + 3x^3 + 5x^4 + 8x^5 \dots  \<br>xA = \ \ \qquad  x + &amp;1x^2 + 2x^3 + 3x^4 + 5x^5\dots \<br>x^2A =\qquad \qquad   &amp;1x^2 + 1x^3 + 2x^4 + 3x^5 \dots<br>\end{aligned}<br>$$</p>
-<p>那么可以得到一个方程$A - xA - x^2A = 1$</p>
-<p>整理一下$A =\frac{1}{1-x-x^2}$</p>
-<p>这样我们就得到了斐波那契数列的生成函数，然而并没有什么卵用，因为我们不能直接通过观察看出每一项的系数。</p>
-<p>现在考虑一下，我们接下来可以干什么。我们已经知道了$\frac{1}{1-x}$和$\frac{1}{1-kx}$所表示的序列。接下来要干的当然是把$\frac{1}{1-x-x^2}$往上面的两个式子转化。</p>
-<p>$\frac{1}{1-x-x^2}$这玩意儿下半部分是个一元二次方程，我们可以配方</p>
-<p>$$1-x-x^2 = (1-\phi_1x)(1-\phi_2x)$$</p>
-<p>$$\phi_1 = \frac{1+\sqrt{5}}{2}, \phi_2 = \frac{1-\sqrt{5}}{2}$$</p>
-<p>(解的时候可以直接把后面的式子拆开，把这两个式子对应项联立组成方程组, $\phi_1 \phi_2$的取值是可以反过来的)</p>
-<p>这个时候我们发现已经找到与$\frac{1}{1-kx}$的联系了，我们可以把$\frac{1}{(1-\phi_1 x)(1-\phi_2 x)}$拆成求和的形式。可以裂一下项</p>
-<p>原式变为$\frac{a}{1-\phi_1x} + \frac{b}{1-\phi_2 x}$，然后再解一个方程$a(1-\phi_2 x) + b(1-\phi_1x) = 1$</p>
-<p>解这个方程就没那么休闲了，这里我们选择把$x$当做主元对方程进行变换</p>
-<p>$$(a+b - 1) - x(a\phi_2 + b\phi_1) = 0 $$</p>
-<p>这样就好处理了，只要列个二元一次方程组</p>
-<p>$$<br>\begin{cases}<br>a-b-1 = 0\<br>a\phi_2 + b\phi_1 = 0<br>\end{cases}<br>$$</p>
-<p>解一下可以得到$a = \frac{1}{\sqrt{5}} \phi_1, b = -\frac{1}{\sqrt{5}} \phi_2$</p>
-<p>带回去</p>
-<p>$$A = \frac{\phi_1}{\sqrt{5}} \frac{1}{1-\phi_1x} - \frac{\phi_2}{\sqrt{5}} \frac{1}{1-\phi_2x}$$</p>
-<p>那么第$n$项的公式为</p>
-<p>$$A_n = \frac{1}{\sqrt{5}} ((\frac{1+\sqrt{5}}{2})^{n+1} -  (\frac{1-\sqrt{5}}{2})^{n+1})$$</p>
-<h3 id="解决组合类问题"><a href="#解决组合类问题" class="headerlink" title="解决组合类问题"></a>解决组合类问题</h3><p>比如<a href="https://www.luogu.org/problemnew/show/P2000" target="_blank" rel="noopener">这种休闲板子题</a></p>
-<p>至多为$k$就是$\frac{1-x^{k+1}}{1-x}$</p>
-<p>$k$的倍数就是$\frac{1}{1-x^k}$</p>
-<p>化简完了就只剩下一个$\frac{1}{(1-x)^5}$</p>
-<p>这个东西可以直接广义二项式定理展开，然后交一发pypy2就过了。。</p>
-<h2 id="指数生成函数的推广"><a href="#指数生成函数的推广" class="headerlink" title="指数生成函数的推广"></a>指数生成函数的推广</h2><p>和上面的很类似，这里直接说结论</p>
-<p>$$e^x = \sum_{i=0}^{\infty} \frac{x^i}{i!}$$</p>
-<blockquote>
-<p>证明<br>考虑直接将$e^x$在$x = 0$处泰勒展开<br>由泰勒展开的公式$f(x) = f(x_0) + \frac{f^1(x_0)}{1} (x-x_0) + \frac{f^2(x_0)}{2!} (x-x_0)^2 + \dots + \frac{f^n(x0)}{n} (x-x_0)^n \xi$ ($f^n$的意思是求$n$次导数)<br>可以直接得到。</p>
-</blockquote>
-<p>一些常用变换</p>
-<ul>
-<li><p>$e^{-x} = 1 - \frac{x}{1} + \frac{x}{2!} -\frac{x}{3!} + \frac{x}{4!}\dots$</p>
-</li>
-<li><p>$\frac{e^x + e^{-x}}{2} = 1 + \frac{x^2}{2!} + \frac{x^4}{4!} + \frac{x^6}{6!}\dots$</p>
-</li>
-<li><p>$\frac{e^x - e^{-x}}{2} = \frac{x}{1} + \frac{x^3}{3!} + \frac{x^5}{5!} + \frac{x^7}{7!}$</p>
-</li>
-<li><p>$e^{kx} = 1 + \frac{x}{1} + \frac{k^2x^2}{2!} + \frac{k^3x^3}{3!} + \frac{k^4x^4}{4!} \dots$</p>
-</li>
-</ul>
-<h3 id="一道简单的题目"><a href="#一道简单的题目" class="headerlink" title="一道简单的题目"></a>一道简单的题目</h3><p>长度为$n$的序列，用红黄蓝绿四种颜色染色，其中红黄只能是偶数，问方案数</p>
-<p>$n \leqslant 10^9$</p>
-<p>这道题就比较休闲了</p>
-<p>任意的是$e^x$，偶数的是$\frac{e^x + e^{-x}}{2}$</p>
-<p>最后化完是$\frac{e^{4x} + 2e^{2x}+1}{4} = \frac{4^n+2 * 2^{n+1}}{4}$($\frac{1}{4}$)相当于常数项</p>
-<p>直接快速幂就可以求</p>
-<h2 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h2><p>本篇讲的是关于生成函数最基础的内容，千万不要认为自己看懂了上面的内容就<strong>会</strong>生成函数了，充其量也就是了解而已。生成函数理论十分博大精深，我也只是略知皮毛。过几天可能会根据学习情况更一些生成函数与多项式运算的东西，敬请期待吧qwq</p>
-<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><p><a href="https://www.baidu.com" target="_blank" rel="noopener">生成函数-罗煜楚(版权原因暂不<strong>公</strong>开)</a></p>
-<p><a href="https://wenku.baidu.com/view/c0f7ee05cc1755270722080d.html" target="_blank" rel="noopener">组合数学—母函数与递推——朱全民</a></p>
-<p><a href="https://zh.wikipedia.org/wiki/%E6%AF%8D%E5%87%BD%E6%95%B0" target="_blank" rel="noopener">母函数——维基百科</a></p>
+<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><p><a href="https://blog.csdn.net/a_crazy_czy/article/details/51959546" target="_blank" rel="noopener">二次剩余Cipolla算法学习小记</a></p>
+<p><a href="https://en.wikipedia.org/wiki/Legendre_symbol" target="_blank" rel="noopener">Legendre symbol</a></p>
 
         </div>
         <!-- .entry-content -->
@@ -461,36 +466,19 @@ for(int i = 1; i &lt;= 3; i++)
       </div>
       <section class="post-squares nextprev">
         
-          
-            <div class="post-nepre half previous">
-          
-            <a href="/2019/03/27/二次剩余Cipolla算法学习笔记/" rel="prev">
-              <div class="background">
-                <img class="lazyload" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://ws1.sinaimg.cn/large/a15b4afegy1fmvj2zjj87j21hc0u0drp.jpg" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)">
-              </div>
-              <span class="label">
-              Previous Post</span>
-              <div class="info">
-                <h3>
-                二次剩余Cipolla算法学习笔记</h3>
-                <hr>
-              </div>
-            </a>
-          </div>
-        
         
           
-            <div class="post-nepre half next">
+            <div class="post-nepre full next">
           
-            <a href="/2019/03/11/利用生成函数求斐波那契数列通项公式/" rel="next">
+            <a href="/2019/03/13/小学生都能看懂的生成函数入门教程/" rel="next">
               <div class="background">
-                <img class="lazyload" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://ws4.sinaimg.cn/large/a15b4afegy1fmviz7fkqdj21hc0u0qcq.jpg" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)">
+                <img class="lazyload" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://ws3.sinaimg.cn/large/0072Vf1pgy1foxkiyghdvj31hc0u0wv0.jpg" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)">
               </div>
               <span class="label">
               Next Post</span>
               <div class="info">
                 <h3>
-                利用生成函数求斐波那契数列通项公式</h3>
+                小学生都能看懂的生成函数入门教程</h3>
                 <hr>
               </div>
             </a>
